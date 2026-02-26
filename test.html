@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JW Lab - SUSTech</title>
+    <style>
+        /* 全局初始化 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #F5F7F8;
+            color: #2D3748;
+            line-height: 1.7;
+        }
+
+        /* 导航栏 */
+        .header {
+            background-color: #222831;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lab-logo {
+            color: #76ABAE;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav a {
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: #76ABAE;
+            border-bottom: 2px solid #76ABAE;
+        }
+
+        /* 横幅 */
+        .banner {
+            background: linear-gradient(135deg, #222831, #31363F);
+            color: #ffffff;
+            padding: 72px 24px;
+        }
+
+        .banner-desc {
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 2.1;
+        }
+
+        .banner-desc strong {
+            color: #76ABAE;
+            font-weight: 600;
+        }
+
+        /* 内容 */
+        .container {
+            max-width: 1200px;
+            margin: 48px auto;
+            padding: 0 24px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .card h3 {
+            font-size: 28px;
+            color: #222831;
+            margin-bottom: 36px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #E5E7EB;
+        }
+
+        .research-item {
+            margin-bottom: 56px;
+        }
+
+        .research-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .research-item h4 {
+            font-size: 24px;
+            color: #222831;
+            margin-bottom: 12px;
+        }
+
+        .research-item p {
+            font-size: 18px;
+            line-height: 1.9;
+            color: #2D3748;
+        }
+
+        /* 底部 */
+        .footer {
+            background-color: #222831;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            padding: 32px 24px;
+            margin-top: 48px;
+        }
+
+        .footer p {
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .footer strong {
+            color: #76ABAE;
+        }
+
+        /* 手机适配 */
+        @media (max-width: 768px) {
+            .lab-logo { font-size: 24px; }
+            .nav { gap: 20px; }
+            .nav a { font-size: 15px; }
+            .banner { padding: 56px 20px; }
+            .banner-desc { font-size: 16px; }
+            .container { margin: 32px auto; padding: 0 20px; }
+            .card { padding: 32px; }
+            .card h3 { font-size: 24px; }
+            .research-img { height: 220px; }
+            .research-item h4 { font-size: 22px; }
+            .research-item p { font-size: 16px; }
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 12px 16px; }
+            .nav-wrap { flex-direction: column; gap: 12px; }
+            .banner { padding: 48px 16px; }
+            .card { padding: 24px; }
+            .research-img { height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="nav-wrap">
+        <a href="index.html" class="lab-logo">JW Lab</a>
+        <div class="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="members.html">Members</a>
+            <a href="facility.html">Facility</a>
+            <a href="openings.html">Openings</a>
+        </div>
+    </div>
+</div>
+
+<div class="banner">
+    <p class="banner-desc">
+        We merge <strong>quantum physics</strong> with <strong>photonic nano-structures and chips</strong>: Application-wise, we develop high-performance photonic computing and quantum information systems; Scientifically, we investigate exotic properties of <strong>macroscopic quantum coherent phases</strong>, such as Bose-Einstein condensation and supersolids, under ambient conditions.
+    </p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <h3>Research Directions</h3>
+
+        <div class="research-item">
+            <h4>1. Integrated Photonics & Semiconductor Lasers</h4>
+            <img src="https://picsum.photos/1200/320?random=1" alt="Integrated Photonics" class="research-img">
+            <p>Develop on-chip integrated photonic devices, topological lasers and 2D material-based heterogeneous optoelectronic devices for photonic computing, realizing high performance, miniaturization and on-chip integration.</p>
+        </div>
+
+        <div class="research-item">
+            <h4>2. Light-Matter Interaction for Microscopic Quantum Coherent States</h4>
+            <img src="https://picsum.photos/1200/320?random=2" alt="Light-Matter Interaction" class="research-img">
+            <p>Investigate light-matter coupling in low-dimensional/topological systems, exploring the evolution of microscopic quantum coherent states such as BEC, superfluidity and topological states of light.</p>
+        </div>
+
+        <div class="research-item">
+            <h4>3. Quantum Photonics</h4>
+            <img src="https://picsum.photos/1200/320?random=3" alt="Quantum Photonics" class="research-img">
+            <p>Based on quantum control of light-matter interaction, develop topological polaritonic devices, high-performance quantum light sources and photonic quantum state information processing systems.</p>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p><strong>JW Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+</div>
+
+</body>
+</html>
