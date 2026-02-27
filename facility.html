@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilities - JW Lab</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #F8FAFC;
+  color: #1F2937;
+  line-height: 1.7;
+}
+
+.header {
+  background-color: #0F172A;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.nav-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lab-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #3B82F6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.page-title {
+  font-size: 28px;
+  color: #1E3A8A;
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.facility-section {
+  margin-bottom: 56px;
+}
+
+.section-subtitle {
+  font-size: 22px;
+  color: #1E3A8A;
+  margin-bottom: 24px;
+  padding-left: 8px;
+  border-left: 4px solid #1E3A8A;
+}
+
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.facility-card {
+  background: #F8FAFC;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.12);
+}
+
+.facility-img {
+  width: 100%;
+  height: 200px;
+  background: #F5F7FA;
+  overflow: hidden;
+}
+
+.facility-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-info {
+  padding: 20px;
+}
+
+.facility-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1E3A8A;
+  margin-bottom: 12px;
+}
+
+.facility-desc {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.footer {
+  background-color: #0F172A;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  padding: 32px 24px;
+  margin-top: 48px;
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .lab-logo { font-size: 24px; }
+  .nav { gap: 20px; }
+  .nav a { font-size: 15px; }
+  .card { padding: 32px; }
+  .page-title { font-size: 24px; }
+  .section-subtitle { font-size: 20px; }
+  .facility-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+  .facility-img { height: 180px; }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 12px 16px; }
+  .nav-wrap {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .nav { justify-content: center; }
+  .facility-grid { grid-template-columns: 1fr; }
+  .facility-img { height: 160px; }
+  .card { padding: 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="nav-wrap">
+        <a href="index.html" class="lab-logo">JW Lab</a>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="members.html">Members</a>
+            <a href="facility.html" class="active">Facility</a>
+            <a href="openings.html">Openings</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3 class="page-title">Lab Facilities & Equipment</h3>
+
+    <div class="facility-section">
+      <h4 class="section-subtitle">Photonics Test Systems</h4>
+      <div class="facility-grid">
+        <div class="facility-card">
+          <div class="facility-img">
+            <img src="https://picsum.photos/340/200?random=ph1" alt="Optical Spectrum Analyzer">
+          </div>
+          <div class="facility-info">
+            <div class="facility-name">Transient pump-probe setup</div>
+            <div class="facility-desc">Ti:sapphire amplifier (Asterella fs laser, wavelength @ 800 nm, 1 kHz repetition rate), optical parametric amplifier (OPerA Solo, wavelength @ 400–1100 nm), delay stage (delay time 2.5 ns), lock-in amplifier (SR830). </div>
+          </div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img">
+            <img src="https://picsum.photos/340/200?random=ph2" alt="Laser Scanning Confocal Microscope">
+          </div>
+          <div class="facility-info">
+            <div class="facility-name">Home-built angle-resolved microscopy</div>
+            <div class="facility-desc">Home-built microscope, monochromator (Shamrock 750), single-photon detector (Becker&Hickl PMC-100-4), CCD (Andor Newton, iStar sCMOS), Cryostat (C04-005-003), pico-second laser diode (Becker&Hickl C200-HD15, wavelength @ 385 nm), single-photon counters (IDQ), piezo-stages (CONEX-AG).</div>
+          </div>
+        </div>
+        <div class="facility-card">
+          <div class="facility-img">
+            <img src="https://picsum.photos/340/200?random=ph3" alt="Femtosecond Laser System">
+          </div>
+          <div class="facility-info">
+            <div class="facility-name">Near-infrared microscopy</div>
+            <div class="facility-desc">Pump lasers (high power ns laser), infrared spectrometer (Andor Kymera 3281-B2 + iDus CCD), infrared CMOS camera (Hamamusu), Objectives (Olympus 50x IR).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="facility-section">
+      <h4 class="section-subtitle">Nano-Fabrication Platform</h4>
+      <div class="facility-grid">
+        <div class="facility-card">
+          <div class="facility-img">
+            <img src="images/facility/nano-fabrication.png" alt="nano-fabrication">
+          </div>
+          <div class="facility-info">
+            <div class="facility-name">南科大校级微纳加工平台</div>
+            <div class="facility-desc">Electron-beam Lithography, Photo-lithography, PECVD, LPCVD, ALD, ICP, RIE.</div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>JW Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+</div>
+
+</body>
+</html>

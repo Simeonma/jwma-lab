@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - JW Lab</title>
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #F8FAFC;
+            color: #1F2937;
+            line-height: 1.7;
+        }
+
+        /* 头部导航样式 */
+        .header {
+            background-color: #0F172A;
+            padding: 16px 24px;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .nav-wrap {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .lab-logo {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: #ffffff;
+            border-bottom: 2px solid #3B82F6;
+        }
+
+        /* 主容器样式 */
+        .container {
+            max-width: 1200px;
+            margin: 48px auto;
+            padding: 0 24px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .card h3 {
+            font-size: 28px;
+            color: #1E3A8A;
+        }
+
+        .scholar-button {
+            padding: 8px 16px;
+            background: #1E3A8A;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .scholar-button:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(30, 58, 138, 0.15);
+        }
+
+        /* 年份时间轴核心样式 */
+        .year-timeline {
+            position: relative;
+            padding-left: 48px; /* 给时间轴留空间 */
+            margin-bottom: 48px;
+        }
+
+        /* 时间轴线样式 */
+        .year-timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E2E8F0;
+            z-index: 1;
+        }
+
+        /* 年份样式 - 时间轴节点 */
+        .year {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1E3A8A;
+            margin-bottom: 24px;
+            position: relative;
+            padding-left: 16px;
+            display: inline-block;
+        }
+
+        /* 时间轴节点圆点 */
+        .year::before {
+            content: '';
+            position: absolute;
+            left: -40px; /* 对齐时间轴线 */
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #3B82F6;
+            border: 4px solid #F8FAFC;
+            box-shadow: 0 0 0 2px #3B82F6;
+            z-index: 2;
+        }
+
+        /* 年份分组样式 */
+        .year-group {
+            margin-bottom: 60px; /* 增加年份组间距 */
+        }
+
+        /* 论文项通用样式 */
+        .pub-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E2E8F0;
+            position: relative;
+            padding-left: 8px;
+        }
+
+        /* 有图片的论文 - 核心样式 */
+        .pub-item.has-img {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center; /* 图片居中显示 */
+        }
+
+        /* 图片容器 - 核心修改：缩小到50%宽度，居中 */
+        .pub-img-container {
+            position: relative;
+            width: 60%; /* 宽度缩小为原来的50% */
+            max-width: 60%;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        /* 图片样式 - 高度自动按比例缩放 */
+        .pub-img {
+            width: 100%;
+            height: auto; /* 高度随宽度等比例缩小到50% */
+            display: block;
+        }
+
+        /* 描述文字层 - 核心修改：高度自适应文字内容 */
+        .pub-desc {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            /* 关键：移除固定高度，改为自适应 */
+            height: auto;
+            max-height: 80%; /* 限制最大高度为图片的80%，避免溢出 */
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 20px 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: block !important; 
+            white-space: normal !important;
+            word-wrap: break-word !important;
+            line-height: 1.6;
+            font-size: 16px;
+            overflow-y: auto; /* 文字过多时滚动 */
+            flex: none !important;
+            align-items: normal !important;
+        }
+
+        /* 超链接样式 - 保持正常排版 */
+        .pub-desc a {
+            color: #3B82F6;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline !important;
+            white-space: normal !important;
+            word-break: break-word !important;
+            width: auto !important;
+            height: auto !important;
+            float: none !important;
+        }
+
+        .pub-desc a:hover {
+            text-decoration: underline;
+        }
+
+        /* 加粗文字样式 */
+        .pub-desc strong {
+            display: inline !important;
+        }
+
+        /* 鼠标悬浮时显示描述文字 */
+        .pub-img-container:hover .pub-desc {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 悬浮时图片容器的效果 */
+        .pub-img-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.12);
+        }
+
+        /* 无图片的论文 */
+        .pub-item.no-img {
+            display: block;
+        }
+
+        /* 论文内容区域 - 居中对齐 */
+        .pub-content {
+            flex: 1;
+            width: 100%;
+        }
+
+        .pub-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1E3A8A;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .pub-title a {
+            color: #1E3A8A;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .pub-title a:hover {
+            color: #3B82F6;
+            text-decoration: underline;
+        }
+
+        .pub-authors {
+            font-size: 16px;
+            color: #4B5563;
+            margin-bottom: 5px;
+            line-height: 1.5;
+        }
+
+        .pub-journal {
+            font-size: 16px;
+            font-style: italic;
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 5px;
+            display: inline;
+            margin-left: 0px;
+        }
+
+        /* 页脚样式 */
+        .footer {
+            background-color: #0F172A;
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+            padding: 32px 24px;
+            margin-top: 48px;
+        }
+
+        .footer p {
+            font-size: 16px;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .lab-logo { font-size: 24px; }
+            .nav { gap: 20px; }
+            .nav a { font-size: 15px; }
+            .card { padding: 32px; }
+            .card h3 { font-size: 24px; }
+            
+            /* 移动端时间轴调整 */
+            .year-timeline {
+                padding-left: 36px;
+            }
+            
+            .year::before {
+                left: -32px;
+                width: 12px;
+                height: 12px;
+            }
+            
+            /* 移动端图片宽度调整为80%，更易查看 */
+            .pub-img-container {
+                width: 90%;
+                max-width: 90%;
+            }
+            
+            .pub-desc {
+                font-size: 15px;
+                padding: 16px 20px;
+                max-height: 90%;
+            }
+            
+            .pub-title { font-size: 18px; }
+        }
+
+        @media (max-width: 480px) {
+            .header { padding: 12px 16px; }
+            .nav-wrap {
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+            }
+            .nav { justify-content: center; }
+            .title-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            
+            /* 移动端时间轴进一步调整 */
+            .year-timeline {
+                padding-left: 28px;
+            }
+            
+            .year::before {
+                left: -26px;
+                width: 10px;
+                height: 10px;
+            }
+            
+            /* 移动端图片宽度调整为90% */
+            .pub-img-container {
+                width: 90%;
+                max-width: 90%;
+            }
+            
+            .pub-desc {
+                font-size: 14px;
+                padding: 12px 16px;
+                max-height: 90%;
+            }
+            
+            .card { padding: 24px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <div class="header">
+        <div class="nav-wrap">
+            <a href="index.html" class="lab-logo">JW Lab</a>
+            <div class="nav">
+                <a href="index.html">Home</a>
+                <a href="publications.html" class="active">Publications</a>
+                <a href="members.html">Members</a>
+                <a href="facility.html">Facility</a>
+                <a href="openings.html">Openings</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="container">
+        <div class="card">
+            <!-- 标题栏 -->
+            <div class="title-row">
+                <h3>Selected Publications</h3>
+                <a href="https://scholar.google.com/citations?user=-2sAiXwAAAAJ&hl=en" class="scholar-button" target="_blank">
+                    Full Publications in Google Scholar
+                </a>
+            </div>
+
+            <!-- 2026年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2026</div>
+                    <div class="pub-item has-img">
+                        <div class="pub-img-container">
+                            <img src="images/publications/Excitonic negative refraction mediated by magnetic orders.png" alt="Excitonic negative refraction mediated by magnetic orders" class="pub-img">
+                            <div class="pub-desc">
+                                We report the first <strong>excitonic negative refraction</strong>. This work is featured in <a href="https://phys.org/news/2026-02-nanoengineers-chip-excitonic-hyperlens.html" target="_blank">Phys.org</a>, <a href="https://www.miragenews.com/scientists-discover-natural-magnetic-materials-1611657/" target="_blank">Mirage News</a>, <a href="https://www.eurekalert.org/news-releases/1115460" target="_blank">EurekAlert!</a>, <a href="https://news.sciencenet.cn/htmlnews/2026/1/559084.shtm" target="_blank">Sciencenet (科学网)</a>, <a href="https://www.stheadline.com/zh-hans/edu-news/3540828/%E6%B8%AF%E5%A4%A7%E7%A0%94%E7%A9%B6%E6%8F%AD%E7%A4%BA%E8%B4%9F%E6%8A%98%E5%B0%84-%E5%88%B6%E5%BE%AE%E5%9E%8B%E6%BF%80%E5%AD%90%E8%B6%85%E9%80%8F%E9%95%9C" target="_blank">星島頭條</a>, <a href="https://news.mingpao.com/pns/%E6%95%99%E8%82%B2/article/20260202/s00011/1769966776846/%E6%B8%AF%E5%A4%A7%E7%A0%94%E6%BF%80%E5%AD%90%E8%B6%85%E9%80%8F%E9%8F%A1-%E6%93%8D%E6%8E%A7%E5%85%89%E3%80%8C%E8%BD%89%E5%BD%8E%E3%80%8D" target="_blank">明報</a>.
+                            </div>
+                        </div>
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Excitonic negative refraction mediated by magnetic orders</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>*; Xiong Wang*; Yuanhao Gong; Chong Hu; Qi Wang; Kai Feng; Zemeng Lin; Teruya Ishihara; Xiaobo Yin; Shuang Zhang; Zuxin Chen†; Xiaoze Liu†; Xiaodong Cui; Xiang Zhang†.
+                                <span class="pub-journal">Nature Nanotechnology</span> (2026)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2025年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2025</div>
+                    <div class="pub-item has-img">
+                        <div class="pub-img-container">
+                            <img src="images/publications/topological parametric phonon oscillator.jpg" alt="topological_paramatric_phonon_oscillator" class="pub-img">
+                            <div class="pub-desc">
+                                Interacting topological bosonic systems exhibit fundamentally distinct behaviour to their fermionic counterparts. We report the first <strong>topological parametric oscillators</strong> based on a Dirac-vortex nano-electro-mechanical cavity.   
+                            </div>
+                        </div>
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1002/adma.202309015" target="_blank">A topological parametric phonon oscillator</a>
+                            </div>
+                            <div class="pub-authors">
+                                Xiang Xi*; <strong>Jingwen Ma</strong>*; Xiankai Sun†.
+                                <span class="pub-journal">Advanced Materials</span>, 37, 2, 2309015 (2025)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1126/science.adw1922" target="_blank">Stacking the future of heterogeneous optoelectronics</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>; Xiaobo Yin.
+                                <span class="pub-journal">Science</span>, 387, eadw1922 (2025) [Invited expert voices]
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1002/lpor.202502392" target="_blank">Hybrid cavity from tunable coupling between anapole and Fabry‐Pérot resonance or anti‐resonance</a>
+                            </div>
+                            <div class="pub-authors">
+                                Aoning Luo; Haitao Li; Ken Qin; <strong>Jingwen Ma</strong>; Shijie Kang; Jiayu Fan; Yiyi Yao; Xiexuan Zhang; Jiusi Yu; Boyang Qu; Xiaoxiao Wu†.
+                                <span class="pub-journal">Laser & Photonics Reviews</span>, e02392 (2025)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1002/lpor.202501208" target="_blank">Monolayer J‐aggregate crystals strong coupling with an all‐dielectric metasurface for photonic properties modification</a>
+                            </div>
+                            <div class="pub-authors">
+                                Xinyi Zhao; <strong>Jingwen Ma</strong>; Fuhuan Shen†; Xiaokun Guo; Zefeng Chen†; Jianbin Xu†.
+                                <span class="pub-journal">Laser & Photonics Reviews</span>, 20, 2, e01208 (2025)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1103/bzpw-7h2x" target="_blank">Far-field excitation of a photonic flat band via a tailored anapole mode</a>
+                            </div>
+                            <div class="pub-authors">
+                                Peiwen Ren*; Junrong Zheng*; Zhuo Huang*; Yan Liu; Long Zhang; Hua Zhang; <strong>Jingwen Ma</strong>; Zhanghai Chen†; Jian-Feng Li†; Jun Yi†; Zhilin Yang†.
+                                <span class="pub-journal">Physical Review Letters</span>, 135, 083803 (2025)
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1103/PhysRevLett.134.196601" target="_blank">Boundary-induced topological chiral extended states in Weyl metamaterial waveguides</a>
+                            </div>
+                            <div class="pub-authors">
+                                Ning Han; Fujia Chen; Mingzhu Li; Rui Zhao; Wenhao Li; Qiaolu Chen; Li Zhang; Yuang Pan; Yuze Hu; Mingyu Tong; Lu Qi; <strong>Jingwen Ma</strong>; Zhi-Ming Yu; Hongsheng Chen†; Yihao Yang†.
+                                <span class="pub-journal">Physical Review Letters</span>, 134, 196601 (2025)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2024年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2024</div>
+                    <div class="pub-item has-img">
+                        <div class="pub-img-container">
+                            <img src="images/publications/vortex_string_chiral_mode.jpg" alt="vortex_string_chiral_mode" class="pub-img">
+                            <div class="pub-desc">
+                                Vortex strings are hypothetical topological defects in the geometry of spacetime in cosmology. We report the first <strong>experimental observations of vortex string chiral modes</strong> using a meta-material system.
+                            </div>
+                        </div>
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Observation of vortex-string chiral modes in metamaterials</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>; Ding Jia; Li Zhang; Yi-jun Guan; Yong Ge; Hong-xiang Sun†; Shou-qi Yuan; Hongsheng Chen; Yihao Yang†; Xiang Zhang†.
+                                <span class="pub-journal">Nature Communications</span>, 15, 2332 (2024)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1093/nsr/nwae275" target="_blank">Parity-time and anti-parity-time symmetries in heat transfer</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>; Xiang Zhang; Xiaobo Yin†.
+                                <span class="pub-journal">National Science Review</span>, 11, 9, nwae275 (2024) [Invited Commentary]
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1002/lpor.202300584" target="_blank">Tunable Kerker scattering in a self-coupled polaritonic metasurface</a>
+                            </div>
+                            <div class="pub-authors">
+                                Fuhuan Shen; Yaoqiang Zhou; <strong>Jingwen Ma</strong>; Jiapeng Zheng; Jianfang Wang; Zefeng Chen†; Jianbin Xu†.
+                                <span class="pub-journal">Laser & Photonics Reviews</span>, 18, 1, 2300584 (2024)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2023年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2023</div>
+                    <div class="pub-item has-img">
+                        <div class="pub-img-container">
+                            <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="vortex_string_chiral_mode" class="pub-img">
+                            <div class="pub-desc">
+                                We report the first Dirac-vortex microcavity laser that harnesses an auxiliary orbital degree of freedom. This work is featured in <a href="https://doi.org/10.1038/s41377-024-01398-1" target="_blank">Light: Science & Applications 13, 64 (2024)</a>, <a href="https://phys.org/news/2023-10-room-temperature-continuous-wave-topological-dirac-vortex-microcavity.html" target="_blank">Phys.org</a>, and <a href="https://paper.sciencenet.cn/htmlpaper/2023/12/202312261443226192329.shtm" target="_blank">Sciencenet (科学网)</a>.
+                            </div>
+                        </div>
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Room-temperature continuous-wave Dirac-vortex topological lasers on silicon</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>*; Taojie Zhou*; Mingchu Tang*; Haochuan Li; Zhan Zhang; Xiang Xi; Mickael Martin; Thierry Baron; Huiyun Liu; Zhaoyu Zhang†; Siming Chen†; Xiankai Sun†.
+                                <span class="pub-journal">Light: Science & Applications</span>, 12, 255 (2023)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1021/acsnano.3c07993" target="_blank">Exciton polaritons in emergent two-dimensional semiconductors</a>
+                            </div>
+                            <div class="pub-authors">
+                                Haifeng Kang; <strong>Jingwen Ma</strong>†; Junyu Li; Xiang Zhang†; Xiaoze Liu†.
+                                <span class="pub-journal">ACS Nano</span>, 17, 24, 24449–24467 (2023)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1088/1361-6633/ac953e" target="_blank">2D-materials-integrated optoelectromechanics: recent progress and future perspectives</a>
+                            </div>
+                            <div class="pub-authors">
+                                Mingzeng Peng; Jiadong Cheng; Xinhe Zheng; <strong>Jingwen Ma</strong>; Ziyao Feng; Xiankai Sun†.
+                                <span class="pub-journal">Reports on Progress in Physics</span>, 86, 2, 26402 (2023)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2022年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2022</div>
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1021/acsphotonics.2c00711" target="_blank">Monolithically integrated ultralow threshold topological corner state nanolasers on silicon</a>
+                            </div>
+                            <div class="pub-authors">
+                                Taojie Zhou*; <strong>Jingwen Ma</strong>*; Mingchu Tang*; Haochuan Li; Mickael Martin; Thierry Baron; Huiyun Liu; Siming Chen†; Xiankai Sun†; Zhaoyu Zhang†.
+                                <span class="pub-journal">ACS Photonics</span>, 9, 12, 3824–3830 (2022)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1038/s41467-022-33088-0" target="_blank">Transition metal dichalcogenide metaphotonic and self-coupled polaritonic platform grown by chemical vapor deposition</a>
+                            </div>
+                            <div class="pub-authors">
+                                Fuhuan Shen; Zhenghe Zhang; Yaoqiang Zhou; <strong>Jingwen Ma</strong>; Kun Chen; Huanjun Chen; Shaojun Wang; Jianbin Xu†; Zefeng Chen†.
+                                <span class="pub-journal">Nature Communications</span>, 13, 5597 (2022)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1364/PRJ.451344" target="_blank">Terahertz topological photonic waveguide switch for on-chip communication</a>
+                            </div>
+                            <div class="pub-authors">
+                                Xudong Liu; Jialiang Huang; Hao Chen; Zhengfang Qian; <strong>Jingwen Ma</strong>; Xiankai Sun; Shuting Fan; Yiwen Sun†.
+                                <span class="pub-journal">Photonics Research</span>, 10, 4, 1090–1096 (2022)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2021年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2021</div>
+                    <div class="pub-item has-img">
+                        <div class="pub-img-container">
+                            <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Nanomechanical topological insulators with an auxiliary orbital degree of freedom" class="pub-img">
+                            <div class="pub-desc">
+                                We report an topological system with auxiliary orbital degree of freedom. This work is featured in <a href="https://doi.org/10.1038/s41565-021-00853-z" target="_blank">Nature Nanotechnology 16 (5): 487–489 (2021)</a>.
+                            </div>
+                        </div>
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nanomechanical topological insulators with an auxiliary orbital degree of freedom</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>*; Xiang Xi*; Yuan Li; Xiankai Sun†.
+                                <span class="pub-journal">Nature Nanotechnology</span>, 16, 5, 576–583 (2021)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1002/adma.202006521" target="_blank">Experimental demonstration of dual-band nanoelectromechanical valley-Hall topological metamaterials</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>*; Xiang Xi*; Xiankai Sun†.
+                                <span class="pub-journal">Advanced Materials</span>, 33, 10, 2006521 (2021)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1126/sciadv.abe1398" target="_blank">Observation of chiral edge states in gapped nanomechanical graphene</a>
+                            </div>
+                            <div class="pub-authors">
+                                Xiang Xi*; <strong>Jingwen Ma</strong>*; Shuai Wan; Chun-Hua Dong; Xiankai Sun†.
+                                <span class="pub-journal">Science Advances</span>, 7, 2, eabe1398 (2021) [This work is featured in <a href="https://phys.org/news/2021-01-chiral-edge-states-gapped-nanomechanical.html" target="_blank">Phys.org</a> and <a href="https://statnano.com/world-news/84432/Observing-chiral-edge-states-in-gapped-nanomechanical-graphene" target="_blank">StatNano</a>]
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1364/OPTICA.423877" target="_blank">Experimental investigation of the angular symmetry of optical force in a solid dielectric</a>
+                            </div>
+                            <div class="pub-authors">
+                                Xiang Xi; <strong>Jingwen Ma</strong>; Zhong-Hao Zhou; Xin-Xin Hu; Yuan Chen; Chang-Ling Zou†; Chun-Hua Dong†; Xiankai Sun†.
+                                <span class="pub-journal">Optica</span>, 8, 11, 1435–1441 (2021)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2019年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2019</div>
+                    <div class="pub-item has-img">
+                        <div class="pub-img-container">
+                            <img src="images/publications/Topological photonic integrated circuits based on valley kink states.jpg" alt="Topological photonic integrated circuits based on valley kink states" class="pub-img">
+                            <div class="pub-desc">
+                                We demonstrate topological photonic integrated circuits. This work is featured as cover article.
+                            </div>
+                        </div>
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Topological photonic integrated circuits based on valley kink states</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>; Xiang Xi; Xiankai Sun†.
+                                <span class="pub-journal">Laser & Photonics Reviews</span>, 13, 12, 1900087 (2019)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1364/OE.27.038087" target="_blank">Amplification of 18 OAM modes in a ring-core Erbium-doped fiber with low differential modal gain</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>*; Fei Xia*; Shi Chen*; Jian Wang†.
+                                <span class="pub-journal">Optics Express</span>, 27, 26, 38087–38097 (2019)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1109/JSTQE.2019.2914413" target="_blank">Optically controlled topologically protected acoustic wave amplification</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>; Ziyao Feng; Yuan Li; Xiankai Sun†.
+                                <span class="pub-journal">IEEE Journal of Selected Topics in Quantum Electronics</span>, 26, 5, 1–10 (2019)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pub-item no-img">
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1364/OPTICA.6.001342" target="_blank">Photonic integrated circuits with bound states in the continuum</a>
+                            </div>
+                            <div class="pub-authors">
+                                Zejie Yu; Xiang Xi; <strong>Jingwen Ma</strong>; Hon Ki Tsang; Chang-Ling Zou; Xiankai Sun†.
+                                <span class="pub-journal">Optica</span>, 6, 10, 1342–1348 (2019)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2016年论文 - 时间轴包裹 -->
+            <div class="year-group">
+                <div class="year-timeline">
+                    <div class="year">2016</div>
+                    <div class="pub-item has-img">
+                        <div class="pub-img-container">
+                            <img src="images/publications/graphene_isolator.jpg" alt="graphene_isolator" class="pub-img">
+                            <div class="pub-desc">
+                                We propose a new design of on-chip isolator using photonic spin-orbit interaction. This work is featured as cover article and selected by Optics & Photonics News (OPN), The optical Society's monthly news magazine, as one of <a href="https://www.optica-opn.org/home/articles/volume_27/december_2016/features/optics_in_2016/" target="_blank">the world's 30 most clearly communicated breakthroughs in optics in 2016</a>.
+                            </div>
+                        </div>
+                        <div class="pub-content">
+                            <div class="pub-title">
+                                <a href="https://doi.org/10.1063/1.4945715" target="_blank">Hybrid graphene/silicon integrated optical isolators with photonic spin-orbit interaction</a>
+                            </div>
+                            <div class="pub-authors">
+                                <strong>Jingwen Ma</strong>; Xiang Xi; Zejie Yu; Xiankai Sun†.
+                                <span class="pub-journal">Applied Physics Letters</span>, 108, 15, 151103 (2016)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <div class="footer">
+        <p><strong>JW Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+    </div>
+</body>
+</html>

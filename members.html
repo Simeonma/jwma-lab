@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Members - JW Lab</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #F8FAFC;
+  color: #1F2937;
+  line-height: 1.7;
+}
+
+.header {
+  background-color: #0F172A;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.nav-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lab-logo {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.nav a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #3B82F6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 48px auto;
+  padding: 0 24px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 48px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section-title {
+  font-size: 28px;
+  color: #1E3A8A;
+  margin-bottom: 36px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.pi-card {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 60px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+/* PI头像（180x180圆形框）- 最简版 */
+.pi-avatar {
+  width: 196px;
+  height: 262px;
+  border-radius: 10%;
+  overflow: hidden;
+  background: #F5F7FA;
+  flex-shrink: 0;
+}
+
+.pi-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background-color: #F5F7FA;
+}
+
+.pi-info h4 {
+  font-size: 24px;
+  color: #1E3A8A;
+  margin-bottom: 8px;
+}
+
+.pi-info .position {
+  font-size: 18px;
+  color: #4B5563;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.pi-info .bio {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #374151;
+}
+
+.pi-info .contact {
+  font-size: 16px;
+  color: #1E3A8A;
+  font-weight: 500;
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.member-card {
+  text-align: center;
+  background: #F8FAFC;
+  border-radius: 12px;
+  padding: 24px;
+  transition: box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.1);
+}
+
+.member-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #F5F7FA;
+  margin: 0 auto 16px;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  background-color: #F5F7FA;
+}
+
+.member-info h5 {
+  font-size: 18px;
+  color: #1E3A8A;
+  margin-bottom: 4px;
+}
+
+.member-info .member-position {
+  font-size: 15px;
+  color: #4B5563;
+  margin-bottom: 12px;
+}
+
+.member-info .research-area {
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.6;
+}
+
+.footer {
+  background-color: #0F172A;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  padding: 32px 24px;
+  margin-top: 48px;
+}
+
+.footer p {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .lab-logo { font-size: 24px; }
+  .nav { gap: 20px; }
+  .nav a { font-size: 15px; }
+  .card { padding: 32px; }
+  .section-title { font-size: 24px; }
+  .pi-card { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+  .pi-avatar { width: 150px; height: 150px; }
+  .members-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 12px 16px; }
+  .nav-wrap {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .nav { justify-content: center; }
+  .pi-avatar { width: 120px; height: 120px; }
+  .members-grid { grid-template-columns: 1fr; }
+  .card { padding: 24px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="nav-wrap">
+        <a href="index.html" class="lab-logo">JW Lab</a>
+        <div class="nav">
+            <a href="index.html" >Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="members.html" class="active">Members</a>
+            <a href="facility.html">Facility</a>
+            <a href="openings.html">Openings</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3 class="section-title">Principal Investigator</h3>
+    <div class="pi-card">
+      <div class="pi-avatar">
+        <img src="images/members/Dr J Ma.jpg" alt="Jingwen Ma">
+      </div>
+      <div class="pi-info">
+        <h4>Jingwen Ma (马静文)</h4>
+        <div class="position">Assistant Professor (Incoming)</div>
+        <div class="bio">
+          Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He is currently a Research Assistant Professor at the University of Hong Kong, and will join the Department of Electrical and Electronic Engineering, Southern University of Science and Technology in June 2026. His research interests focus on integrated photonic devices, light-matter interaction physics, and metamaterials.
+        </div>
+        <div class="contact">Email: jwma at hku dot hk | Office: Department of Electrical and Electronic Engineering, HKU</div>
+      </div>
+    </div>
+
+    <h3 class="section-title">Lab Members</h3>
+    <div class="members-grid">
+
+      <div class="member-card">
+        <div class="member-avatar">
+          <img src="https://picsum.photos/120/120?random=m1" alt="Member">
+        </div>
+        <div class="member-info">
+          <h5></h5>
+          <div class="member-position"></div>
+          <div class="research-area"></div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>JW Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+</div>
+
+</body>
+</html>
