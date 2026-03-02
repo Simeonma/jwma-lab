@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Openings - jwma Lab</title>
+<link rel="stylesheet" href="styles/common.css">
+<style>
+
+.page-title {
+  font-size: 32px;
+  color: #1E3A8A;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #EFF6FF;
+  font-weight: 700;
+}
+
+.intro-text {
+  font-size: 17px;
+  color: #475569;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  background: #F9FBFF;
+  padding: 24px;
+  border-radius: 12px;
+  border-left: 4px solid #3B82F6;
+}
+
+.opening-section {
+  margin-bottom: 64px;
+}
+
+.section-subtitle {
+  font-size: 24px;
+  color: #1E3A8A;
+  margin-bottom: 32px;
+  padding-left: 12px;
+  border-left: 4px solid #3B82F6;
+  font-weight: 600;
+}
+
+.positions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  gap: 28px;
+}
+
+.position-card {
+  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid #E2E8F0;
+  border-left: 4px solid #3B82F6;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.position-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(59, 130, 246, 0.08);
+  background: linear-gradient(180deg, #F9FBFF 0%, #EFF6FF 100%);
+  border-color: #DBEAFE;
+}
+
+.position-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: rgba(59, 130, 246, 0.05);
+  border-radius: 0 16px 0 100%;
+  z-index: 0;
+}
+
+.position-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1E3A8A;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.position-desc {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.8;
+  position: relative;
+  z-index: 1;
+}
+
+.info-list {
+  list-style: none;
+  background: #F9FBFF;
+  border-radius: 16px;
+  padding: 32px;
+  border: 1px solid #E2E8F0;
+}
+
+.info-list li {
+  font-size: 16px;
+  color: #334155;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  padding-left: 28px;
+  position: relative;
+}
+
+.info-list li:last-child {
+  margin-bottom: 0;
+}
+
+.info-list li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: linear-gradient(135deg, #3B82F6, #60A5FA);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+.contact-highlight {
+  font-size: 17px;
+  color: #1E40AF;
+  font-weight: 600;
+  background: linear-gradient(90deg, #EFF6FF, #DBEAFE);
+  padding: 16px 24px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 20px;
+  border: 1px solid #BFDBFE;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.08);
+}
+
+@media (max-width: 768px) {
+  .page-title { font-size: 26px; }
+  .section-subtitle { font-size: 22px; }
+  .positions-grid { grid-template-columns: 1fr; gap: 24px; }
+  .position-card { padding: 24px; }
+  .info-list { padding: 24px; }
+  .info-list li { font-size: 15px; padding-left: 24px; }
+  .contact-highlight { padding: 12px 20px; font-size: 16px; }
+  .intro-text { padding: 20px; font-size: 16px; }
+}
+
+@media (max-width: 480px) {
+  .page-title { font-size: 24px; }
+  .position-card { padding: 20px; }
+  .position-name { font-size: 18px; }
+  .intro-text { padding: 16px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="nav-wrap">
+        <a href="index.html" class="lab-logo">Quantum Light-Matter Device Lab</a>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="members.html">Members</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="openings.html" class="active">Openings!</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="card">
+
+
+    <h3 class="page-title">About us</h3>
+   
+    <div class="intro-text">
+      Our research group explores cutting-edge interdisciplinary topics in nano-device engineering and photonic physics, including integrated photonic chips, semiconductor lasers, nonlinear optics, van der Waals materials, nanomechanics, exciton physics, and metamaterials. 
+      <br><br>
+     We are actively recruiting motivated and creative researchers. If you are passionate about pushing the boundaries of optoelectronic engineering and physics, we welcome you to apply! 
+    </div>
+
+
+    <h3 class="page-title">Open Positions</h3>
+
+    <div class="opening-section">
+       <div class="positions-grid">
+
+<div class="position-card">
+  <div class="position-name">Ph.D. Student (2026 and 2027 Fall)</div>
+  <div class="position-desc">
+    We always welcome motivated students with genuine curiosity in photonics and condensed-matter physics.<br><br>
+    <strong>Basic Requirements</strong>:<br>
+    • Bachelor's or Master's degree in optoelectronics, electronic engineering, physics, or related disciplines.<br>
+    • Strong academic background (GPA ≥ 80/100 or 3.2/4.0) from top-tier universities (985 institutions or internationally prestigious universities); exceptional graduates from 211 universities are also welcome.<br><br>
+    <strong>Preferred Expertise</strong>:<br>
+    • Device nanofabrication / material synthesis<br>
+    • Free-space optics<br>
+    • Optoelectronic chip characterization<br>
+    • Device design / numerical simulations / theoretical modeling<br>
+    • Artificial intelligence algorithms / programming
+  </div>
+</div>
+
+<div class="position-card">
+  <div class="position-name">Postdoctoral Fellow</div>
+  <div class="position-desc">
+    We currently have 2-3 openings for postdoctoral fellow.<br><br>
+    <strong>Basic Requirements</strong>:<br>
+    • Ph.D. degree from top-tier universities (985 institutions or internationally prestigious universities)<br>
+    • Applicants must have first-author publications in related research areas, demonstrating the capability and potential to conduct high-quality research.<br><br>
+    <strong>Salaries & Benefits</strong>:<br>
+    Competitive salary package; comprehensive social insurance (medical, pension, work injury insurance, etc.); well-equipped office facilities.<br>
+  </div>
+</div>
+
+        <div class="position-card">
+          <div class="position-name">Master Student / Research Assistant / Undergraduate Intern</div>
+          <div class="position-desc">
+            Welcom to join our lab to gain hands-on research experience in photonics and nanotechnology! We will provide personalized short-term projects, academic guidance, and experimental training.<br>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 新增申请指南：更清晰的申请要求，吸引学生 -->
+
+
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+</div>
+
+</body>
+</html>

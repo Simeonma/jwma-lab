@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facilities - jwma Lab</title>
+<link rel="stylesheet" href="styles/common.css">
+<style>
+
+.page-title {
+  font-size: 28px;
+  color: #1E3A8A;
+  margin-bottom: 40px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #E2E8F0;
+}
+
+.facility-section {
+  margin-bottom: 56px;
+}
+
+.section-subtitle {
+  font-size: 22px;
+  color: #1E3A8A;
+  margin-bottom: 24px;
+  padding-left: 8px;
+  border-left: 4px solid #1E3A8A;
+}
+
+/* 通用设施网格 - 保留原有多列布局（用于无图的其他设施） */
+.facility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+/* 微纳加工专属网格 - 强制独占一行 */
+.nano-fabrication-grid {
+  display: grid;
+  grid-template-columns: 1fr !important; /* 独占一行 */
+  gap: 28px;
+}
+
+.facility-card {
+  background: #F8FAFC;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.facility-card:hover {
+  box-shadow: 0 6px 16px rgba(30, 58, 138, 0.12);
+}
+
+/* 核心修改：完全参考publications.html的图片容器样式 */
+.facility-img {
+  /* 参考pub-img-container的样式逻辑 */
+  width: 80%; /* 和publications保持一致的60%宽度 */
+  max-width: 80%;
+  margin: 0 auto; /* 居中显示 */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+  background: #F5F7FA; /* 空余区域填充浅灰色（隐形背景） */
+}
+
+/* 核心修改：参考publications.html的图片样式，保证完整显示不截断 */
+.facility-img img {
+  width: 100%;
+  height: auto; /* 高度自适应，不强制拉伸 */
+  display: block;
+  object-fit: contain; /* 完整显示，不截断（和publications一致） */
+}
+
+.facility-info {
+  padding: 20px;
+  text-align: left; /* 恢复文字左对齐 */
+}
+
+.facility-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1E3A8A;
+  margin-bottom: 12px;
+}
+
+.facility-desc {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+/* 响应式适配 - 参考publications的移动端逻辑 */
+@media (max-width: 768px) {
+  .page-title { font-size: 24px; }
+  .section-subtitle { font-size: 20px; }
+  
+  /* 移动端图片宽度调整为90%（和publications一致） */
+  .facility-img {
+    width: 90%;
+    max-width: 90%;
+  }
+  
+  .facility-grid { 
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 24px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .facility-grid { grid-template-columns: 1fr; }
+  
+  /* 小屏图片宽度保持90%（和publications一致） */
+  .facility-img {
+    width: 90%;
+    max-width: 90%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="nav-wrap">
+        <a href="index.html" class="lab-logo">Quantum Light-Matter Device Lab</a>
+        <div class="nav">
+            <a href="index.html">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="members.html">Members</a>
+            <a href="facilities.html" class="active">Facilities</a>
+            <a href="openings.html">Openings!</a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  <div class="card">
+    <h3 class="page-title">Facilities & Equipment</h3>
+
+    <!-- 微纳加工板块 - 独占一行 -->
+    <div class="facility-section">
+      <h4 class="section-subtitle">Nano-Fabrication</h4>
+      <!-- 关键：添加nano-fabrication-grid类强制独占一行 -->
+      <div class="facility-grid nano-fabrication-grid">
+        <div class="facility-card">
+          <div class="facility-img">
+            <img src="images/facility/nano-fabrication.png" alt="nano-fabrication">
+          </div>
+          <div class="facility-info">
+            <div class="facility-name">南科大校级微纳加工平台</div>
+            <div class="facility-desc">Most of the nanofabrication in our research can be performed in the SUSTech University Cleanroom. Key capabilities include electron-beam lithography, photolithography, PECVD, LPCVD, ALD, ICP, RIE, and so on. For more details, please visit <a href="https://crf.sustech.edu.cn/platform/weina" target="_blank">the official website</a>.
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+
+    <!-- 光电表征板块 - 保留原有多列布局（无图） -->
+    <div class="facility-section">
+      <h4 class="section-subtitle">Optoelectronic Characterization</h4>
+      <div class="facility-grid">
+        <div class="facility-card">
+          <div class="facility-info">
+            <div class="facility-name">Photonic chip testing system</div>
+            <div class="facility-desc">For characterizing integrated photonic devices and optoelectronic chips for various applications, including optical signal processing, photonic computing, entangled photon-pair generation, and integrated lidars. Key facilities include:<br>
+  • Wavelength tunable infrared lasers<br>
+  • High-speed modulators and detectors<br>
+  • Optical spectra analyzers<br>
+  • RF sources, spectra analyzers, and network analyzers<br>
+  • Superconductor-based single-photon counters<br>
+  • Liquid Helium cryogenic probe station
+            </div>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-info">
+            <div class="facility-name">Meta-surface and quantum matter characterization</div>
+            <div class="facility-desc">For characterizing photonic nano-structures, quantum materials, and hybrid light–matter quantum states. The system grants full control over nearly all degrees of freedom of photons, with ultrafast time resolution of 100 fs. 
+Key facilities include:<br>
+  • Custom angle-resolved microscope<br>
+  • Transient pump-probe system<br>
+  • High-resolution spectrometer & single-photon detection setup<br>
+  • Piezo scanning stages, lock-in amplifier, cryostat
+            </div>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-info">
+            <div class="facility-name">III-V semiconductor laser characterization</div>
+            <div class="facility-desc">For characterizing optical/electrical pumped semiconductor lasers at communication bands. Key facilities include:<br>
+• Pump lasers (high power ns laser)<br>
+• High-power electrical source<br>
+• Infrared spectrometer (Andor Kymera + iDus CCD)<br>
+• Infrared CMOS camera (Hamamusu)<br>
+• Superconductor-based g2 measurement system
+            </div>
+          </div>
+        </div>
+
+        <div class="facility-card">
+          <div class="facility-info">
+            <div class="facility-name">Nano-mechanics and on-chip phonon characterization</div>
+            <div class="facility-desc">Under construction...
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+</div>
+
+</body>
+</html>
