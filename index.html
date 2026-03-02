@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - jwma Lab</title>
+    <link rel="stylesheet" href="styles/common.css">
+    <style>
+        
+        .banner {
+            /* 背景图片设置 */
+            background-image: url('images/home/home.jpg');
+            background-size: cover; /* 覆盖整个区域 */
+            background-position: center; /* 居中显示 */
+            background-repeat: no-repeat; /* 不重复 */
+            /* 增加半透明遮罩保证文字可读性 */
+            position: relative;
+            color: #ffffff;
+            padding: 72px 24px;
+        }
+
+
+        /* 新增遮罩层 */
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(16, 42, 67, 0.6); /* 半透明深蓝遮罩 */
+            z-index: 1;
+        }
+
+        /* 让文字在遮罩上层显示 */
+        .banner-desc {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 2.1;
+            word-spacing: 2px;
+        }
+
+        .banner-desc strong {
+            color: #93C5FD;
+            font-weight: 600;
+        }
+
+
+        .card h3 {
+            font-size: 28px;
+            color: #1E3A8A;
+            margin-bottom: 36px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #E2E8F0;
+            text-align: center;
+        }
+
+        .research-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 28px;
+            width: 100%;
+        }
+
+        .research-item {
+            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 16px;
+            border: 1px solid #F1F5F9;
+            border-radius: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .research-item:hover {
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border-color: #E2E8F0;
+        }
+
+        .research-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            flex-shrink: 0;
+        }
+
+        .research-item h4 {
+            font-size: 20px;
+            color: #1E3A8A;
+            margin-bottom: 8px;
+        }
+
+        .research-item p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #1F2937;
+            flex-grow: 1;
+            margin-top: 0;
+        }
+
+
+        @media (max-width: 768px) {
+
+            .banner { padding: 56px 20px; }
+            .banner-desc { font-size: 16px; }
+            .card h3 { font-size: 24px; }
+            
+            .research-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .research-img { height: 220px; margin-bottom: 16px; }
+            .research-item h4 { font-size: 22px; margin-bottom: 8px; }
+            .research-item p { font-size: 16px; }
+        }
+
+        @media (max-width: 480px) {
+
+            .banner { padding: 48px 16px; }
+            .research-img { height: 180px; }
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="header">
+    <div class="nav-wrap">
+        <a href="index.html" class="lab-logo">Quantum Light-Matter Device Lab</a>
+        <div class="nav">
+            <a href="index.html" class="active">Home</a>
+            <a href="publications.html">Publications</a>
+            <a href="members.html">Members</a>
+            <a href="facilities.html">Facilities</a>
+            <a href="openings.html">Openings!</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="banner">
+    <p class="banner-desc">
+        We are an interdisciplinary research group in photonic nano-devices and chips, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance III-V semiconductor lasers, silicon photonic chips, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations, quantum fluids and solids.
+    </p>
+</div>
+
+
+<div class="container">
+    <div class="card">
+        <h3>Research Interests</h3>
+        
+        <div class="research-container">
+            <div class="research-item">
+                <img src="images/home/research3.jpg" alt="Integrated photonic chips" class="research-img">
+                <h4>Integrated photonic chips</h4>
+                <p>Development of photonic integrated circuits (PICs) and photonic crystal surface emitting lasers (PCSELs) for optical information and computing applications. </p>
+            </div>
+
+            <div class="research-item">
+                <img src="images/home/research5.jpg" alt="Quantum light-matter hybrids" class="research-img">
+                <h4>Quantum light-matter hybrids</h4>
+                <p>Investigation of strong light-matter interactions in novel van der Waals materials, and realization of their macroscopic quantum phases and collective excitations.</p>
+            </div>
+
+            <div class="research-item">
+                <img src="images/home/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
+                <h4>Nano-electro-mechanics</h4>
+                <p>Development of advanced nano-electro-mechanical systems (NEMS) for radio-frequency signal processing and quantum phononics.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+</div>
+
+</body>
+</html>
