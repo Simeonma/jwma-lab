@@ -1,278 +1,181 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - jwma Lab</title>
+    <title>
+        <span class="zh-only">JWMA 实验室 - 集成光子学与量子光学</span>
+        <span class="en-only">JWMA Lab - Integrated & Quantum Photonics</span>
+    </title>
     <link rel="stylesheet" href="styles/common.css">
+    <!-- 中英文切换按钮及文本控制样式 -->
     <style>
-        .banner {
-            background-image: url('images/home/home.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+        /* 基础导航栏样式兼容（若common.css已有可忽略） */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Arial", "Microsoft YaHei", sans-serif;
+        }
+        .navbar {
             position: relative;
-            color: #ffffff;
-            padding: 72px 24px;
-        }
-
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(16, 42, 67, 0.6);
-            z-index: 1;
-        }
-
-        .banner-desc {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 2.1;
-            word-spacing: 2px;
-        }
-
-        .banner-desc strong {
-            color: #93C5FD;
-            font-weight: 600;
-        }
-
-        .card h3 {
-            font-size: 28px;
-            color: #1E3A8A;
-            margin-bottom: 36px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #E2E8F0;
-            text-align: center;
-        }
-
-        .research-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 28px;
-            width: 100%;
-        }
-
-        .research-item {
-            margin-bottom: 0;
             display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding: 16px;
-            border: 1px solid #F1F5F9;
-            border-radius: 12px;
-            transition: all 0.2s ease;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-
-        .research-item:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-color: #E2E8F0;
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5282;
+            text-decoration: none;
         }
-
-        .research-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            flex-shrink: 0;
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
         }
-
-        .research-item h4 {
-            font-size: 20px;
-            color: #1E3A8A;
-            margin-bottom: 8px;
-        }
-
-        .research-item p {
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
             font-size: 16px;
-            line-height: 1.9;
-            color: #1F2937;
-            flex-grow: 1;
-            margin-top: 0;
+            transition: color 0.2s;
         }
-
-        /* 新增：语言切换按钮样式 */
+        .nav-links a:hover {
+            color: #2c5282;
+        }
+        /* 中英文切换按钮样式 */
         .lang-switch {
             position: absolute;
-            top: 24px;
-            right: 24px;
-            z-index: 10;
+            top: 20px;
+            right: 50px;
             display: flex;
             gap: 8px;
         }
-
         .lang-btn {
-            padding: 8px 16px;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
             cursor: pointer;
+            background: #f0f4f9;
             font-size: 14px;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
         }
-
-        .lang-btn:hover {
-            background-color: rgba(147, 197, 253, 0.3);
-            border-color: #93C5FD;
-        }
-
         .lang-btn.active {
-            background-color: #93C5FD;
-            border-color: #93C5FD;
-            color: #1E3A8A;
-            font-weight: 500;
+            background: #2c5282;
+            color: white;
         }
-
-        /* 响应式调整 */
-        @media (max-width: 768px) {
-            .banner { padding: 56px 20px; }
-            .banner-desc { font-size: 16px; }
-            .card h3 { font-size: 24px; }
-            .research-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-            .research-img { height: 220px; margin-bottom: 16px; }
-            .research-item h4 { font-size: 22px; margin-bottom: 8px; }
-            .research-item p { font-size: 16px; }
-            .lang-switch {
-                top: 16px;
-                right: 16px;
-            }
-            .lang-btn {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
+        /* 中英文文本显示控制 */
+        .en-only { display: none; }
+        body.en .zh-only { display: none; }
+        body.en .en-only { display: block; }
+        /* 首页核心内容样式 */
+        .hero-section {
+            padding: 100px 50px;
+            background-color: #f9f9f9;
+            text-align: center;
         }
-
-        @media (max-width: 480px) {
-            .banner { padding: 48px 16px; }
-            .research-img { height: 180px; }
+        .hero-section h1 {
+            font-size: 36px;
+            color: #2c5282;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            font-size: 18px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #2c5282;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+        .hero-btn:hover {
+            background-color: #1a365d;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            color: #666;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <!-- 语言切换按钮 -->
-    <div class="lang-switch">
-        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-        <button class="lang-btn" onclick="switchLang('cn')">中</button>
-    </div>
-
-    <div class="header">
-        <div class="nav-wrap">
-            <a href="index.html" class="lab-logo">MacroQuantum Photonics Lab</a>
-            <div class="nav">
-                <a href="index.html" class="active" id="nav-home">Home</a>
-                <a href="publications.html" id="nav-pubs">Publications</a>
-                <a href="members.html" id="nav-members">Members</a>
-                <a href="facilities.html" id="nav-facilities">Facilities</a>
-                <a href="openings.html" id="nav-openings">Openings!</a>
-            </div>
+    <!-- 导航栏（含中英文切换按钮） -->
+    <nav class="navbar">
+        <!-- 语言切换按钮 -->
+        <div class="lang-switch">
+            <button class="lang-btn active" onclick="switchLang('zh')">中文</button>
+            <button class="lang-btn" onclick="switchLang('en')">English</button>
         </div>
-    </div>
 
-    <div class="banner">
-        <p class="banner-desc" id="banner-text">
-            We are an interdisciplinary research group in photonic nano-devices and chips, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance III-V semiconductor lasers, silicon photonic chips, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations, quantum fluids and solids.
+        <!-- 实验室Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <span class="zh-only">JWMA 实验室</span>
+                <span class="en-only">JWMA Lab</span>
+            </a>
+        </div>
+
+        <!-- 导航链接 -->
+        <ul class="nav-links">
+            <li><a href="index.html"><span class="zh-only">首页</span><span class="en-only">Home</span></a></li>
+            <li><a href="research.html"><span class="zh-only">研究方向</span><span class="en-only">Research</span></a></li>
+            <li><a href="facilities.html"><span class="zh-only">实验设施</span><span class="en-only">Facilities</span></a></li>
+            <li><a href="members.html"><span class="zh-only">团队成员</span><span class="en-only">Members</span></a></li>
+            <li><a href="publications.html"><span class="zh-only">研究成果</span><span class="en-only">Publications</span></a></li>
+            <li><a href="openings.html"><span class="zh-only">加入我们</span><span class="en-only">Openings</span></a></li>
+        </ul>
+    </nav>
+
+    <!-- 首页核心内容区 -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>
+                <span class="zh-only">集成光子学与量子光学创新研究</span>
+                <span class="en-only">Innovative Research in Integrated & Quantum Photonics</span>
+            </h1>
+            <p>
+                <span class="zh-only">聚焦拓扑光子学、光-物质相互作用、片上声子学与宏观量子态等前沿方向，致力于探索光子器件的基础物理与集成应用，推动新一代光量子技术的发展。</span>
+                <span class="en-only">Focus on frontier fields such as topological photonics, light-matter interaction, on-chip phononics and macroscopic quantum states, dedicated to exploring the fundamental physics and integrated applications of photonic devices, and promoting the development of next-generation photonic quantum technologies.</span>
+            </p>
+            <a href="openings.html" class="hero-btn">
+                <span class="zh-only">加入我们</span>
+                <span class="en-only">Join Us</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>
+            <span class="zh-only">&copy; 2026 JWMA 实验室 版权所有 | 南方科技大学工学院电子系</span>
+            <span class="en-only">&copy; 2026 JWMA Lab All Rights Reserved | Department of Electronics, School of Engineering, SUSTech</span>
         </p>
-    </div>
+    </footer>
 
-    <div class="container">
-        <div class="card">
-            <h3 id="research-title">Research Interests</h3>
-            <div class="research-container">
-                <div class="research-item">
-                    <img src="images/home/research3.jpg" alt="Integrated photonic chips" class="research-img">
-                    <h4 id="research-1">Integrated photonic chips</h4>
-                    <p id="research-1-desc">Development of photonic integrated circuits (PICs) and photonic crystal surface emitting lasers (PCSELs) for optical information and computing applications.</p>
-                </div>
-                <div class="research-item">
-                    <img src="images/home/research5.jpg" alt="Quantum light-matter hybrids" class="research-img">
-                    <h4 id="research-2">Quantum light-matter hybrids</h4>
-                    <p id="research-2-desc">Investigation of strong light-matter interactions in novel van der Waals materials, and realization of their macroscopic quantum phases and collective excitations.</p>
-                </div>
-                <div class="research-item">
-                    <img src="images/home/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
-                    <h4 id="research-3">Nano-electro-mechanics</h4>
-                    <p id="research-3-desc">Development of advanced nano-electro-mechanical systems (NEMS) for radio-frequency signal processing and quantum phononics.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <p id="footer-text"><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
-    </div>
-
+    <!-- 中英文切换核心逻辑 -->
     <script>
-        // 中英文文案映射
-        const langText = {
-            en: {
-                navHome: 'Home',
-                navPubs: 'Publications',
-                navMembers: 'Members',
-                navFacilities: 'Facilities',
-                navOpenings: 'Openings!',
-                bannerText: 'We are an interdisciplinary research group in photonic nano-devices and chips, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance III-V semiconductor lasers, silicon photonic chips, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations, quantum fluids and solids.',
-                researchTitle: 'Research Interests',
-                research1: 'Integrated photonic chips',
-                research1Desc: 'Development of photonic integrated circuits (PICs) and photonic crystal surface emitting lasers (PCSELs) for optical information and computing applications.',
-                research2: 'Quantum light-matter hybrids',
-                research2Desc: 'Investigation of strong light-matter interactions in novel van der Waals materials, and realization of their macroscopic quantum phases and collective excitations.',
-                research3: 'Nano-electro-mechanics',
-                research3Desc: 'Development of advanced nano-electro-mechanical systems (NEMS) for radio-frequency signal processing and quantum phononics.',
-                footerText: '<strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China'
-            },
-            cn: {
-                navHome: '首页',
-                navPubs: '研究成果',
-                navMembers: '团队成员',
-                navFacilities: '实验平台',
-                navOpenings: '招聘信息',
-                bannerText: '我们是一支专注于光子纳米器件与芯片的交叉学科研究团队，深耕光电测量、纳米加工与理论建模领域。<strong>应用层面，我们研发面向片上信息与计算的先进光子器件</strong>，包括III-V族半导体激光器、硅光子芯片与光机电集成芯片。<strong>科学层面，我们探索光物质杂化体系的量子相及新奇物性</strong>，例如玻色-爱因斯坦凝聚、量子流体与量子固体等。',
-                researchTitle: '研究方向',
-                research1: '集成光子芯片',
-                research1Desc: '研发光子集成回路（PIC）与光子晶体面发射激光器（PCSEL），应用于光学信息处理与计算系统。',
-                research2: '量子光物质杂化体系',
-                research2Desc: '研究新型范德华材料中的强光物质相互作用，实现宏观量子相及集体激发态的观测与调控。',
-                research3: '纳机电系统',
-                research3Desc: '研发先进纳机电系统（NEMS），用于射频信号处理与量子声子学研究。',
-                footerText: '<strong>马静文课题组 © 2026</strong> | 南方科技大学电子与电气工程系 | 中国·深圳'
-            }
-        };
-
-        // 切换语言函数
         function switchLang(lang) {
-            // 更新按钮状态
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            // 更新页面文案
-            const text = langText[lang];
-            document.getElementById('nav-home').textContent = text.navHome;
-            document.getElementById('nav-pubs').textContent = text.navPubs;
-            document.getElementById('nav-members').textContent = text.navMembers;
-            document.getElementById('nav-facilities').textContent = text.navFacilities;
-            document.getElementById('nav-openings').textContent = text.navOpenings;
-            document.getElementById('banner-text').innerHTML = text.bannerText;
-            document.getElementById('research-title').textContent = text.researchTitle;
-            document.getElementById('research-1').textContent = text.research1;
-            document.getElementById('research-1-desc').textContent = text.research1Desc;
-            document.getElementById('research-2').textContent = text.research2;
-            document.getElementById('research-2-desc').textContent = text.research2Desc;
-            document.getElementById('research-3').textContent = text.research3;
-            document.getElementById('research-3-desc').textContent = text.research3Desc;
-            document.getElementById('footer-text').innerHTML = text.footerText;
-
-            // 更新HTML语言属性
-            document.documentElement.lang = lang;
+            // 切换body的语言类名
+            document.body.className = lang;
+            // 切换按钮的激活状态
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.toggle('active', btn.onclick.toString().includes(lang));
+            });
         }
     </script>
 </body>
