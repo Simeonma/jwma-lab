@@ -6,21 +6,16 @@
     <title>Home - jwma Lab</title>
     <link rel="stylesheet" href="styles/common.css">
     <style>
-        
         .banner {
-            /* 背景图片设置 */
             background-image: url('images/home/home.jpg');
-            background-size: cover; /* 覆盖整个区域 */
-            background-position: center; /* 居中显示 */
-            background-repeat: no-repeat; /* 不重复 */
-            /* 增加半透明遮罩保证文字可读性 */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             position: relative;
             color: #ffffff;
             padding: 72px 24px;
         }
 
-
-        /* 新增遮罩层 */
         .banner::before {
             content: '';
             position: absolute;
@@ -28,11 +23,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(16, 42, 67, 0.6); /* 半透明深蓝遮罩 */
+            background-color: rgba(16, 42, 67, 0.6);
             z-index: 1;
         }
 
-        /* 让文字在遮罩上层显示 */
         .banner-desc {
             position: relative;
             z-index: 2;
@@ -47,7 +41,6 @@
             color: #93C5FD;
             font-weight: 600;
         }
-
 
         .card h3 {
             font-size: 28px;
@@ -104,88 +97,183 @@
             margin-top: 0;
         }
 
+        /* 新增：语言切换按钮样式 */
+        .lang-switch {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            z-index: 10;
+            display: flex;
+            gap: 8px;
+        }
 
+        .lang-btn {
+            padding: 8px 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            background-color: rgba(147, 197, 253, 0.3);
+            border-color: #93C5FD;
+        }
+
+        .lang-btn.active {
+            background-color: #93C5FD;
+            border-color: #93C5FD;
+            color: #1E3A8A;
+            font-weight: 500;
+        }
+
+        /* 响应式调整 */
         @media (max-width: 768px) {
-
             .banner { padding: 56px 20px; }
             .banner-desc { font-size: 16px; }
             .card h3 { font-size: 24px; }
-            
             .research-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            
             .research-img { height: 220px; margin-bottom: 16px; }
             .research-item h4 { font-size: 22px; margin-bottom: 8px; }
             .research-item p { font-size: 16px; }
+            .lang-switch {
+                top: 16px;
+                right: 16px;
+            }
+            .lang-btn {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
         }
 
         @media (max-width: 480px) {
-
             .banner { padding: 48px 16px; }
             .research-img { height: 180px; }
         }
-
-
-
     </style>
 </head>
 <body>
+    <!-- 语言切换按钮 -->
+    <div class="lang-switch">
+        <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+        <button class="lang-btn" onclick="switchLang('cn')">中</button>
+    </div>
 
-
-<div class="header">
-    <div class="nav-wrap">
-        <a href="index.html" class="lab-logo">MacroQuantum Photonics Lab</a>
-        <div class="nav">
-            <a href="index.html" class="active">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="members.html">Members</a>
-            <a href="facilities.html">Facilities</a>
-            <a href="openings.html">Openings!</a>
+    <div class="header">
+        <div class="nav-wrap">
+            <a href="index.html" class="lab-logo">MacroQuantum Photonics Lab</a>
+            <div class="nav">
+                <a href="index.html" class="active" id="nav-home">Home</a>
+                <a href="publications.html" id="nav-pubs">Publications</a>
+                <a href="members.html" id="nav-members">Members</a>
+                <a href="facilities.html" id="nav-facilities">Facilities</a>
+                <a href="openings.html" id="nav-openings">Openings!</a>
+            </div>
         </div>
     </div>
-</div>
 
+    <div class="banner">
+        <p class="banner-desc" id="banner-text">
+            We are an interdisciplinary research group in photonic nano-devices and chips, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance III-V semiconductor lasers, silicon photonic chips, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations, quantum fluids and solids.
+        </p>
+    </div>
 
-<div class="banner">
-    <p class="banner-desc">
-        We are an interdisciplinary research group in photonic nano-devices and chips, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance III-V semiconductor lasers, silicon photonic chips, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations, quantum fluids and solids.
-    </p>
-</div>
-
-
-<div class="container">
-    <div class="card">
-        <h3>Research Interests</h3>
-        
-        <div class="research-container">
-            <div class="research-item">
-                <img src="images/home/research3.jpg" alt="Integrated photonic chips" class="research-img">
-                <h4>Integrated photonic chips</h4>
-                <p>Development of photonic integrated circuits (PICs) and photonic crystal surface emitting lasers (PCSELs) for optical information and computing applications. </p>
+    <div class="container">
+        <div class="card">
+            <h3 id="research-title">Research Interests</h3>
+            <div class="research-container">
+                <div class="research-item">
+                    <img src="images/home/research3.jpg" alt="Integrated photonic chips" class="research-img">
+                    <h4 id="research-1">Integrated photonic chips</h4>
+                    <p id="research-1-desc">Development of photonic integrated circuits (PICs) and photonic crystal surface emitting lasers (PCSELs) for optical information and computing applications.</p>
+                </div>
+                <div class="research-item">
+                    <img src="images/home/research5.jpg" alt="Quantum light-matter hybrids" class="research-img">
+                    <h4 id="research-2">Quantum light-matter hybrids</h4>
+                    <p id="research-2-desc">Investigation of strong light-matter interactions in novel van der Waals materials, and realization of their macroscopic quantum phases and collective excitations.</p>
+                </div>
+                <div class="research-item">
+                    <img src="images/home/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
+                    <h4 id="research-3">Nano-electro-mechanics</h4>
+                    <p id="research-3-desc">Development of advanced nano-electro-mechanical systems (NEMS) for radio-frequency signal processing and quantum phononics.</p>
+                </div>
             </div>
-
-            <div class="research-item">
-                <img src="images/home/research5.jpg" alt="Quantum light-matter hybrids" class="research-img">
-                <h4>Quantum light-matter hybrids</h4>
-                <p>Investigation of strong light-matter interactions in novel van der Waals materials, and realization of their macroscopic quantum phases and collective excitations.</p>
-            </div>
-
-            <div class="research-item">
-                <img src="images/home/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
-                <h4>Nano-electro-mechanics</h4>
-                <p>Development of advanced nano-electro-mechanical systems (NEMS) for radio-frequency signal processing and quantum phononics.</p>
-            </div>
-
         </div>
     </div>
-</div>
 
-<div class="footer">
-    <p><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
-</div>
+    <div class="footer">
+        <p id="footer-text"><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+    </div>
 
+    <script>
+        // 中英文文案映射
+        const langText = {
+            en: {
+                navHome: 'Home',
+                navPubs: 'Publications',
+                navMembers: 'Members',
+                navFacilities: 'Facilities',
+                navOpenings: 'Openings!',
+                bannerText: 'We are an interdisciplinary research group in photonic nano-devices and chips, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance III-V semiconductor lasers, silicon photonic chips, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations, quantum fluids and solids.',
+                researchTitle: 'Research Interests',
+                research1: 'Integrated photonic chips',
+                research1Desc: 'Development of photonic integrated circuits (PICs) and photonic crystal surface emitting lasers (PCSELs) for optical information and computing applications.',
+                research2: 'Quantum light-matter hybrids',
+                research2Desc: 'Investigation of strong light-matter interactions in novel van der Waals materials, and realization of their macroscopic quantum phases and collective excitations.',
+                research3: 'Nano-electro-mechanics',
+                research3Desc: 'Development of advanced nano-electro-mechanical systems (NEMS) for radio-frequency signal processing and quantum phononics.',
+                footerText: '<strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China'
+            },
+            cn: {
+                navHome: '首页',
+                navPubs: '研究成果',
+                navMembers: '团队成员',
+                navFacilities: '实验平台',
+                navOpenings: '招聘信息',
+                bannerText: '我们是一支专注于光子纳米器件与芯片的交叉学科研究团队，深耕光电测量、纳米加工与理论建模领域。<strong>应用层面，我们研发面向片上信息与计算的先进光子器件</strong>，包括III-V族半导体激光器、硅光子芯片与光机电集成芯片。<strong>科学层面，我们探索光物质杂化体系的量子相及新奇物性</strong>，例如玻色-爱因斯坦凝聚、量子流体与量子固体等。',
+                researchTitle: '研究方向',
+                research1: '集成光子芯片',
+                research1Desc: '研发光子集成回路（PIC）与光子晶体面发射激光器（PCSEL），应用于光学信息处理与计算系统。',
+                research2: '量子光物质杂化体系',
+                research2Desc: '研究新型范德华材料中的强光物质相互作用，实现宏观量子相及集体激发态的观测与调控。',
+                research3: '纳机电系统',
+                research3Desc: '研发先进纳机电系统（NEMS），用于射频信号处理与量子声子学研究。',
+                footerText: '<strong>马静文课题组 © 2026</strong> | 南方科技大学电子与电气工程系 | 中国·深圳'
+            }
+        };
+
+        // 切换语言函数
+        function switchLang(lang) {
+            // 更新按钮状态
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // 更新页面文案
+            const text = langText[lang];
+            document.getElementById('nav-home').textContent = text.navHome;
+            document.getElementById('nav-pubs').textContent = text.navPubs;
+            document.getElementById('nav-members').textContent = text.navMembers;
+            document.getElementById('nav-facilities').textContent = text.navFacilities;
+            document.getElementById('nav-openings').textContent = text.navOpenings;
+            document.getElementById('banner-text').innerHTML = text.bannerText;
+            document.getElementById('research-title').textContent = text.researchTitle;
+            document.getElementById('research-1').textContent = text.research1;
+            document.getElementById('research-1-desc').textContent = text.research1Desc;
+            document.getElementById('research-2').textContent = text.research2;
+            document.getElementById('research-2-desc').textContent = text.research2Desc;
+            document.getElementById('research-3').textContent = text.research3;
+            document.getElementById('research-3-desc').textContent = text.research3Desc;
+            document.getElementById('footer-text').innerHTML = text.footerText;
+
+            // 更新HTML语言属性
+            document.documentElement.lang = lang;
+        }
+    </script>
 </body>
-
 </html>
