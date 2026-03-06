@@ -6,7 +6,7 @@
 <title>Members - jwma Lab</title>
 <link rel="stylesheet" href="styles/common.css">
 <style>
-
+/* 标题样式优化 */
 .section-title {
   font-size: 28px;
   color: #1E3A8A;
@@ -14,7 +14,7 @@
   padding-bottom: 16px;
   border-bottom: 2px solid #E2E8F0;
   font-weight: 700;
-  text-align: left; /* 与index的card标题对齐居中 */
+  text-align: left;
   position: relative;
 }
 .section-title::after {
@@ -100,7 +100,24 @@
   gap: 4px;
   margin-top: 8px;
 }
+
+.pi-info .location::before {
+  content: '📍';
+  font-size: 18px;
+  margin-right: 4px;
+}
+
+/* 成员分类标题 */
+.members-category {
+  font-size: 22px;
+  color: #1E3A8A;
+  margin: 48px 0 20px 0;
+  font-weight: 600;
+  padding-left: 8px;
+  border-left: 4px solid #3B82F6;
+}
   
+/* 成员网格布局 */
 .members-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -109,12 +126,13 @@
   width: 100%;
 }
 
+/* 成员卡片样式 */
 .member-card {
   text-align: center;
   background: #ffffff;
   border: 1px solid #F1F5F9;
   border-radius: 12px;
-  padding: 16px;
+  padding: 20px 16px;
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -161,6 +179,15 @@
   background-color: #F8FAFC;
 }
 
+/* 缺失头像占位符 */
+.member-avatar.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  color: #94A3B8;
+}
+
 .member-info h5 {
   font-size: 18px;
   color: #1E3A8A;
@@ -182,12 +209,31 @@
   padding: 0 4px;
 }
 
-/* 页脚 - 完全对齐index.html样式 */
+/* 校友/离职成员样式 */
+.alumni-card {
+  opacity: 0.85;
+}
 
+.alumni-card .member-info::after {
+  content: 'Alumni';
+  display: inline-block;
+  font-size: 12px;
+  color: #64748B;
+  background: #F1F5F9;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
 
-/* 响应式优化 - 完全对齐index.html的响应式逻辑 */
+/* 中文校友标注 */
+.alumni-card .member-info.cn::after {
+  content: '校友';
+}
+
+/* 响应式优化 */
 @media (max-width: 768px) {
   .section-title { font-size: 24px; }
+  .members-category { font-size: 20px; }
   .pi-card { 
     flex-direction: column; 
     align-items: center; 
@@ -207,59 +253,105 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .pi-avatar { 
     width: 150px; 
     height: 180px; 
+  }
+  .member-avatar {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pi-avatar { 
+    width: 140px; 
+    height: 170px; 
   }
 }
 </style>
 </head>
 
 <body>
-
+<!-- 导航栏 - 同步全局布局 -->
 <div class="header">
     <div class="nav-wrap">
-        <a href="index.html" class="lab-logo">MacroQuantum Photonics Lab</a>
+            <!-- 英文Logo：图片在左，文字在右 -->
+            <a href="index.html" class="lab-logo" id="lab-logo-en">
+                <img src="images/home/logo.png" alt="Lab Logo" class="logo-img">
+                <span class="logo-text">MacroQuantum<br>Photonics Lab</span>
+            </a>
+            <!-- 中文Logo：图片在左，文字在右 -->
+            <a href="index.html" class="lab-logo" id="lab-logo-cn" style="display: none;">
+                <img src="images/home/logo.png" alt="实验室Logo" class="logo-img">
+                <span class="logo-text">宏观量子<br>光芯片实验室</span>
+            </a>
+
+
+        <!-- 导航菜单 - 居右（第一行） -->
         <div class="nav">
-            <a href="index.html">Home</a>
-            <a href="publications.html">Publications</a>
-            <a href="members.html" class="active">Members</a>
-            <a href="facilities.html">Facilities</a>
-            <a href="openings.html">Openings!</a>
+            <a href="index.html" id="nav-home-en">Home</a>
+            <a href="index.html" id="nav-home-cn" style="display: none;">首页</a>
+            <a href="publications.html" id="nav-pub-en">Publications</a>
+            <a href="publications.html" id="nav-pub-cn" style="display: none;">研究成果</a>
+            <a href="members.html" class="active" id="nav-member-en">Members</a>
+            <a href="members.html" class="active" id="nav-member-cn" style="display: none;">团队成员</a>
+            <a href="facilities.html" id="nav-fac-en">Facilities</a>
+            <a href="facilities.html" id="nav-fac-cn" style="display: none;">实验设备</a>
+            <a href="openings.html" id="nav-open-en">Openings!</a>
+            <a href="openings.html" id="nav-open-cn" style="display: none;">招聘信息</a>
+        </div>
+
+        <!-- 语言切换按钮 - 居右（第二行） -->
+        <div class="lang-switch">
+            <button class="lang-btn active" id="en-btn">English</button>
+            <button class="lang-btn" id="cn-btn">中文</button>
         </div>
     </div>
 </div>
 
 <div class="container">
   <div class="card">
-    <h3 class="section-title">Principal Investigator</h3>
+    <!-- 首席研究员 - 中英文切换 -->
+    <h3 class="section-title" id="pi-title-en">Principal Investigator</h3>
+    <h3 class="section-title" id="pi-title-cn" style="display: none;">Principal Investigator</h3>
+    
     <div class="pi-card">
       <div class="pi-avatar">
         <img src="images/members/Dr J Ma.jpg" alt="Jingwen Ma">
       </div>
       <div class="pi-info">
-        <h4>Jingwen Ma (马静文)</h4>
-        <div class="position">Assistant Professor (Incoming)</div>
-        <div class="bio">
+        <h4>Dr. Jingwen Ma (马静文)</h4>
+        <div class="position" id="pi-position-en">Associate Professor (Incoming)</div>
+        <div class="position" id="pi-position-cn" style="display: none;">准聘副教授（即将入职）</div>
+        
+        <div class="bio" id="pi-bio-en">
           Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He is currently a Research Assistant Professor at the University of Hong Kong, and will join the Department of Electrical and Electronic Engineering, Southern University of Science and Technology in June 2026. His research interests focus on integrated photonic devices, light-matter interaction physics, and metamaterials.
         </div>
-        <div class="contact">Email: jwma at hku dot hk</div>
-        <br>
-        <div class="location">Office: Department of Electrical and Electronic Engineering, HKU</div>
+        <div class="bio" id="pi-bio-cn" style="display: none;">
+          马静文博士于2021年获得香港中文大学电子工程博士学位，现任香港大学研究助理教授，将于2026年6月加入南方科技大学电子与电气工程系。研究方向包括集成光子器件、光-物质相互作用物理及纳米超材料。
+        </div>
+        
+        <div class="contact">Email: jwma@hku.hk</div>
+        <div class="location" id="pi-location-en">Office: Room 206D, Chong Yuet Ming Physics Building, HKU</div>
+        <div class="location" id="pi-location-cn" style="display: none;">办公室：香港大学庄月明物理楼206D</div>
       </div>
     </div>
 
-    <h3 class="section-title">Lab Members</h3>
+    <!-- 博士研究生 - 中英文切换 -->
+    <h4 class="members-category" id="phd-title-en">PhD Students</h4>
+    <h4 class="members-category" id="phd-title-cn" style="display: none;">博士研究生</h4>
+    
     <div class="members-grid">
-      <!-- 示例成员卡片 -->
       <div class="member-card">
         <div class="member-avatar">
           <img src="images/members/Yuanhao Gong.jpg" alt="Yuanhao Gong">
         </div>
         <div class="member-info">
-          <h5>Yuanhao Gong</h5>
-          <div class="member-position">Visiting PhD student</div>
+          <h5>Yuanhao Gong (龚元昊)</h5>
+          <div class="member-position" id="pos-gong-en">Visiting PhD student</div>
+          <div class="member-position" id="pos-gong-cn" style="display: none;">访问博士研究生</div>
           <div class="research-area">III-V semiconductor lasers; Polaritons</div>
         </div>
       </div>
@@ -269,18 +361,64 @@
           <img src="images/members/Yunfan Bai.jpg" alt="Yunfan Bai">
         </div>
         <div class="member-info">
-          <h5>Yunfan Bai</h5>
-          <div class="member-position">Visiting PhD student</div>
-          <div class="research-area">Photonic crystals</div>
+          <h5>Yunfan Bai (白芸帆)</h5>
+          <div class="member-position" id="pos-bai-en">Visiting PhD student</div>
+          <div class="member-position" id="pos-bai-cn" style="display: none;">访问博士研究生</div>
+          <div class="research-area">Photonic crystals; Metamaterials</div>
         </div>
       </div>
+
     </div>
   </div>
 </div>
 
+<!-- 页脚 - 中英文切换 -->
 <div class="footer">
-  <p><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+  <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+  <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国深圳</p>
 </div>
 
+<!-- 语言切换逻辑 - 同步全局 -->
+<script>
+    // 从localStorage读取语言状态，默认英文
+    const currentLang = localStorage.getItem('labLang') || 'en';
+    
+    const enBtn = document.getElementById('en-btn');
+    const cnBtn = document.getElementById('cn-btn');
+    const enElements = document.querySelectorAll('[id$="-en"]');
+    const cnElements = document.querySelectorAll('[id$="-cn"]');
+
+    // 初始化语言显示
+    function initLanguage(lang) {
+        if (lang === 'cn') {
+            cnBtn.classList.add('active');
+            enBtn.classList.remove('active');
+            cnElements.forEach(el => el.style.display = 'block');
+            enElements.forEach(el => el.style.display = 'none');
+            document.documentElement.lang = 'zh-CN';
+        } else {
+            enBtn.classList.add('active');
+            cnBtn.classList.remove('active');
+            enElements.forEach(el => el.style.display = 'block');
+            cnElements.forEach(el => el.style.display = 'none');
+            document.documentElement.lang = 'en';
+        }
+    }
+
+    // 页面加载时初始化语言
+    initLanguage(currentLang);
+
+    // 英文按钮点击事件
+    enBtn.addEventListener('click', () => {
+        localStorage.setItem('labLang', 'en');
+        initLanguage('en');
+    });
+
+    // 中文按钮点击事件
+    cnBtn.addEventListener('click', () => {
+        localStorage.setItem('labLang', 'cn');
+        initLanguage('cn');
+    });
+</script>
 </body>
 </html>
