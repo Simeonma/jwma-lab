@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Openings - jwma Lab</title>
+<link rel="stylesheet" href="styles/common.css">
+<style>
+/* 招聘页面独有样式 */
+.page-title {
+  font-size: 28px;
+  color: #1E3A8A;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #E2E8F0;
+  font-weight: 700;
+}
+
+.intro-text {
+  font-size: 17px;
+  color: #475569;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  background: #F9FBFF;
+  padding: 24px;
+  border-radius: 12px;
+  border-left: 4px solid #3B82F6;
+}
+
+.opening-section {
+  margin-bottom: 64px;
+}
+
+.section-subtitle {
+  font-size: 24px;
+  color: #1E3A8A;
+  margin-bottom: 32px;
+  padding-left: 12px;
+  border-left: 4px solid #3B82F6;
+  font-weight: 600;
+}
+
+.positions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(45%, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+/* 职位卡片样式（同步成员卡片特效） */
+.position-card {
+  background: #ffffff;
+  border: 1px solid #F1F5F9;
+  border-radius: 12px;
+  padding: 32px;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.position-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: #E2E8F0;
+}
+
+.position-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3B82F6, #1E3A8A);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.position-card:hover::before {
+  opacity: 1;
+}
+
+.position-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1E3A8A;
+  margin-bottom: 16px;
+}
+
+.position-desc {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.position-desc strong {
+  color: #1E3A8A;
+}
+
+.application-info {
+  background: #F9FBFF;
+  border-radius: 12px;
+  padding: 24px;
+  border: 1px solid #E2E8F0;
+  margin-top: 40px;
+}
+
+.application-info h4 {
+  font-size: 18px;
+  color: #1E3A8A;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.application-info p {
+  font-size: 16px;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.contact-email {
+  color: #3B82F6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-email:hover {
+  text-decoration: underline;
+}
+
+/* 响应式适配（同步全局断点） */
+@media (max-width: 768px) {
+  .page-title { font-size: 24px; }
+  .section-subtitle { font-size: 22px; }
+  .positions-grid { 
+    grid-template-columns: 1fr; 
+    gap: 24px; 
+  }
+  .position-card { padding: 24px; }
+  .intro-text { 
+    padding: 20px; 
+    font-size: 16px; 
+  }
+  .application-info { padding: 20px; }
+}
+
+@media (max-width: 600px) {
+  .position-name { font-size: 18px; }
+  .position-desc { font-size: 15px; }
+  .application-info p { font-size: 15px; }
+}
+
+@media (max-width: 375px) {
+  .position-card { padding: 20px; }
+  .section-subtitle { font-size: 20px; }
+}
+</style>
+</head>
+
+<body>
+<!-- 导航栏 - 完全同步全局布局 -->
+<div class="header">
+    <div class="nav-wrap">
+            <!-- 英文Logo：图片在左，文字在右 -->
+            <a href="index.html" class="lab-logo" id="lab-logo-en">
+                <img src="images/home/logo.png" alt="Lab Logo" class="logo-img">
+                <span class="logo-text">MacroQuantum<br>Photonics Lab</span>
+            </a>
+            <!-- 中文Logo：图片在左，文字在右 -->
+            <a href="index.html" class="lab-logo" id="lab-logo-cn" style="display: none;">
+                <img src="images/home/logo.png" alt="实验室Logo" class="logo-img">
+                <span class="logo-text">宏观量子<br>光芯片实验室</span>
+            </a>
+
+
+        <!-- 导航菜单 - 居右（第一行） -->
+        <div class="nav">
+            <a href="index.html" id="nav-home-en">Home</a>
+            <a href="index.html" id="nav-home-cn" style="display: none;">首页</a>
+            <a href="publications.html" id="nav-pub-en">Publications</a>
+            <a href="publications.html" id="nav-pub-cn" style="display: none;">研究成果</a>
+            <a href="members.html" id="nav-member-en">Members</a>
+            <a href="members.html" id="nav-member-cn" style="display: none;">团队成员</a>
+            <a href="facilities.html" id="nav-fac-en">Facilities</a>
+            <a href="facilities.html" id="nav-fac-cn" style="display: none;">实验设备</a>
+            <a href="openings.html" class="active" id="nav-open-en">Openings!</a>
+            <a href="openings.html" class="active" id="nav-open-cn" style="display: none;">招聘信息</a>
+        </div>
+
+        <!-- 语言切换按钮 - 居右（第二行） -->
+        <div class="lang-switch">
+            <button class="lang-btn active" id="en-btn">English</button>
+            <button class="lang-btn" id="cn-btn">中文</button>
+        </div>
+    </div>
+</div>
+
+<!-- 主内容区 -->
+<div class="container">
+  <div class="card">
+    <!-- 页面标题 - 中英文切换 -->
+    <h3 class="page-title" id="about-title-en">About Us</h3>
+    <h3 class="page-title" id="about-title-cn" style="display: none;">关于我们</h3>
+
+    <!-- 实验室介绍 - 中英文切换 -->
+    <div class="intro-text" id="intro-en">
+      Our research group is interested in cutting-edge topics at the intersection of nano-device engineering and photonic physics, including but not limited to silicon/lithium niobate/lithium tantalate integrated photonic chips, III-V semiconductor lasers, nonlinear optics, van der Waals materials physics, nano-optomechanics and nano-acoustics, topological physics, exciton physics, Bose-Einstein condensates, and metamaterials. <br><br>  
+
+We believe that the essence of scientific research lies in pure exploration and creation — thus, we are committed to building an inclusive and supportive team environment.  <strong>We hope every member can enjoy the joy of exploring the unknown, unleash creativity in an open and free atmosphere, and eventually grow into an independent and competent researcher </strong>. If you are interested in our research, we welcome you to reach out!
+    </div>
+    <div class="intro-text" id="intro-cn" style="display: none;">
+我们对纳米器件工程与光子物理交叉领域的许多前沿课题都感兴趣，包括但不限于硅 / 铌酸锂 / 钽酸锂集成光子芯片、三五族半导体激光器、非线性光学、范德华材料物理、纳米光力学和纳米声学、拓扑物理、激子物理、玻色爱因斯坦凝聚、超材料等方向。 <br><br>  
+
+我们坚信科研的本质是纯粹的探索与创造 —— 因此我们致力于维持一个包容互助的团队环境。<strong>我们希望让每一位成员都能纯粹地享受探索未知的乐趣，在开放自由的氛围中释放创造力，最终成长为独当一面的科研工作者</strong>。如果你对我们研究感兴趣，欢迎联系我们！
+    </div>
+
+
+    <!-- 开放职位标题 - 中英文切换 -->
+    <h3 class="page-title" id="positions-title-en">Open Positions</h3>
+    <h3 class="page-title" id="positions-title-cn" style="display: none;">开放职位</h3>
+
+    <div class="opening-section">
+      <div class="positions-grid">
+        <!-- 博士研究生 - 中英文切换 -->
+        <div class="position-card">
+          <div class="position-name" id="phd-name-en">Ph.D. Student (2026 and 2027 Fall)</div>
+          <div class="position-name" id="phd-name-cn" style="display: none;">博士研究生（2026、2027年秋季入学）</div>
+          
+          <div class="position-desc" id="phd-desc-en">
+            We always welcome motivated students with genuine curiosity in photonics and condensed-matter physics.<br><br>
+            <strong>Basic Requirements</strong>:<br>
+            • Bachelor's or Master's degree in optoelectronics, electronic engineering, physics, or related disciplines.<br>
+            • Strong academic background (GPA ≥ 80/100 or 3.2/4.0) from top-tier universities.<br><br>
+            <strong>Preferred Expertise</strong>:<br>
+            • Device nanofabrication / material synthesis<br>
+            • Free-space optics<br>
+            • Optoelectronic chip characterization<br>
+            • Device design / numerical simulations / theoretical modeling<br>
+            • Artificial intelligence algorithms / programming
+          </div>
+          <div class="position-desc" id="phd-desc-cn" style="display: none;">
+            长期招收对光子学和凝聚态物理有浓厚兴趣的博士研究生。<br><br>
+            <strong>基本要求</strong>：<br>
+            • 光电信息工程、电子工程、物理学或相关专业本科/硕士学历；<br>
+            • 顶尖高校毕业，具备优秀的学术背景（GPA ≥ 80/100 或 3.2/4.0）；<br><br>
+            <strong>优先考虑的专长</strong>：<br>
+            • 器件纳米加工 / 材料制备<br>
+            • 自由空间光学<br>
+            • 光电子芯片表征<br>
+            • 器件设计 / 数值模拟 / 理论建模<br>
+            • 人工智能算法 / 编程开发
+          </div>
+        </div>
+
+        <!-- 博士后研究员 - 中英文切换 -->
+        <div class="position-card">
+          <div class="position-name" id="postdoc-name-en">Postdoctoral Fellow</div>
+          <div class="position-name" id="postdoc-name-cn" style="display: none;">博士后研究员</div>
+          
+          <div class="position-desc" id="postdoc-desc-en">
+            We currently have 2-3 openings for postdoctoral fellow.<br><br>
+            <strong>Basic Requirements</strong>:<br>
+            • Ph.D. degree from top-tier universities (985 institutions or internationally prestigious universities)<br>
+            • Applicants must have first-author publications in related research areas, demonstrating the capability and potential to conduct high-quality research.<br><br>
+            <strong>Salaries & Benefits</strong>:<br>
+            Competitive salary package; comprehensive social insurance (medical, pension, work injury insurance, etc.); well-equipped office facilities.
+          </div>
+          <div class="position-desc" id="postdoc-desc-cn" style="display: none;">
+            现招聘2-3名博士后研究员。<br><br>
+            <strong>基本要求</strong>：<br>
+            • 985高校或国际知名大学博士学位；<br>
+            • 在相关研究领域以第一作者发表过学术论文，具备开展高质量科研工作的能力和潜力；<br><br>
+            <strong>薪资福利</strong>：<br>
+            • 有竞争力的薪资待遇；<br>
+            • 完善的社会保险（医疗、养老等）；<br>
+            • 设备齐全的办公实验条件。
+          </div>
+        </div>
+
+        <!-- 硕士研究生/研究助理/本科生实习生 - 中英文切换 -->
+        <div class="position-card">
+          <div class="position-name" id="other-name-en">Master Student / Research Assistant / Undergraduate Intern</div>
+          <div class="position-name" id="other-name-cn" style="display: none;">硕士研究生 / 研究助理 / 本科生实习生</div>
+          
+          <div class="position-desc" id="other-desc-en">
+            Welcome to join our lab to gain hands-on research experience in photonics and nanotechnology! We will provide personalized short-term projects, academic guidance, and experimental training.
+          </div>
+          <div class="position-desc" id="other-desc-cn" style="display: none;">
+            欢迎加入实验室，获得光子学和纳米技术领域的一线科研经验！我们将提供个性化的短期课题、学术指导和实验技能培训。
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- 页脚 - 中英文切换 -->
+<div class="footer">
+  <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+  <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国深圳</p>
+</div>
+
+<!-- 语言切换逻辑 - 完全同步全局 -->
+<script>
+    // 从localStorage读取语言状态，默认英文
+    const currentLang = localStorage.getItem('labLang') || 'en';
+    
+    const enBtn = document.getElementById('en-btn');
+    const cnBtn = document.getElementById('cn-btn');
+    const enElements = document.querySelectorAll('[id$="-en"]');
+    const cnElements = document.querySelectorAll('[id$="-cn"]');
+
+    // 初始化语言显示
+    function initLanguage(lang) {
+        if (lang === 'cn') {
+            cnBtn.classList.add('active');
+            enBtn.classList.remove('active');
+            cnElements.forEach(el => el.style.display = 'block');
+            enElements.forEach(el => el.style.display = 'none');
+            document.documentElement.lang = 'zh-CN';
+        } else {
+            enBtn.classList.add('active');
+            cnBtn.classList.remove('active');
+            enElements.forEach(el => el.style.display = 'block');
+            cnElements.forEach(el => el.style.display = 'none');
+            document.documentElement.lang = 'en';
+        }
+    }
+
+    // 页面加载时初始化语言
+    initLanguage(currentLang);
+
+    // 英文按钮点击事件
+    enBtn.addEventListener('click', () => {
+        localStorage.setItem('labLang', 'en');
+        initLanguage('en');
+    });
+
+    // 中文按钮点击事件
+    cnBtn.addEventListener('click', () => {
+        localStorage.setItem('labLang', 'cn');
+        initLanguage('cn');
+    });
+</script>
+</body>
+</html>
