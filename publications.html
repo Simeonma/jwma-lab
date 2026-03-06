@@ -6,6 +6,7 @@
     <title>Publications - jwma Lab</title>
     <link rel="stylesheet" href="styles/common.css">
     <style>
+        /* 论文页面独有样式 */
         .title-row {
             display: flex;
             align-items: center;
@@ -106,10 +107,10 @@
             align-items: center; /* 图片居中显示 */
         }
 
-        /* 图片容器 - 核心修改：缩小到50%宽度，居中 */
+        /* 图片容器 - 缩小到60%宽度，居中 */
         .pub-img-container {
             position: relative;
-            width: 60%; /* 宽度缩小为原来的50% */
+            width: 60%; /* 宽度控制 */
             max-width: 60%;
             border-radius: 12px;
             overflow: hidden;
@@ -120,36 +121,35 @@
         /* 图片样式 - 高度自动按比例缩放 */
         .pub-img {
             width: 100%;
-            height: auto; /* 高度随宽度等比例缩小到50% */
+            height: auto;
             display: block;
         }
 
-        /* 描述文字层 - 核心修改：高度自适应文字内容 */
+        /* 描述文字层 - 高度自适应 */
         .pub-desc {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
-            /* 关键：移除固定高度，改为自适应 */
             height: auto;
-            max-height: 80%; /* 限制最大高度为图片的80%，避免溢出 */
+            max-height: 80%;
             background: rgba(0, 0, 0, 0.8);
             color: #ffffff;
             padding: 20px 24px;
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
-            display: block !important; 
+            display: block !important;
             white-space: normal !important;
             word-wrap: break-word !important;
             line-height: 1.6;
             font-size: 16px;
-            overflow-y: auto; /* 文字过多时滚动 */
+            overflow-y: auto;
             flex: none !important;
             align-items: normal !important;
         }
 
-        /* 超链接样式 - 保持正常排版 */
+        /* 超链接样式 */
         .pub-desc a {
             color: #93C5FD;
             font-weight: 500;
@@ -166,18 +166,12 @@
             text-decoration: underline;
         }
 
-        /* 加粗文字样式 */
-        .pub-desc strong {
-            display: inline !important;
-        }
-
-        /* 鼠标悬浮时显示描述文字 */
+        /* 悬浮显示描述 */
         .pub-img-container:hover .pub-desc {
             opacity: 1;
             visibility: visible;
         }
 
-        /* 悬浮时图片容器的效果 */
         .pub-img-container:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(30, 58, 138, 0.12);
@@ -188,7 +182,7 @@
             display: block;
         }
 
-        /* 论文内容区域 - 居中对齐 */
+        /* 论文内容区域 */
         .pub-content {
             flex: 1;
             width: 100%;
@@ -230,8 +224,7 @@
             margin-left: 0px;
         }
 
-
-        /* 移动端适配 */
+        /* 响应式适配 */
         @media (max-width: 768px) {
             .card h3 { font-size: 24px; }
             
@@ -245,7 +238,7 @@
                 height: 12px;
             }
             
-            /* 移动端图片宽度调整为80%，更易查看 */
+            /* 移动端图片宽度调整 */
             .pub-img-container {
                 width: 90%;
                 max-width: 90%;
@@ -260,14 +253,14 @@
             .pub-title { font-size: 18px; }
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 600px) {
             .title-row {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 12px;
             }
             
-            /* 移动端时间轴进一步调整 */
+            /* 移动端时间轴调整 */
             .year-timeline {
                 padding-left: 28px;
             }
@@ -278,10 +271,10 @@
                 height: 10px;
             }
             
-            /* 移动端图片宽度调整为90% */
+            /* 移动端图片宽度调整 */
             .pub-img-container {
-                width: 90%;
-                max-width: 90%;
+                width: 95%;
+                max-width: 95%;
             }
             
             .pub-desc {
@@ -289,22 +282,48 @@
                 padding: 12px 16px;
                 max-height: 90%;
             }
-            
+        }
+
+        @media (max-width: 375px) {
+            .pub-title { font-size: 17px; }
+            .pub-authors { font-size: 15px; }
         }
     </style>
 </head>
 
 <body>
-    <!-- 头部导航 -->
+    <!-- 导航栏 - 同步index.html布局 -->
     <div class="header">
         <div class="nav-wrap">
-            <a href="index.html" class="lab-logo">MacroQuantum Photonics Lab</a>
+            <!-- 英文Logo：图片在左，文字在右 -->
+            <a href="index.html" class="lab-logo" id="lab-logo-en">
+                <img src="images/home/logo.png" alt="Lab Logo" class="logo-img">
+                <span class="logo-text">MacroQuantum<br>Photonics Lab</span>
+            </a>
+            <!-- 中文Logo：图片在左，文字在右 -->
+            <a href="index.html" class="lab-logo" id="lab-logo-cn" style="display: none;">
+                <img src="images/home/logo.png" alt="实验室Logo" class="logo-img">
+                <span class="logo-text">宏观量子<br>光芯片实验室</span>
+            </a>
+
+            <!-- 导航菜单 - 居右（第一行） -->
             <div class="nav">
-                <a href="index.html">Home</a>
-                <a href="publications.html" class="active">Publications</a>
-                <a href="members.html">Members</a>
-                <a href="facilities.html">Facilities</a>
-                <a href="openings.html">Openings!</a>
+                <a href="index.html" id="nav-home-en">Home</a>
+                <a href="index.html" id="nav-home-cn" style="display: none;">首页</a>
+                <a href="publications.html" class="active" id="nav-pub-en">Publications</a>
+                <a href="publications.html" class="active" id="nav-pub-cn" style="display: none;">研究成果</a>
+                <a href="members.html" id="nav-member-en">Members</a>
+                <a href="members.html" id="nav-member-cn" style="display: none;">团队成员</a>
+                <a href="facilities.html" id="nav-fac-en">Facilities</a>
+                <a href="facilities.html" id="nav-fac-cn" style="display: none;">实验设备</a>
+                <a href="openings.html" id="nav-open-en">Openings!</a>
+                <a href="openings.html" id="nav-open-cn" style="display: none;">招聘信息</a>
+            </div>
+
+            <!-- 语言切换按钮 - 居右（第二行） -->
+            <div class="lang-switch">
+                <button class="lang-btn active" id="en-btn">English</button>
+                <button class="lang-btn" id="cn-btn">中文</button>
             </div>
         </div>
     </div>
@@ -312,18 +331,21 @@
     <!-- 主内容区 -->
     <div class="container">
         <div class="card">
-            <!-- 标题栏 -->
+            <!-- 标题栏 - 仅翻译界面文字 -->
             <div class="title-row">
-                <h3>Selected Publications</h3>
+                <h3 id="pub-title-en">Selected Publications</h3>
+                <h3 id="pub-title-cn" style="display: none;">Selected Publications</h3>
                 <a href="https://scholar.google.com/citations?user=-2sAiXwAAAAJ&hl=en" class="scholar-button" target="_blank">
-                    Full Publications in Google Scholar
+                    <span id="scholar-btn-en">Full Publications in Google Scholar</span>
+                    <span id="scholar-btn-cn" style="display: none;">Full Publications in Google Scholar</span>
                 </a>
             </div>
 
-            <!-- 2026年论文 - 时间轴包裹 -->
+            <!-- 2026年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2026</div>
+                    <div class="year" id="year-2026-en">2026</div>
+                    <div class="year" id="year-2026-cn" style="display: none;">2026年</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container">
                             <img src="images/publications/Excitonic negative refraction mediated by magnetic orders.png" alt="Excitonic negative refraction mediated by magnetic orders" class="pub-img">
@@ -344,15 +366,16 @@
                 </div>
             </div>
 
-            <!-- 2025年论文 - 时间轴包裹 -->
+            <!-- 2025年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2025</div>
+                    <div class="year" id="year-2025-en">2025</div>
+                    <div class="year" id="year-2025-cn" style="display: none;">2025年</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container">
                             <img src="images/publications/topological parametric phonon oscillator.jpg" alt="topological_paramatric_phonon_oscillator" class="pub-img">
                             <div class="pub-desc">
-                                Interacting topological bosonic systems exhibit fundamentally distinct behaviour to their fermionic counterparts. We report the first <strong>topological parametric oscillators</strong> based on a Dirac-vortex nano-electro-mechanical cavity.   
+                                Interacting topological bosonic systems exhibit fundamentally distinct behaviour to their fermionic counterparts. We report the first <strong>topological parametric oscillators</strong> based on a Dirac-vortex nano-electro-mechanical cavity.
                             </div>
                         </div>
                         <div class="pub-content">
@@ -428,10 +451,11 @@
                 </div>
             </div>
 
-            <!-- 2024年论文 - 时间轴包裹 -->
+            <!-- 2024年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2024</div>
+                    <div class="year" id="year-2024-en">2024</div>
+                    <div class="year" id="year-2024-cn" style="display: none;">2024年</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container">
                             <img src="images/publications/vortex_string_chiral_mode.jpg" alt="vortex_string_chiral_mode" class="pub-img">
@@ -476,10 +500,11 @@
                 </div>
             </div>
 
-            <!-- 2023年论文 - 时间轴包裹 -->
+            <!-- 2023年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2023</div>
+                    <div class="year" id="year-2023-en">2023</div>
+                    <div class="year" id="year-2023-cn" style="display: none;">2023年</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container">
                             <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="vortex_string_chiral_mode" class="pub-img">
@@ -524,10 +549,11 @@
                 </div>
             </div>
 
-            <!-- 2022年论文 - 时间轴包裹 -->
+            <!-- 2022年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2022</div>
+                    <div class="year" id="year-2022-en">2022</div>
+                    <div class="year" id="year-2022-cn" style="display: none;">2022年</div>
                     <div class="pub-item no-img">
                         <div class="pub-content">
                             <div class="pub-title">
@@ -566,10 +592,11 @@
                 </div>
             </div>
 
-            <!-- 2021年论文 - 时间轴包裹 -->
+            <!-- 2021年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2021</div>
+                    <div class="year" id="year-2021-en">2021</div>
+                    <div class="year" id="year-2021-cn" style="display: none;">2021年</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container">
                             <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Nanomechanical topological insulators with an auxiliary orbital degree of freedom" class="pub-img">
@@ -626,10 +653,11 @@
                 </div>
             </div>
 
-            <!-- 2019年论文 - 时间轴包裹 -->
+            <!-- 2019年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2019</div>
+                    <div class="year" id="year-2019-en">2019</div>
+                    <div class="year" id="year-2019-cn" style="display: none;">2019年</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container">
                             <img src="images/publications/Topological photonic integrated circuits based on valley kink states.jpg" alt="Topological photonic integrated circuits based on valley kink states" class="pub-img">
@@ -686,10 +714,11 @@
                 </div>
             </div>
 
-            <!-- 2016年论文 - 时间轴包裹 -->
+            <!-- 2016年论文 - 核心内容保持英文 -->
             <div class="year-group">
                 <div class="year-timeline">
-                    <div class="year">2016</div>
+                    <div class="year" id="year-2016-en">2016</div>
+                    <div class="year" id="year-2016-cn" style="display: none;">2016年</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container">
                             <img src="images/publications/graphene_isolator.jpg" alt="graphene_isolator" class="pub-img">
@@ -714,7 +743,51 @@
 
     <!-- 页脚 -->
     <div class="footer">
-        <p><strong>jwma Lab © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+        <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国深圳</p>
     </div>
+
+    <!-- 语言切换逻辑 - 同步index.html -->
+    <script>
+        // 从localStorage读取语言状态，默认英文
+        const currentLang = localStorage.getItem('labLang') || 'en';
+        
+        const enBtn = document.getElementById('en-btn');
+        const cnBtn = document.getElementById('cn-btn');
+        const enElements = document.querySelectorAll('[id$="-en"]');
+        const cnElements = document.querySelectorAll('[id$="-cn"]');
+
+        // 初始化语言显示
+        function initLanguage(lang) {
+            if (lang === 'cn') {
+                cnBtn.classList.add('active');
+                enBtn.classList.remove('active');
+                cnElements.forEach(el => el.style.display = 'block');
+                enElements.forEach(el => el.style.display = 'none');
+                document.documentElement.lang = 'zh-CN';
+            } else {
+                enBtn.classList.add('active');
+                cnBtn.classList.remove('active');
+                enElements.forEach(el => el.style.display = 'block');
+                cnElements.forEach(el => el.style.display = 'none');
+                document.documentElement.lang = 'en';
+            }
+        }
+
+        // 页面加载时初始化语言
+        initLanguage(currentLang);
+
+        // 英文按钮点击事件
+        enBtn.addEventListener('click', () => {
+            localStorage.setItem('labLang', 'en');
+            initLanguage('en');
+        });
+
+        // 中文按钮点击事件
+        cnBtn.addEventListener('click', () => {
+            localStorage.setItem('labLang', 'cn');
+            initLanguage('cn');
+        });
+    </script>
 </body>
 </html>
