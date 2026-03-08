@@ -58,6 +58,7 @@ body {
 .logo-text {
     line-height: 1.2;
     display: inline-block;
+    align-items: center;
 }
 
 /* 导航菜单样式 */
