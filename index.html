@@ -556,23 +556,15 @@
             carouselInterval = setInterval(nextSlide, 3000);
         }
 
-        function stopAutoCarousel() {
-            clearInterval(carouselInterval);
-        }
-
         nextBtn.addEventListener('click', nextSlide);
         prevBtn.addEventListener('click', prevSlide);
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => switchSlide(index));
         });
-        document.querySelector('.carousel-wrap').addEventListener('mouseenter', stopAutoCarousel);
-        document.querySelector('.carousel-wrap').addEventListener('mouseleave', startAutoCarousel);
+        
 
         startAutoCarousel();
     </script>
 </body>
 
 </html>
-
-
-
