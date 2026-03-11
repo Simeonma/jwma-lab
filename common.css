@@ -47,8 +47,8 @@ body {
 
 /* Logo图片样式 */
 .logo-img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     object-fit: contain;
     /*flex-shrink: 0;  禁止图片压缩 */
     display: inline-block;
