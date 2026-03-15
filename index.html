@@ -66,8 +66,8 @@
         }
 
         .carousel-slide {
-            width: 90%;
-            max-width: 1000px;
+            width: 95%;
+            max-width: 1200px;
             height: 500px;
             display: none;
             border-radius: 12px;
@@ -99,8 +99,8 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 90%;
-            max-width: 1000px;
+            width: 95%;
+            max-width: 1200px;
             height: auto;
             max-height: 70%;
             background: rgba(0, 0, 0, 0.8);
@@ -183,7 +183,7 @@
 
         .carousel-indicators {
             position: absolute;
-            bottom: -40px;
+            bottom: -30px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -215,51 +215,6 @@
             text-align: center;
         }
 
-        .research-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 28px;
-            width: 100%;
-        }
-
-        .research-item {
-            margin-bottom: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            padding: 16px;
-            border: 1px solid #F1F5F9;
-            border-radius: 12px;
-            transition: all 0.2s ease;
-        }
-
-        .research-item:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-color: #E2E8F0;
-        }
-
-        .research-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            flex-shrink: 0;
-        }
-
-        .research-item h4 {
-            font-size: 20px;
-            color: #1E3A8A;
-            margin-bottom: 8px;
-        }
-
-        .research-item p {
-            font-size: 16px;
-            line-height: 1.9;
-            color: #1F2937;
-            flex-grow: 1;
-            margin-top: 0;
-        }
 
         @media (max-width: 768px) {
             .banner {
@@ -274,24 +229,6 @@
                 font-size: 24px;
             }
 
-            .research-container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .research-img {
-                height: 220px;
-                margin-bottom: 16px;
-            }
-
-            .research-item h4 {
-                font-size: 22px;
-                margin-bottom: 8px;
-            }
-
-            .research-item p {
-                font-size: 16px;
-            }
 
             .carousel-title {
                 font-size: 24px;
@@ -318,11 +255,11 @@
             }
 
             .prev-btn {
-                left: calc(2.5% - 20px);
+                left: calc(2.5% - 0px);
             }
 
             .next-btn {
-                right: calc(2.5% - 20px);
+                right: calc(2.5% - 0px);
             }
         }
 
@@ -360,11 +297,11 @@
             }
 
             .prev-btn {
-                left: calc(1% - 18px);
+                left: calc(1% - 0px);
             }
 
             .next-btn {
-                right: calc(1% - 18px);
+                right: calc(1% - px);
             }
 
             .indicator-dot {
@@ -387,7 +324,7 @@
                 <span class="logo-text">MacroQuantum<br>Photonics Group</span>
             </a>
             <a href="index.html" class="lab-logo" id="lab-logo-cn" style="display: none;">
-                <img src="images/home/logo.png" alt="实验室Logo" class="logo-img">
+                <img src="images/home/logo.png" alt="Lab Logo" class="logo-img">
                 <span class="logo-text">MacroQuantum<br>Photonics Group</span>
             </a>
 
@@ -415,10 +352,10 @@
 
     <div class="banner">
         <p class="banner-desc" id="banner-desc-en">
-            We are an interdisciplinary research group in photonic chips and macroscopic quantum phase, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance silicon photonic chips, III-V semiconductor lasers, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations, quantum fluids and solids.
+            We are an interdisciplinary research group in photonic chips and macroscopic quantum phase, with expertise in optical and electrical measurements, nano-fabrications, and theoretical modeling. <strong>Application-wise, we develop advanced photonic devices for on-chip information and computing applications</strong>, for instance silicon photonic chips, III-V semiconductor lasers, and opto-electro-mechanical chips. <strong>Scientifically, we investigate quantum phases of light-matter hybrids and their exotic properties</strong>, such as Bose-Einstein condensations and quantum fluids.
         </p>
         <p class="banner-desc" id="banner-desc-cn" style="display: none;">
-            我们从事光子芯片与宏观光量子物态的交叉科学研究，研究内容涵盖光学与电学测量、纳米加工、理论建模等方向。<strong>应用层面，我们研发面向光信息与光计算领域的先进光子器件及芯片</strong>，包括硅光集成芯片、III-V 族半导体激光器、光机电芯片等；<strong>科学层面，我们聚焦光 - 物质强耦合体系的宏观量子相及其奇异特性研究</strong>，致力于在芯片上实现玻色 - 爱因斯坦凝聚、量子流体与量子固体等宏观量子效应。
+            我们从事光子芯片与宏观光量子物态的交叉科学研究，研究内容涵盖光电测量、纳米加工、理论建模等方向。<strong>应用层面，我们研发面向光信息与光计算领域的先进光子器件及芯片</strong>，包括硅光集成芯片、III-V 族半导体激光器、光机电芯片等；<strong>基础科学层面，我们聚焦光-物质强耦合纳米芯片的量子物态研究</strong>，致力于在集成光子芯片平台上实现并操控玻色 - 爱因斯坦凝聚、量子流体等宏观量子效应。
         </p>
     </div>
 
@@ -476,7 +413,7 @@
 
     <div class="footer">
         <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
-        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国深圳</p>
+        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
     </div>
 
     <script>
