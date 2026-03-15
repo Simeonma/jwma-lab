@@ -9,7 +9,7 @@
         .section-title {
             font-size: 28px;
             color: #1E3A8A;
-            margin-bottom: 36px;
+            margin-bottom: 16px;
             padding-bottom: 16px;
             border-bottom: 2px solid #E2E8F0;
             font-weight: 700;
@@ -33,16 +33,11 @@
         .pi-avatar {
             width: 196px;
             height: 262px;
-            border-radius: 10%;
+            border-radius: 5%;
             overflow: hidden;
             background: #F8FAFC;
             flex-shrink: 0;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .pi-avatar:hover {
-            transform: scale(1.02);
         }
 
         .pi-avatar img {
@@ -54,7 +49,7 @@
         }
 
         .pi-info h4 {
-            font-size: 26px;
+            font-size: 24px;
             color: #1E3A8A;
             margin-bottom: 8px;
             font-weight: 600;
@@ -86,7 +81,7 @@
 
         .pi-info .contact::before {
             content: '📧';
-            font-size: 18px;
+            font-size: 16px;
             margin-right: 4px;
         }
 
@@ -102,7 +97,7 @@
 
         .pi-info .location::before {
             content: '📍';
-            font-size: 18px;
+            font-size: 16px;
             margin-right: 4px;
         }
 
@@ -119,7 +114,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 28px;
-            margin-top: 16px;
+            margin-top: 10px;
             width: 100%;
         }
 
@@ -157,13 +152,12 @@
         }
 
         .member-avatar {
-            width: 180px;
-            height: 180px;
+            width: 196px;
+            height: 196px;
             border-radius: 50%;
             overflow: hidden;
             background: #F8FAFC;
             margin: 0 auto 16px;
-            border: 3px solid #ffffff;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
@@ -191,17 +185,35 @@
         }
 
         .member-info .member-position {
-            font-size: 15px;
+            font-size: 16px;
             color: #4B5563;
             margin-bottom: 8px;
             font-weight: 500;
         }
 
         .member-info .research-area {
-            font-size: 14px;
+            font-size: 16px;
             color: #1F2937;
             line-height: 1.6;
             padding: 0 4px;
+            text-align: left;
+            margin-bottom: 5px; /* 增加一点间距，让邮箱和研究方向分开 */
+        }
+
+        /* 成员邮箱复用PI的contact样式，确保图标一致 */
+        .member-info .contact {
+            font-size: 16px;
+            color: #1E3A8A;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .member-info .contact::before {
+            content: '📧';
+            font-size: 16px;
+            margin-right: 4px;
         }
 
         .alumni-card {
@@ -319,15 +331,17 @@
                     <img src="images/members/Dr J Ma.jpg" alt="Jingwen Ma">
                 </div>
                 <div class="pi-info">
-                    <h4>Dr. Jingwen Ma (马静文)</h4>
+                    <h4 id="pi-name-en">Dr. Jingwen Ma</h4>
+                    <h4 id="pi-name-cn" style="display: none;">马静文博士</h4>
+                    
                     <div class="position" id="pi-position-en">Associate Professor (Incoming)</div>
                     <div class="position" id="pi-position-cn" style="display: none;">准聘副教授（即将入职）</div>
                     
                     <div class="bio" id="pi-bio-en">
-                        Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He is currently a Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong, and will join the Department of Electrical and Electronic Engineering, Southern University of Science and Technology in June 2026. His research interests focus on integrated photonic chips, light-matter interaction physics, and metamaterials.
+                        Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He is currently a Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong, and will join the Department of Electrical and Electronic Engineering, Southern University of Science and Technology in June 2026. His research interests include integrated photonic chips, semiconductor lasers, light-matter interaction physics, and metamaterials.
                     </div>
                     <div class="bio" id="pi-bio-cn" style="display: none;">
-                        马静文博士于2021年获得香港中文大学电子工程博士学位，现在香港大学张翔院士课题组任研究助理教授，将于2026年6月加入南方科技大学电子与电气工程系。研究方向包括集成光子芯片、光-物质相互作用物理及纳米超材料。
+                        2021年获得香港中文大学电子工程博士学位，现在香港大学张翔院士课题组任研究助理教授，将于2026年6月加入南方科技大学电子与电气工程系。研究方向包括集成光子芯片、半导体激光器、光-物质相互作用物理、纳米超表面与超材料等。
                     </div>
                     
                     <div class="contact">Email: jwma@hku.hk</div>
@@ -336,8 +350,8 @@
                 </div>
             </div>
 
-            <h3 class="section-title" id="phd-title-en">PhD Students</h3>
-            <h3 class="section-title" id="phd-title-cn" style="display: none;">博士研究生</h3>
+            <h3 class="section-title" id="phd-title-en">Members</h3>
+            <h3 class="section-title" id="phd-title-cn" style="display: none;">Members</h3>
             
             <div class="members-grid">
                 <div class="member-card">
@@ -345,10 +359,14 @@
                         <img src="images/members/Yuanhao Gong.jpg" alt="Yuanhao Gong">
                     </div>
                     <div class="member-info">
-                        <h5>Yuanhao Gong (龚元昊)</h5>
+                        <h5 id="name-gong-en">Yuanhao Gong</h5>
+                        <h5 id="name-gong-cn" style="display: none;">龚元昊</h5>
                         <div class="member-position" id="pos-gong-en">Visiting PhD student</div>
-                        <div class="member-position" id="pos-gong-cn" style="display: none;">访问博士研究生</div>
-                        <div class="research-area">III-V semiconductor lasers; Polaritons</div>
+                        <div class="member-position" id="pos-gong-cn" style="display: none;">访问博士生</div>
+
+                        <div class="research-area" >Yuanhao Gong is a visiting student at our lab, and is currently a PhD candidate at the University of Hong Kong under the supervision of Prof. Xiaobo Yin. His research focuses on polaritons and III-V semiconductor lasers.</div>
+
+                        <div class="contact">Email: yhgong@connect.hku.hk</div>
                     </div>
                 </div>
 
@@ -357,10 +375,13 @@
                         <img src="images/members/Yunfan Bai.jpg" alt="Yunfan Bai">
                     </div>
                     <div class="member-info">
-                        <h5>Yunfan Bai (白芸帆)</h5>
+                        <h5 id="name-bai-en">Yunfan Bai</h5>
+                        <h5 id="name-bai-cn" style="display: none;">白芸帆</h5>
                         <div class="member-position" id="pos-bai-en">Visiting PhD student</div>
                         <div class="member-position" id="pos-bai-cn" style="display: none;">访问博士研究生</div>
-                        <div class="research-area">Photonic crystals; Metamaterials</div>
+                        
+                        <div class="research-area">Yunfan Bai is a visiting student at our lab, and is currently an MPhil candidate at the University of Hong Kong under the supervision of Prof. Xiaobo Yin. Her research focuses on photonic crystals.</div>
+	        <div class="contact">Email: u3013269@connect.hku.hk</div>
                     </div>
                 </div>
             </div>
@@ -369,7 +390,7 @@
 
     <div class="footer">
         <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
-        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国深圳</p>
+        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
     </div>
 
     <script>
