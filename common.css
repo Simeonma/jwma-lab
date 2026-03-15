@@ -47,10 +47,9 @@ body {
 
 /* Logo图片样式 */
 .logo-img {
-    width: 70px;
-    height: 70px;
+    width: 65px;
+    height: 65px;
     object-fit: contain;
-    /*flex-shrink: 0;  禁止图片压缩 */
     display: inline-block;
     transform: translateY(5px);
 }
@@ -184,8 +183,8 @@ body {
     }
 
     .logo-img {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
 
     .nav {
@@ -222,8 +221,8 @@ body {
     }
 
     .logo-img {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
     
     .nav {
