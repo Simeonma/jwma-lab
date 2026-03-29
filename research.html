@@ -53,7 +53,7 @@
 
         .research-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: 1fr;
             gap: 28px;
             width: 100%;
         }
@@ -61,14 +61,21 @@
         .research-item {
             margin-bottom: 0;
             display: flex;
-            flex-direction: column;
+            flex-direction: row; 
+            align-items: flex-start; 
             height: 100%;
-            padding: 16px;
+            padding: 24px;
             border: 1px solid #F1F5F9;
             border-radius: 12px;
             transition: all 0.2s ease;
             position: relative;
             overflow: hidden;
+        }
+
+        .research-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .research-item::before {
@@ -95,11 +102,13 @@
         }
 
         .research-img {
-            width: 100%;
-            height: 200px;
+            width: 40%;
+            height: auto;
+            max-height: 240px;
             object-fit: cover;
             border-radius: 12px;
-            margin-bottom: 16px;
+            margin-right: 28px;
+            margin-bottom: 0;
             flex-shrink: 0;
         }
 
@@ -107,6 +116,7 @@
             font-size: 20px;
             color: #1E3A8A;
             margin-bottom: 8px;
+            text-align: center; /* 新增：标题居中 */
         }
 
         .research-item p {
@@ -125,7 +135,19 @@
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-            .research-img { height: 220px; margin-bottom: 16px; }
+
+            .research-item {
+                flex-direction: column;
+                padding: 16px;
+            }
+
+            .research-img { 
+                width: 100%;
+                height: 220px; 
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
+            
             .research-item h4 { font-size: 22px; margin-bottom: 8px; }
             .research-item p { font-size: 16px; }
         }
@@ -174,33 +196,55 @@
     <div class="container">
         <div class="card">
             <h3 id="research-title-en">Research Interests</h3>
-            <h3 id="research-title-cn" style="display: none;">研究方向</h3>
+            <h3 id="research-title-cn" style="display: none;">研究兴趣</h3>
             
             <div class="research-container">
+                <!-- 研究方向1 -->
                 <div class="research-item">
                     <img src="images/research/research3.jpg" alt="Integrated photonic chips" class="research-img">
-                    <h4 id="item1-title-en">Integrated photonic chips</h4>
-                    <h4 id="item1-title-cn" style="display: none;">集成光子芯片</h4>
-                    <p id="item1-desc-en">Development of photonic integrated circuits (PICs) and photonic crystal surface emitting lasers (PCSELs) for optical information and computing applications. </p>
-                    <p id="item1-desc-cn" style="display: none;">研发光子集成回路（PIC）与光子晶体面发射激光器（PCSEL），应用于光学信息与计算领域。</p>
+                    <div class="research-content">
+                        <h4 id="item1-title-en">Photonic integrated circuits and chips</h4>
+                        <h4 id="item1-title-cn" style="display: none;">集成光子芯片</h4>
+                        <p id="item1-desc-en">We develop advanced photonic integrated circuits (PICs) across cutting-edge material platforms including silicon photonics, silicon nitride, III-V semiconductors,and thin-film lithium niobate, with a focus on enabling high-performance, scalable, and energy-efficient solutions for next-generation optical information processing, high-bandwidth optical interconnects, and photonic computing applications. </p>
+                        <p id="item1-desc-cn" style="display: none;">我们围绕硅光子学、氮化硅、III-V半导体和薄膜铌酸锂等前沿材料平台，研发高性能先进光子集成芯片（PICs），聚焦为下一代光信息处理、高带宽光互连及光子计算领域，打造高性能、可扩展、低能耗的核心解决方案。</p>
+                    </div>
                 </div>
 
+                <!-- 研究方向2 -->
+                <div class="research-item">
+                    <img src="images/research/research1.jpg" alt="Photonic-crystal lasers" class="research-img">
+                    <div class="research-content">
+                        <h4 id="item2-title-en">Photonic-crystal surface-emitting lasers</h4>
+                        <h4 id="item2-title-cn" style="display: none;">光子晶体激光器</h4>
+                        <p id="item2-desc-en">We focus on the design, nanofabrication, and comprehensive characterization of next-generation photonic-crystal surface-emitting lasers (PCSELs), with breakthroughs in stable single-mode operation, ultra-narrow linewidth, diffraction-limited beam quality, and high-power output, targeting transformative applications in automotive LiDAR, long-haul coherent optical communications, high-precision metrology, and photonic integrated system pumping.</p>
+                        <p id="item2-desc-cn" style="display: none;">我们专注于下一代光子晶体面发射激光器（PCSELs）的设计、纳米制备与综合表征，在稳定单模工作、超窄线宽、衍射极限光束质量与高功率输出方面实现性能突破，面向车载激光雷达、长距离相干光通信、高精度计量以及光子集成系统泵浦等应用。</p>
+                    </div>
+                </div>
+
+                <!-- 研究方向3 -->
                 <div class="research-item">
                     <img src="images/research/research5.jpg" alt="Quantum light-matter hybrids" class="research-img">
-                    <h4 id="item2-title-en">Quantum light-matter hybrids</h4>
-                    <h4 id="item2-title-cn" style="display: none;">光-物质强耦合宏观量子态</h4>
-                    <p id="item2-desc-en">Investigation of strong light-matter interactions in novel van der Waals materials, realization of their macroscopic quantum phases and collective excitations, and exploration of their applications in optoelectronic chips.</p>
-                    <p id="item2-desc-cn" style="display: none;">研究新型范德华材料中的强光-物质相互作用，实现其宏观量子相和集体激发，探索其在光电芯片领域的应用。</p>
+                    <div class="research-content">
+                        <h4 id="item3-title-en">Quantum material and light-matter interaction physics</h4>
+                        <h4 id="item3-title-cn" style="display: none;">量子材料及其光-物质相互作用物理</h4>
+                        <p id="item3-desc-en">We investigate strong light-matter interactions in novel van der Waals material systems, including transition metal dichalcogenides (TMDs), moiré superlattices, and magnetic materials, realize exotic macroscopic quantum phases and coherent collective excitations in these systems, and explore their disruptive applications in high-performance on-chip optoelectronic devices and quantum photonic chips.</p>
+                        <p id="item3-desc-cn" style="display: none;">我们研究新型范德华材料体系（包括过渡金属硫族化合物（TMDs）、莫尔超晶格与低维磁性材料）中的强光 - 物质相互作用，在该体系中实现新奇的宏观量子相与相干集体激发，并探索其在高性能片上光电器件与量子光子芯片中的应用。</p>
+                    </div>
                 </div>
 
+                <!-- 研究方向4 -->
                 <div class="research-item">
                     <img src="images/research/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
-                    <h4 id="item3-title-en">Nano-electro-mechanics</h4>
-                    <h4 id="item3-title-cn" style="display: none;">纳米机电系统</h4>
-                    <p id="item3-desc-en">Development of advanced nano-electro-mechanical systems (NEMS) for radio-frequency signal processing and quantum phononics.</p>
-                    <p id="item3-desc-cn" style="display: none;">研发新型的纳米机电系统（NEMS），应用于射频信号处理与量子声子学领域。</p>
+                    <div class="research-content">
+                        <h4 id="item4-title-en">Nano-electro-mechanical chips</h4>
+                        <h4 id="item4-title-cn" style="display: none;">纳米机电芯片</h4>
+                        <p id="item4-desc-en">We develop advanced nano-electro-mechanical systems (NEMS) with topologically nontrivial properties, focusing on achieving high robustness and ultra-high frequency device, to enable innovative solutions for next-generation radio-frequency (RF) signal processing, ultra-sensitive sensing, and quantum phononics.</p>
+                        <p id="item4-desc-cn" style="display: none;">我们开发具备拓扑非平庸特性的先进纳米机电系统（NEMS），聚焦实现高鲁棒性与超高频率的器件性能，为下一代射频（RF）信号处理、超灵敏传感与量子声子学领域提供新方案。</p>
+                    </div>
                 </div>
+
             </div>
+
         </div>
     </div>
 
