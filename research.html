@@ -67,11 +67,31 @@
             border: 1px solid #F1F5F9;
             border-radius: 12px;
             transition: all 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-item::before {
+            content: ''; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #3B82F6, #1E3A8A);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10; 
         }
 
         .research-item:hover {
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
             border-color: #E2E8F0;
+            transform: translateY(-4px);
+        }
+
+        .research-item:hover::before {
+            opacity: 1;
         }
 
         .research-img {
