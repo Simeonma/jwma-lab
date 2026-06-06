@@ -6,7 +6,9 @@
     <title>Openings - jwma Lab</title>
     <link rel="icon" type="image/png" href="images/home/logo.png">
     <link rel="stylesheet" href="common.css">
+
     <style>
+
         .page-title {
             font-size: 28px;
             color: #1E3A8A;
@@ -32,7 +34,7 @@
         }
 
         .section-subtitle {
-            font-size: 24px;
+            font-size: 22px;
             color: #1E3A8A;
             margin-bottom: 32px;
             padding-left: 12px;
@@ -131,15 +133,9 @@
         @media (max-width: 768px) {
             .page-title { font-size: 24px; }
             .section-subtitle { font-size: 22px; }
-            .positions-grid { 
-                grid-template-columns: 1fr; 
-                gap: 24px; 
-            }
+            .positions-grid { grid-template-columns: 1fr; gap: 24px; }
             .position-card { padding: 24px; }
-            .intro-text { 
-                padding: 20px; 
-                font-size: 16px; 
-            }
+            .intro-text { padding: 20px; font-size: 16px; }
             .application-info { padding: 20px; }
         }
 
@@ -153,9 +149,9 @@
             .position-card { padding: 20px; }
             .section-subtitle { font-size: 20px; }
         }
+
     </style>
 </head>
-
 <body>
     <div class="header">
         <div class="nav-wrap">
@@ -164,25 +160,25 @@
                 <span class="logo-text">MacroQuantop<br>Lab</span>
             </a>
             <a href="index.html" class="lab-logo" id="lab-logo-cn" style="display: none;">
-                <img src="images/home/logo.png" alt="实验室Logo" class="logo-img">
+                <img src="images/home/logo.png" alt="Lab Logo" class="logo-img">
                 <span class="logo-text">MacroQuantop<br>Lab</span>
             </a>
-
             <div class="nav">
-                <a href="index.html" id="nav-home-en">Home</a>
-                <a href="index.html" id="nav-home-cn" style="display: none;">首页</a>
-                <a href="people.html" id="nav-people-en">People</a>
-                <a href="people.html" id="nav-people-cn" style="display: none;">团队成员</a>
-                <a href="research.html" id="nav-research-en">Research</a>
-                <a href="research.html" id="nav-research-cn" style="display: none;">研究方向</a>
-                <a href="publications.html" id="nav-pub-en">Publications</a>
-                <a href="publications.html" id="nav-pub-cn" style="display: none;">发表论文</a>
-                <a href="facilities.html" id="nav-fac-en">Facilities</a>
-                <a href="facilities.html" id="nav-fac-cn" style="display: none;">实验设备</a>
-                <a href="openings.html" class="active" id="nav-open-en">Openings!</a>
-                <a href="openings.html" class="active" id="nav-open-cn" style="display: none;">招聘信息</a>
+                <a href="index.html" class="" id="nav-home-en">Home</a>
+                <a href="index.html" class="" id="nav-home-cn" style="display: none;">首页</a>
+                <a href="people.html" class="" id="nav-people-en">People</a>
+                <a href="people.html" class="" id="nav-people-cn" style="display: none;">团队成员</a>
+                <a href="research.html" class="" id="nav-research-en">Research</a>
+                <a href="research.html" class="" id="nav-research-cn" style="display: none;">研究方向</a>
+                <a href="publications.html" class="" id="nav-pub-en">Publications</a>
+                <a href="publications.html" class="" id="nav-pub-cn" style="display: none;">发表论文</a>
+                <a href="facilities.html" class="" id="nav-fac-en">Facilities</a>
+                <a href="facilities.html" class="" id="nav-fac-cn" style="display: none;">实验设备</a>
+                <a href="openings.html" class="active" id="nav-open-en">Openings!<span class="nav-badge"></span></a>
+                <a href="openings.html" class="active" id="nav-open-cn" style="display: none;">招聘信息<span class="nav-badge"></span></a>
+                <a href="contact.html" class="" id="nav-contact-en">Contact</a>
+                <a href="contact.html" class="" id="nav-contact-cn" style="display: none;">联系方式</a>
             </div>
-
             <div class="lang-switch">
                 <button class="lang-btn active" id="en-btn">English</button>
                 <button class="lang-btn" id="cn-btn">中文</button>
@@ -190,18 +186,19 @@
         </div>
     </div>
 
+
     <div class="container">
         <div class="card">
             <h3 class="page-title" id="about-title-en">About Us</h3>
             <h3 class="page-title" id="about-title-cn" style="display: none;">关于我们</h3>
 
             <div class="intro-text" id="intro-en">
-                Our research group works at the intersection of nano-device engineering and photonic physics, including but not limited to silicon/silicon nitride/lithium niobate integrated photonic chips, III-V semiconductor lasers, condensed-matter physics, nano-optomechanics and nano-acoustics, topological physics, and metamaterials. <br><br>  
+                Our research group works at the intersection of nano-device engineering and photonic physics, including but not limited to silicon/silicon nitride/lithium niobate integrated photonic chips, III-V semiconductor lasers, condensed-matter physics, nano-optomechanics and nano-acoustics, topological physics, and metamaterials. <br><br>
 
                 We believe research is all about exploration and discovery. Thus, we're building a supportive group where everyone can grow — and have fun doing it. <strong>We hope every member can enjoy the joy of exploring the unknown, unleash creativity in an open and free atmosphere, and eventually grow into an independent and competent researcher</strong>. If you are interested in our research, feel free to contact the PI directly at <a href="mailto:jwma@hku.hk" class="contact-email">jwma@hku.hk</a>. You will typically receive a reply within 3 business days.
             </div>
             <div class="intro-text" id="intro-cn" style="display: none;">
-                我们对纳米器件工程与光子物理交叉领域的许多前沿课题都感兴趣，包括但不限于硅/氮化硅/铌酸锂集成光子芯片、三五族半导体激光器、凝聚态物理、超材料、纳米光力学和纳米声学、拓扑物理等方向。<br><br>  
+                我们对纳米器件工程与光子物理交叉领域的许多前沿课题都感兴趣，包括但不限于硅/氮化硅/铌酸锂集成光子芯片、三五族半导体激光器、凝聚态物理、超材料、纳米光力学和纳米声学、拓扑物理等方向。<br><br>
 
                 科研的本质是纯粹的探索与创造，因此我们致力于维持一个包容互助的团队环境。<strong>我们希望让每一位成员都能纯粹地享受探索未知的乐趣，在开放自由的氛围中释放创造力，最终成长为独当一面的科研工作者</strong>。如果你对我们的研究感兴趣，欢迎直接联系PI: <a href="mailto:jwma@hku.hk" class="contact-email">jwma@hku.hk</a>，你一般会在3个工作日内收到回复。
             </div>
@@ -215,7 +212,7 @@
                 <div class="position-card">
                         <div class="position-name" id="postdoc-name-en">Postdoctoral Fellow</div>
                         <div class="position-name" id="postdoc-name-cn" style="display: none;">博士后研究员</div>
-                        
+
                         <div class="position-desc" id="postdoc-desc-en">
                             We currently have 2-3 openings for postdoctoral fellows in the areas of integrated photonics, quantum optics, and meta-materials.<br><br>
                             <strong>Collaboration Philosophy</strong>:<br>
@@ -245,7 +242,7 @@
                     <div class="position-card">
                         <div class="position-name" id="phd-name-en">Master/Ph.D. Student</div>
                         <div class="position-name" id="phd-name-cn" style="display: none;">硕士/博士研究生</div>
-                        
+
                         <div class="position-desc" id="phd-desc-en">
                             We always welcome motivated students with genuine curiosity in photonics and physics. For details, please refer to the <a href="https://gs.sustech.edu.cn/#/admission/index">University Admissions Website</a>.<br><br>
                             <strong>Mentoring Philosophy</strong>:<br>
@@ -277,7 +274,7 @@
                     <div class="position-card">
                         <div class="position-name" id="ra-name-en">Research Assistant</div>
                         <div class="position-name" id="ra-name-cn" style="display: none;">科研助理</div>
-                        
+
                         <div class="position-desc" id="ra-desc-en">
                             If you are interested in hands-on research experience in photonics and nanotechnology, or wish to gain a deeper understanding of our research group, feel free to contact us!<br><br>
                             • Flexible start date to accommodate your schedule<br>
@@ -298,46 +295,15 @@
         </div>
     </div>
 
+
     <div class="footer">
-        <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
-        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
+        <p id="footer-en"><strong>Jingwen Ma &copy; 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma &copy; 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
     </div>
 
+    <script src="common.js"></script>
     <script>
-        const currentLang = localStorage.getItem('labLang') || 'en';
-        
-        const enBtn = document.getElementById('en-btn');
-        const cnBtn = document.getElementById('cn-btn');
-        const enElements = document.querySelectorAll('[id$="-en"]');
-        const cnElements = document.querySelectorAll('[id$="-cn"]');
 
-        function initLanguage(lang) {
-            if (lang === 'cn') {
-                cnBtn.classList.add('active');
-                enBtn.classList.remove('active');
-                cnElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-                document.documentElement.lang = 'zh-CN';
-            } else {
-                enBtn.classList.add('active');
-                cnBtn.classList.remove('active');
-                enElements.forEach(el => el.style.display = 'block');
-                cnElements.forEach(el => el.style.display = 'none');
-                document.documentElement.lang = 'en';
-            }
-        }
-
-        initLanguage(currentLang);
-
-        enBtn.addEventListener('click', () => {
-            localStorage.setItem('labLang', 'en');
-            initLanguage('en');
-        });
-
-        cnBtn.addEventListener('click', () => {
-            localStorage.setItem('labLang', 'cn');
-            initLanguage('cn');
-        });
     </script>
 </body>
 </html>

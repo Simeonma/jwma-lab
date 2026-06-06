@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,42 +6,8 @@
     <title>Research - jwma Lab</title>
     <link rel="icon" type="image/png" href="images/home/logo.png">
     <link rel="stylesheet" href="common.css">
+
     <style>
-        .banner {
-            background-image: url('images/home/home.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            position: relative;
-            color: #ffffff;
-            padding: 72px 24px;
-        }
-
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(16, 42, 67, 0.6);
-            z-index: 1;
-        }
-
-        .banner-desc {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            font-size: 18px;
-            line-height: 2.1;
-            word-spacing: 2px;
-        }
-
-        .banner-desc strong {
-            color: #93C5FD;
-            font-weight: 600;
-        }
 
         .card h3 {
             font-size: 28px;
@@ -62,8 +28,8 @@
         .research-item {
             margin-bottom: 0;
             display: flex;
-            flex-direction: row; 
-            align-items: flex-start; 
+            flex-direction: row;
+            align-items: flex-start;
             height: 100%;
             padding: 24px;
             border: 1px solid #F1F5F9;
@@ -80,7 +46,7 @@
         }
 
         .research-item::before {
-            content: ''; 
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
@@ -89,7 +55,7 @@
             background: linear-gradient(90deg, #3B82F6, #1E3A8A);
             opacity: 0;
             transition: opacity 0.3s ease;
-            z-index: 10; 
+            z-index: 10;
         }
 
         .research-item:hover {
@@ -117,7 +83,7 @@
             font-size: 20px;
             color: #1E3A8A;
             margin-bottom: 8px;
-            text-align: center; /* 新增：标题居�?*/
+            text-align: center;
         }
 
         .research-item p {
@@ -129,37 +95,31 @@
         }
 
         @media (max-width: 768px) {
-            .banner { padding: 56px 20px; }
-            .banner-desc { font-size: 16px; }
             .card h3 { font-size: 24px; }
             .research-container {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
-
             .research-item {
                 flex-direction: column;
                 padding: 16px;
             }
-
-            .research-img { 
+            .research-img {
                 width: 100%;
-                height: 220px; 
+                height: 220px;
                 margin-right: 0;
                 margin-bottom: 16px;
             }
-            
             .research-item h4 { font-size: 22px; margin-bottom: 8px; }
             .research-item p { font-size: 16px; }
         }
 
         @media (max-width: 480px) {
-            .banner { padding: 48px 16px; }
             .research-img { height: 180px; }
         }
+
     </style>
 </head>
-
 <body>
     <div class="header">
         <div class="nav-wrap">
@@ -168,25 +128,25 @@
                 <span class="logo-text">MacroQuantop<br>Lab</span>
             </a>
             <a href="index.html" class="lab-logo" id="lab-logo-cn" style="display: none;">
-                <img src="images/home/logo.png" alt="实验室Logo" class="logo-img">
+                <img src="images/home/logo.png" alt="Lab Logo" class="logo-img">
                 <span class="logo-text">MacroQuantop<br>Lab</span>
             </a>
-
             <div class="nav">
-                <a href="index.html" id="nav-home-en">Home</a>
-                <a href="index.html" id="nav-home-cn" style="display: none;">首页</a>
-                <a href="people.html" id="nav-member-en">People</a>
-                <a href="people.html" id="nav-member-cn" style="display: none;">团队成员</a>
+                <a href="index.html" class="" id="nav-home-en">Home</a>
+                <a href="index.html" class="" id="nav-home-cn" style="display: none;">首页</a>
+                <a href="people.html" class="" id="nav-people-en">People</a>
+                <a href="people.html" class="" id="nav-people-cn" style="display: none;">团队成员</a>
                 <a href="research.html" class="active" id="nav-research-en">Research</a>
                 <a href="research.html" class="active" id="nav-research-cn" style="display: none;">研究方向</a>
-                <a href="publications.html" id="nav-pub-en">Publications</a>
-                <a href="publications.html" id="nav-pub-cn" style="display: none;">发表论文</a>
-                <a href="facilities.html" id="nav-fac-en">Facilities</a>
-                <a href="facilities.html" id="nav-fac-cn" style="display: none;">实验设备</a>
-                <a href="openings.html" id="nav-open-en">Openings!</a>
-                <a href="openings.html" id="nav-open-cn" style="display: none;">招聘信息</a>
+                <a href="publications.html" class="" id="nav-pub-en">Publications</a>
+                <a href="publications.html" class="" id="nav-pub-cn" style="display: none;">发表论文</a>
+                <a href="facilities.html" class="" id="nav-fac-en">Facilities</a>
+                <a href="facilities.html" class="" id="nav-fac-cn" style="display: none;">实验设备</a>
+                <a href="openings.html" class="" id="nav-open-en">Openings!<span class="nav-badge"></span></a>
+                <a href="openings.html" class="" id="nav-open-cn" style="display: none;">招聘信息<span class="nav-badge"></span></a>
+                <a href="contact.html" class="" id="nav-contact-en">Contact</a>
+                <a href="contact.html" class="" id="nav-contact-cn" style="display: none;">联系方式</a>
             </div>
-
             <div class="lang-switch">
                 <button class="lang-btn active" id="en-btn">English</button>
                 <button class="lang-btn" id="cn-btn">中文</button>
@@ -194,13 +154,13 @@
         </div>
     </div>
 
+
     <div class="container">
         <div class="card">
             <h3 id="research-title-en">Research Interests</h3>
             <h3 id="research-title-cn" style="display: none;">研究兴趣</h3>
-            
+
             <div class="research-container">
-                <!-- 研究方向1 -->
                 <div class="research-item">
                     <img src="images/research/research3.jpg" alt="Integrated photonic chips" class="research-img">
                     <div class="research-content">
@@ -211,7 +171,6 @@
                     </div>
                 </div>
 
-                <!-- 研究方向2 -->
                 <div class="research-item">
                     <img src="images/research/research1.jpg" alt="Photonic-crystal lasers" class="research-img">
                     <div class="research-content">
@@ -222,7 +181,6 @@
                     </div>
                 </div>
 
-                <!-- 研究方向3 -->
                 <div class="research-item">
                     <img src="images/research/research5.jpg" alt="Quantum light-matter hybrids" class="research-img">
                     <div class="research-content">
@@ -233,7 +191,6 @@
                     </div>
                 </div>
 
-                <!-- 研究方向4 -->
                 <div class="research-item">
                     <img src="images/research/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
                     <div class="research-content">
@@ -243,51 +200,19 @@
                         <p id="item4-desc-cn" style="display: none;">我们开发具备拓扑非平庸特性的先进纳米机电系统（NEMS），聚焦实现高鲁棒性与超高频率的器件性能，为下一代射频（RF）信号处理、超灵敏传感与量子声子学领域提供新方案。</p>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 
+
     <div class="footer">
-        <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
-        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
+        <p id="footer-en"><strong>Jingwen Ma &copy; 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma &copy; 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
     </div>
 
+    <script src="common.js"></script>
     <script>
-        const currentLang = localStorage.getItem('labLang') || 'en';
-        const enBtn = document.getElementById('en-btn');
-        const cnBtn = document.getElementById('cn-btn');
-        const enElements = document.querySelectorAll('[id$="-en"]');
-        const cnElements = document.querySelectorAll('[id$="-cn"]');
 
-        function initLanguage(lang) {
-            if (lang === 'cn') {
-                cnBtn.classList.add('active');
-                enBtn.classList.remove('active');
-                cnElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-                document.documentElement.lang = 'zh-CN';
-            } else {
-                enBtn.classList.add('active');
-                cnBtn.classList.remove('active');
-                enElements.forEach(el => el.style.display = 'block');
-                cnElements.forEach(el => el.style.display = 'none');
-                document.documentElement.lang = 'en';
-            }
-        }
-
-        initLanguage(currentLang);
-
-        enBtn.addEventListener('click', () => {
-            localStorage.setItem('labLang', 'en');
-            initLanguage('en');
-        });
-
-        cnBtn.addEventListener('click', () => {
-            localStorage.setItem('labLang', 'cn');
-            initLanguage('cn');
-        });
     </script>
 </body>
 </html>

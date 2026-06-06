@@ -6,7 +6,9 @@
     <title>Facilities - jwma Lab</title>
     <link rel="icon" type="image/png" href="images/home/logo.png">
     <link rel="stylesheet" href="common.css">
+
     <style>
+
         .page-title {
             font-size: 28px;
             color: #1E3A8A;
@@ -59,7 +61,7 @@
             background: linear-gradient(90deg, #3B82F6, #1E3A8A);
             opacity: 0;
             transition: opacity 0.3s ease;
-            z-index: 10; 
+            z-index: 10;
         }
 
         .facility-card:hover {
@@ -71,7 +73,6 @@
         .facility-card:hover::before {
             opacity: 1;
         }
-
 
         .facility-img {
             width: 80%;
@@ -119,48 +120,26 @@
         }
 
         @media (max-width: 768px) {
-            .page-title { 
-                font-size: 24px; 
-            }
-            
-            .section-subtitle { 
-                font-size: 20px; 
-            }
-            
-            .facility-img {
-                width: 90%;
-                max-width: 90%;
-            }
-            
-            .facility-grid { 
-                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-                gap: 24px; 
-            }
+            .page-title { font-size: 24px; }
+            .section-subtitle { font-size: 20px; }
+            .facility-img { width: 90%; max-width: 90%; }
+            .facility-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
         }
 
         @media (max-width: 600px) {
-            .facility-grid { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .facility-img {
-                width: 95%;
-                max-width: 95%;
-            }
+            .facility-grid { grid-template-columns: 1fr; }
+            .facility-img { width: 95%; max-width: 95%; }
+            .facility-info { padding: 16px; }
+            .facility-desc { word-break: break-word; hyphens: auto; }
         }
 
         @media (max-width: 375px) {
-            .facility-name { 
-                font-size: 17px; 
-            }
-            
-            .facility-desc { 
-                font-size: 14px; 
-            }
+            .facility-name { font-size: 17px; }
+            .facility-desc { font-size: 14px; word-break: break-word; }
         }
+
     </style>
 </head>
-
 <body>
     <div class="header">
         <div class="nav-wrap">
@@ -169,25 +148,25 @@
                 <span class="logo-text">MacroQuantop<br>Lab</span>
             </a>
             <a href="index.html" class="lab-logo" id="lab-logo-cn" style="display: none;">
-                <img src="images/home/logo.png" alt="实验室Logo" class="logo-img">
+                <img src="images/home/logo.png" alt="Lab Logo" class="logo-img">
                 <span class="logo-text">MacroQuantop<br>Lab</span>
             </a>
-
             <div class="nav">
-                <a href="index.html" id="nav-home-en">Home</a>
-                <a href="index.html" id="nav-home-cn" style="display: none;">首页</a>
-                <a href="people.html" id="nav-people-en">People</a>
-                <a href="people.html" id="nav-people-cn" style="display: none;">团队成员</a>
-                <a href="research.html" id="nav-research-en">Research</a>
-                <a href="research.html" id="nav-research-cn" style="display: none;">研究方向</a>
-                <a href="publications.html" id="nav-pub-en">Publications</a>
-                <a href="publications.html" id="nav-pub-cn" style="display: none;">发表论文</a>
+                <a href="index.html" class="" id="nav-home-en">Home</a>
+                <a href="index.html" class="" id="nav-home-cn" style="display: none;">首页</a>
+                <a href="people.html" class="" id="nav-people-en">People</a>
+                <a href="people.html" class="" id="nav-people-cn" style="display: none;">团队成员</a>
+                <a href="research.html" class="" id="nav-research-en">Research</a>
+                <a href="research.html" class="" id="nav-research-cn" style="display: none;">研究方向</a>
+                <a href="publications.html" class="" id="nav-pub-en">Publications</a>
+                <a href="publications.html" class="" id="nav-pub-cn" style="display: none;">发表论文</a>
                 <a href="facilities.html" class="active" id="nav-fac-en">Facilities</a>
                 <a href="facilities.html" class="active" id="nav-fac-cn" style="display: none;">实验设备</a>
-                <a href="openings.html" id="nav-open-en">Openings!</a>
-                <a href="openings.html" id="nav-open-cn" style="display: none;">招聘信息</a>
+                <a href="openings.html" class="" id="nav-open-en">Openings!<span class="nav-badge"></span></a>
+                <a href="openings.html" class="" id="nav-open-cn" style="display: none;">招聘信息<span class="nav-badge"></span></a>
+                <a href="contact.html" class="" id="nav-contact-en">Contact</a>
+                <a href="contact.html" class="" id="nav-contact-cn" style="display: none;">联系方式</a>
             </div>
-
             <div class="lang-switch">
                 <button class="lang-btn active" id="en-btn">English</button>
                 <button class="lang-btn" id="cn-btn">中文</button>
@@ -195,12 +174,13 @@
         </div>
     </div>
 
+
     <div class="container">
         <div class="card">
             <div class="facility-section">
                 <h3 class="page-title" id="nano-title-en">Nano-Fabrication</h3>
                 <h3 class="page-title" id="nano-title-cn" style="display: none;">微纳加工平台</h3>
-                
+
                 <div class="facility-grid nano-fabrication-grid">
                     <div class="facility-card">
                         <div class="facility-img">
@@ -209,7 +189,7 @@
                         <div class="facility-info">
                             <div class="facility-name" id="nano-name-en">SUSTech University Cleanroom</div>
                             <div class="facility-name" id="nano-name-cn" style="display: none;">南科大分析检测中心</div>
-                            
+
                             <div class="facility-desc" id="nano-desc-en">
                                 Most of the nanofabrication in our research can be performed in the SUSTech University Cleanroom. Key capabilities include electron-beam lithography, photolithography, PECVD, LPCVD, ALD, ICP, and RIE. For more details, please visit <a href="https://crf.sustech.edu.cn/platform/weina" target="_blank">the official website</a>.
                             </div>
@@ -224,13 +204,13 @@
             <div class="facility-section">
                 <h3 class="page-title" id="opto-title-en">Optoelectronic Characterization</h3>
                 <h3 class="page-title" id="opto-title-cn" style="display: none;">光电表征平台</h3>
-                
+
                 <div class="facility-grid">
                     <div class="facility-card">
                         <div class="facility-info">
                             <div class="facility-name" id="chip-name-en">Photonic chip testing system</div>
                             <div class="facility-name" id="chip-name-cn" style="display: none;">光子芯片测试系统</div>
-                            
+
                             <div class="facility-desc" id="chip-desc-en">
                                 For characterizing integrated photonic devices and optoelectronic chips for various applications, including optical signal processing, photonic computing, entangled photon-pair generation, and integrated lidars. Key facilities include:<br>
                                 • Wavelength tunable infrared lasers<br>
@@ -256,7 +236,7 @@
                         <div class="facility-info">
                             <div class="facility-name" id="meta-name-en">Meta-surface and quantum matter characterization</div>
                             <div class="facility-name" id="meta-name-cn" style="display: none;">超表面与量子物态表征系统</div>
-                            
+
                             <div class="facility-desc" id="meta-desc-en">
                                 For characterizing photonic nano-structures, quantum materials, and hybrid light-matter quantum states. The system enables full control over nearly all degrees of freedom of photons, with ultrafast time resolution of 100 fs.<br>
                                 Key facilities include:<br>
@@ -269,8 +249,8 @@
                                 用于表征光子纳米结构、量子材料及光-物质杂化量子态。该系统可实现对光子几乎所有自由度的完全调控，时间分辨率达100飞秒。<br>
                                 核心设备包括:<br>
                                 • 定制化角分辨显微镜<br>
-                                • 瞬态泵?探测系统<br>
-                                • 高分辨率光谱仪及单光子探测系<br>
+                                • 瞬态泵-探测系统<br>
+                                • 高分辨率光谱仪及单光子探测系统<br>
                                 • 压电扫描台、锁相放大器、低温恒温器
                             </div>
                         </div>
@@ -280,19 +260,19 @@
                         <div class="facility-info">
                             <div class="facility-name" id="laser-name-en">III-V semiconductor laser characterization</div>
                             <div class="facility-name" id="laser-name-cn" style="display: none;">III-V族半导体激光器表征系统</div>
-                            
+
                             <div class="facility-desc" id="laser-desc-en">
                                 For characterizing optical/electrical pumped semiconductor lasers at communication bands. Key facilities include:<br>
                                 • Pump lasers (high power ns laser)<br>
                                 • High-power electrical source<br>
                                 • Infrared spectrometer (Andor Kymera + iDus CCD)<br>
-                                • Infrared CMOS camera (Hamamusu)<br>
+                                • Infrared CMOS camera (Hamamatsu)<br>
                                 • g2 measurement system
                             </div>
                             <div class="facility-desc" id="laser-desc-cn" style="display: none;">
                                 用于表征通信波段的光泵浦/电泵浦半导体激光器。核心设备包括：<br>
                                 • 泵浦激光器（高功率纳秒激光器）<br>
-                                • 高功率电信号<br>
+                                • 高功率电信号源<br>
                                 • 红外光谱仪（Andor Kymera + iDus CCD）<br>
                                 • 红外CMOS相机（滨松）<br>
                                 • g2测量系统
@@ -304,7 +284,7 @@
                         <div class="facility-info">
                             <div class="facility-name" id="phonon-name-en">Nano-mechanics and on-chip phonon characterization</div>
                             <div class="facility-name" id="phonon-name-cn" style="display: none;">纳米力学与片上声子表征系统</div>
-                            
+
                             <div class="facility-desc" id="phonon-desc-en">
                                 Under construction...
                             </div>
@@ -318,46 +298,15 @@
         </div>
     </div>
 
+
     <div class="footer">
-        <p id="footer-en"><strong>Jingwen Ma © 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
-        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma © 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
+        <p id="footer-en"><strong>Jingwen Ma &copy; 2026</strong> | Department of Electrical and Electronic Engineering, Southern University of Science and Technology | Shenzhen, China</p>
+        <p id="footer-cn" style="display: none;"><strong>Jingwen Ma &copy; 2026</strong> | 南方科技大学电子与电气工程系 | 中国・深圳</p>
     </div>
 
+    <script src="common.js"></script>
     <script>
-        const currentLang = localStorage.getItem('labLang') || 'en';
-        
-        const enBtn = document.getElementById('en-btn');
-        const cnBtn = document.getElementById('cn-btn');
-        const enElements = document.querySelectorAll('[id$="-en"]');
-        const cnElements = document.querySelectorAll('[id$="-cn"]');
 
-        function initLanguage(lang) {
-            if (lang === 'cn') {
-                cnBtn.classList.add('active');
-                enBtn.classList.remove('active');
-                cnElements.forEach(el => el.style.display = 'block');
-                enElements.forEach(el => el.style.display = 'none');
-                document.documentElement.lang = 'zh-CN';
-            } else {
-                enBtn.classList.add('active');
-                cnBtn.classList.remove('active');
-                enElements.forEach(el => el.style.display = 'block');
-                cnElements.forEach(el => el.style.display = 'none');
-                document.documentElement.lang = 'en';
-            }
-        }
-
-        initLanguage(currentLang);
-
-        enBtn.addEventListener('click', () => {
-            localStorage.setItem('labLang', 'en');
-            initLanguage('en');
-        });
-
-        cnBtn.addEventListener('click', () => {
-            localStorage.setItem('labLang', 'cn');
-            initLanguage('cn');
-        });
     </script>
 </body>
 </html>
