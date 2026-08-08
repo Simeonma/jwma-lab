@@ -164,7 +164,7 @@
             transition: all 0.3s ease;
             display: block !important;
             white-space: normal !important;
-            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
             line-height: 1.6;
             font-size: 16px;
             overflow-y: auto;
@@ -738,9 +738,8 @@
     </div>
 
     <script src="common.js"></script>
-    <script>
-
-        function toggleYear(el) {
+        <script>
+function toggleYear(el) {
             var group = el.closest('.year-group');
             group.classList.toggle('collapsed');
             el.classList.toggle('collapsed');
@@ -749,7 +748,6 @@
         function togglePubDesc(el) {
             el.classList.toggle('show-desc');
         }
-
     </script>
 </body>
 </html>

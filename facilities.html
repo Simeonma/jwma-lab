@@ -10,25 +10,11 @@
     <style>
 
         .page-title {
-            font-size: 28px;
-            color: #1E3A8A;
             margin-bottom: 40px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #E2E8F0;
-            font-weight: 700;
         }
 
         .facility-section {
             margin-bottom: 56px;
-        }
-
-        .section-subtitle {
-            font-size: 22px;
-            color: #1E3A8A;
-            margin-bottom: 24px;
-            padding-left: 8px;
-            border-left: 4px solid #3B82F6;
-            font-weight: 600;
         }
 
         .facility-grid {
@@ -46,32 +32,6 @@
             background: #ffffff;
             border: 1px solid #F1F5F9;
             border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.2s ease;
-            position: relative;
-        }
-
-        .facility-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #3B82F6, #1E3A8A);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-        }
-
-        .facility-card:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-color: #E2E8F0;
-            transform: translateY(-4px);
-        }
-
-        .facility-card:hover::before {
-            opacity: 1;
         }
 
         .facility-img {
@@ -182,7 +142,7 @@
                 <h3 class="page-title" id="nano-title-cn" style="display: none;">微纳加工平台</h3>
 
                 <div class="facility-grid nano-fabrication-grid">
-                    <div class="facility-card">
+                    <div class="facility-card hover-card">
                         <div class="facility-img">
                             <img src="images/facility/nano-fabrication.png" alt="nano-fabrication">
                         </div>
@@ -206,7 +166,7 @@
                 <h3 class="page-title" id="opto-title-cn" style="display: none;">光电表征平台</h3>
 
                 <div class="facility-grid">
-                    <div class="facility-card">
+                    <div class="facility-card hover-card">
                         <div class="facility-info">
                             <div class="facility-name" id="chip-name-en">Photonic chip testing system</div>
                             <div class="facility-name" id="chip-name-cn" style="display: none;">光子芯片测试系统</div>
@@ -232,7 +192,7 @@
                         </div>
                     </div>
 
-                    <div class="facility-card">
+                    <div class="facility-card hover-card">
                         <div class="facility-info">
                             <div class="facility-name" id="meta-name-en">Meta-surface and quantum matter characterization</div>
                             <div class="facility-name" id="meta-name-cn" style="display: none;">超表面与量子物态表征系统</div>
@@ -256,7 +216,7 @@
                         </div>
                     </div>
 
-                    <div class="facility-card">
+                    <div class="facility-card hover-card">
                         <div class="facility-info">
                             <div class="facility-name" id="laser-name-en">III-V semiconductor laser characterization</div>
                             <div class="facility-name" id="laser-name-cn" style="display: none;">III-V族半导体激光器表征系统</div>
@@ -305,8 +265,6 @@
     </div>
 
     <script src="common.js"></script>
-    <script>
-
-    </script>
+    
 </body>
 </html>

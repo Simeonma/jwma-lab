@@ -9,15 +9,6 @@
 
     <style>
 
-        .card h3 {
-            font-size: 28px;
-            color: #1E3A8A;
-            margin-bottom: 36px;
-            padding-bottom: 16px;
-            border-bottom: 2px solid #E2E8F0;
-            text-align: center;
-        }
-
         .research-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -34,38 +25,12 @@
             padding: 24px;
             border: 1px solid #F1F5F9;
             border-radius: 12px;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
         }
 
         .research-content {
             display: flex;
             flex-direction: column;
             flex-grow: 1;
-        }
-
-        .research-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #3B82F6, #1E3A8A);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 10;
-        }
-
-        .research-item:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-color: #E2E8F0;
-            transform: translateY(-4px);
-        }
-
-        .research-item:hover::before {
-            opacity: 1;
         }
 
         .research-img {
@@ -161,7 +126,7 @@
             <h3 id="research-title-cn" style="display: none;">研究兴趣</h3>
 
             <div class="research-container">
-                <div class="research-item">
+                <div class="research-item hover-card">
                     <img src="images/research/research3.jpg" alt="Integrated photonic chips" class="research-img">
                     <div class="research-content">
                         <h4 id="item1-title-en">Photonic integrated circuits</h4>
@@ -171,7 +136,7 @@
                     </div>
                 </div>
 
-                <div class="research-item">
+                <div class="research-item hover-card">
                     <img src="images/research/research1.jpg" alt="Photonic-crystal lasers" class="research-img">
                     <div class="research-content">
                         <h4 id="item2-title-en">Photonic-crystal surface-emitting lasers</h4>
@@ -181,7 +146,7 @@
                     </div>
                 </div>
 
-                <div class="research-item">
+                <div class="research-item hover-card">
                     <img src="images/research/research5.jpg" alt="Quantum light-matter hybrids" class="research-img">
                     <div class="research-content">
                         <h4 id="item3-title-en">Quantum materials and light-matter interaction</h4>
@@ -191,7 +156,7 @@
                     </div>
                 </div>
 
-                <div class="research-item">
+                <div class="research-item hover-card">
                     <img src="images/research/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
                     <div class="research-content">
                         <h4 id="item4-title-en">Nano-electro-mechanical chips</h4>
@@ -211,8 +176,6 @@
     </div>
 
     <script src="common.js"></script>
-    <script>
-
-    </script>
+    
 </body>
 </html>

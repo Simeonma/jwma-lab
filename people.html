@@ -20,10 +20,6 @@
             position: relative;
         }
 
-        .section-title::after {
-            content: none;
-        }
-
         .pi-card {
             display: flex;
             gap: 24px;
@@ -84,15 +80,6 @@
             color: #3B82F6;
         }
 
-        .members-category {
-            font-size: 22px;
-            color: #1E3A8A;
-            margin: 48px 0 20px 0;
-            font-weight: 600;
-            padding-left: 8px;
-            border-left: 4px solid #3B82F6;
-        }
-
         .members-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -107,31 +94,6 @@
             border: 1px solid #F1F5F9;
             border-radius: 12px;
             padding: 20px 16px;
-            transition: all 0.2s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .member-card:hover {
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-            border-color: #E2E8F0;
-            transform: translateY(-4px);
-        }
-
-        .member-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #3B82F6, #1E3A8A);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .member-card:hover::before {
-            opacity: 1;
         }
 
         .member-avatar {
@@ -198,25 +160,6 @@
             margin-right: 4px;
         }
 
-        .alumni-card {
-            opacity: 0.85;
-        }
-
-        .alumni-card .member-info::after {
-            content: 'Alumni';
-            display: inline-block;
-            font-size: 12px;
-            color: #64748B;
-            background: #F1F5F9;
-            padding: 2px 8px;
-            border-radius: 12px;
-            margin-top: 8px;
-        }
-
-        .alumni-card .member-info.cn::after {
-            content: '校友';
-        }
-
         .join-card {
             border: 1px solid #F1F5F9;
         }
@@ -255,7 +198,6 @@
 
         @media (max-width: 768px) {
             .section-title { font-size: 24px; }
-            .members-category { font-size: 20px; }
             .pi-card { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
             .pi-avatar { width: 180px; height: 220px; }
             .pi-info .bio { text-align: center; }
@@ -311,7 +253,7 @@
     <div class="container">
         <div class="card">
             <h3 class="section-title" id="pi-title-en">Principal Investigator</h3>
-            <h3 class="section-title" id="pi-title-cn" style="display: none;">Principal Investigator</h3>
+            <h3 class="section-title" id="pi-title-cn" style="display: none;">课题组负责人</h3>
 
             <div class="pi-card">
                 <div class="pi-avatar">
@@ -333,11 +275,11 @@
                 </div>
             </div>
 
-            <h3 class="section-title" id="phd-title-en">Members</h3>
-            <h3 class="section-title" id="phd-title-cn" style="display: none;">Members</h3>
+            <h3 class="section-title" id="members-title-en">Members</h3>
+            <h3 class="section-title" id="members-title-cn" style="display: none;">团队成员</h3>
 
             <div class="members-grid">
-                <div class="member-card">
+                <div class="member-card hover-card">
                     <div class="member-avatar">
                         <img src="images/members/Han Zhang.jpg" alt="Han Zhang">
                     </div>
@@ -350,7 +292,7 @@
                         <div class="research-area" id="hz-bio-cn" style="display: none;">本科毕业于华南理工大学，现于新加坡国立大学攻读硕士学位，研究兴趣为光子晶体激光器。</div>
                     </div>
                 </div>
-                <div class="member-card">
+                <div class="member-card hover-card">
                     <div class="member-avatar">
                         <img src="images/members/Yikang Peng.jpg" alt="Yikang Peng">
                     </div>
@@ -363,7 +305,7 @@
                         <div class="research-area" id="yp-bio-cn" style="display: none;">即将毕业于中山大学，研究兴趣为光计算与光子芯片。</div>
                     </div>
                 </div>
-                <div class="member-card">
+                <div class="member-card hover-card">
                     <div class="member-avatar">
                         <img src="images/members/Yidan Zhu.jpg" alt="Yidan Zhu">
                     </div>
@@ -376,7 +318,7 @@
                         <div class="research-area" id="yz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为拓扑光子晶体。</div>
                     </div>
                 </div>
-                <div class="member-card">
+                <div class="member-card hover-card">
                     <div class="member-avatar">
                         <img src="images/members/Jiaheng Zheng.jpg" alt="Jiaheng Zheng">
                     </div>
@@ -389,7 +331,7 @@
                         <div class="research-area" id="jz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为光子芯片。</div>
                     </div>
                 </div>
-                <div class="member-card join-card">
+                <div class="member-card join-card hover-card">
                     <div class="member-avatar placeholder">
                         <span>👥</span>
                     </div>
@@ -413,8 +355,6 @@
     </div>
 
     <script src="common.js"></script>
-    <script>
-
-    </script>
+    
 </body>
 </html>
