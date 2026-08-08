@@ -85,7 +85,7 @@ BODY = """
 
             <div class="research-container">
                 <div class="research-item hover-card">
-                    <img src="images/research/research3.jpg" alt="Integrated photonic chips" class="research-img">
+                    <img src="images/research/research3.jpg" alt="Integrated photonic chips" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="item1-title-en">Photonic integrated circuits</h4>
                         <h4 id="item1-title-cn" style="display: none;">集成光子芯片</h4>
@@ -95,7 +95,7 @@ BODY = """
                 </div>
 
                 <div class="research-item hover-card">
-                    <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="Photonic-crystal lasers" class="research-img">
+                    <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="Photonic-crystal lasers" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="item2-title-en">Photonic-crystal surface-emitting lasers</h4>
                         <h4 id="item2-title-cn" style="display: none;">光子晶体激光器</h4>
@@ -105,7 +105,7 @@ BODY = """
                 </div>
 
                 <div class="research-item hover-card">
-                    <img src="images/research/research5.png" alt="Quantum light-matter hybrids" class="research-img">
+                    <img src="images/research/research5.png" alt="Quantum light-matter hybrids" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="item3-title-en">Quantum materials and light-matter interaction</h4>
                         <h4 id="item3-title-cn" style="display: none;">量子材料及光-物质相互作用物理</h4>
@@ -115,7 +115,7 @@ BODY = """
                 </div>
 
                 <div class="research-item hover-card">
-                    <img src="images/research/research4.jpg" alt="Nano-electro-mechanical chips" class="research-img">
+                    <img src="images/research/research4.jpg" alt="Nano-electro-mechanical chips" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="item4-title-en">Nano-electro-mechanical chips</h4>
                         <h4 id="item4-title-cn" style="display: none;">纳米机电芯片</h4>

@@ -16,12 +16,8 @@
 
         enBtn.classList.toggle('active', showEn);
         cnBtn.classList.toggle('active', !showEn);
-        show.forEach(function(el) {
-            if (!el.classList.contains('carousel-desc')) el.style.display = 'block';
-        });
-        hide.forEach(function(el) {
-            if (!el.classList.contains('carousel-desc')) el.style.display = 'none';
-        });
+        show.forEach(function(el) { el.style.display = 'block'; });
+        hide.forEach(function(el) { el.style.display = 'none'; });
         document.documentElement.lang = showEn ? 'en' : 'zh-CN';
         document.title = showEn ? enTitle : cnTitle;
     }

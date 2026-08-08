@@ -102,7 +102,7 @@ BODY = """
                 <div class="facility-grid nano-fabrication-grid">
                     <div class="facility-card hover-card">
                         <div class="facility-img">
-                            <img src="images/facility/nano-fabrication.jpg" alt="nano-fabrication">
+                            <img src="images/facility/nano-fabrication.jpg" alt="nano-fabrication" loading="lazy">
                         </div>
                         <div class="facility-info">
                             <div class="facility-name" id="nano-name-en">SUSTech University Cleanroom</div>

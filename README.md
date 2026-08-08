@@ -34,7 +34,9 @@ git commit -m "更新说明"
 git push origin main
 ```
 
-推送后 GitHub Pages 会自动更新线上站点。
+推送后 GitHub Actions（`.github/workflows/build.yml`）会自动重新构建并提交生成的 HTML，随后 GitHub Pages 自动更新线上站点。
+
+> 如果推送前已在本地运行 `build.py`，CI 产生的输出与本地一致，不会重复提交；也可跳过本地构建，直接推送源码让 CI 完成构建。
 
 ## 常见维护操作
 

@@ -197,9 +197,16 @@ CSS = """
             width: 12px;
             height: 12px;
             border-radius: 50%;
+            border: none;
+            padding: 0;
             background-color: rgba(30, 58, 138, 0.6);
             cursor: pointer;
             transition: all 0.2s ease;
+        }
+
+        .indicator-dot:focus-visible {
+            outline: 2px solid #3B82F6;
+            outline-offset: 2px;
         }
 
         .indicator-dot.active {
@@ -326,12 +333,18 @@ BODY = """
             <div class="carousel-desc active" id="desc1-en">
                 <strong>Strong light-matter interactions:</strong> We made the first excitonic negative refraction — mediated by magnetic orders. Published in <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>.
             </div>
+            <div class="carousel-desc active" id="desc1-cn">
+                <strong>强光-物质相互作用：</strong>我们实现了首个由磁序调控的激子负折射，发表于 <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>。
+            </div>
 
             <div class="carousel-slide" data-index="1">
                 <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Topological nanomechanics" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc2-en">
                 <strong>Nano-electro-mechanical chips:</strong> We made the first topological chip with auxiliary orbital degree of freedom. Published in <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>.
+            </div>
+            <div class="carousel-desc" id="desc2-cn">
+                <strong>纳米机电芯片：</strong>我们制备了首个具备辅助轨道自由度的拓扑芯片，发表于 <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>。
             </div>
 
             <div class="carousel-slide" data-index="2">
@@ -340,12 +353,18 @@ BODY = """
             <div class="carousel-desc" id="desc3-en">
                 <strong>III-V semiconductor lasers:</strong> We built photonic-crystal micro-cavity lasers with Dirac-vortex states. Published in <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>.
             </div>
+            <div class="carousel-desc" id="desc3-cn">
+                <strong>III-V 族半导体激光器：</strong>我们构建了基于狄拉克涡旋态的光子晶体微腔激光器，发表于 <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>。
+            </div>
 
             <div class="carousel-slide" data-index="3">
                 <img src="images/publications/vortex_string_chiral_mode.jpg" alt="Vortex-string chiral modes" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc4-en">
                 <strong>Metamaterials:</strong> We realized vortex-string chiral modes in metamaterials. Published in <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>.
+            </div>
+            <div class="carousel-desc" id="desc4-cn">
+                <strong>超材料：</strong>我们在超材料中实现了涡旋弦手性模式，发表于 <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>。
             </div>
 
             <div class="carousel-slide" data-index="4">
@@ -354,17 +373,19 @@ BODY = """
             <div class="carousel-desc" id="desc5-en">
                 <strong>Photonic integrated circuits:</strong> We built photonic integrated circuits using valley kink states. Published in <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Laser &amp; Photonics Review</a> (cover article).
             </div>
+            <div class="carousel-desc" id="desc5-cn">
+                <strong>光子集成芯片：</strong>我们基于谷霍尔拓扑边缘态构建了光子集成芯片，发表于 <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Laser &amp; Photonics Review</a>（封面文章）。
+            </div>
 
-            <button class="carousel-btn prev-btn">&larr;</button>
-            <button class="carousel-btn next-btn">&rarr;</button>
+            <button class="carousel-btn prev-btn" aria-label="Previous slide">&larr;</button>
+            <button class="carousel-btn next-btn" aria-label="Next slide">&rarr;</button>
 
             <div class="carousel-indicators">
-                <div class="indicator-dot active" data-index="0"></div>
-                <div class="indicator-dot" data-index="1"></div>
-                <div class="indicator-dot" data-index="2"></div>
-                <div class="indicator-dot" data-index="3"></div>
-                <div class="indicator-dot" data-index="4"></div>
-
+                <button type="button" class="indicator-dot active" data-index="0" aria-label="Go to slide 1"></button>
+                <button type="button" class="indicator-dot" data-index="1" aria-label="Go to slide 2"></button>
+                <button type="button" class="indicator-dot" data-index="2" aria-label="Go to slide 3"></button>
+                <button type="button" class="indicator-dot" data-index="3" aria-label="Go to slide 4"></button>
+                <button type="button" class="indicator-dot" data-index="4" aria-label="Go to slide 5"></button>
             </div>
         </div>
     </div>
@@ -375,13 +396,8 @@ BODY = """
             <h3 id="news-title-cn" style="display: none;">动态</h3>
             <div class="news-item">
                 <span class="news-date">Aug 2026</span>
-                <span class="news-text" id="news3-en">We warmly welcome Yidan Zhu and Jiaheng Zheng to join our lab.</span>
-                <span class="news-text" id="news3-cn" style="display: none;">欢迎朱奕丹、郑家恒加入实验室。</span>
-            </div>
-            <div class="news-item">
-                <span class="news-date">Aug 2026</span>
-                <span class="news-text" id="news2-en">We warmly welcome Han Zhang and Yikang Peng to join our lab.</span>
-                <span class="news-text" id="news2-cn" style="display: none;">欢迎张涵、彭怡康加入实验室。</span>
+                <span class="news-text" id="news2-en">We warmly welcome Han Zhang, Yikang Peng, Yidan Zhu, and Jiaheng Zheng to join our lab.</span>
+                <span class="news-text" id="news2-cn" style="display: none;">欢迎张涵、彭怡康、朱奕丹、郑家恒加入实验室。</span>
             </div>
             <div class="news-item">
                 <span class="news-date">Jun 2026</span>
@@ -399,7 +415,7 @@ SCRIPT = """
         const nextBtn = document.querySelector('.next-btn');
         const descElements = document.querySelectorAll('.carousel-desc');
         let currentIndex = 0;
-        let carouselInterval;
+        let carouselInterval = null;
 
         function switchSlide(index) {
             slides.forEach(function(slide) { slide.classList.remove('active'); });
@@ -407,40 +423,43 @@ SCRIPT = """
             slides[index].classList.add('active');
             dots[index].classList.add('active');
 
-            descElements.forEach(function(desc) {
-                desc.classList.remove('active');
-                desc.classList.remove('show-desc');
-            });
+            descElements.forEach(function(desc) { desc.classList.remove('active', 'show-desc'); });
             document.getElementById('desc' + (index + 1) + '-en').classList.add('active');
+            document.getElementById('desc' + (index + 1) + '-cn').classList.add('active');
 
             currentIndex = index;
         }
 
-        function nextSlide() {
-            var newIndex = (currentIndex + 1) % slides.length;
-            switchSlide(newIndex);
-        }
+        function nextSlide() { switchSlide((currentIndex + 1) % slides.length); }
 
-        function prevSlide() {
-            var newIndex = (currentIndex - 1 + slides.length) % slides.length;
-            switchSlide(newIndex);
-        }
+        function prevSlide() { switchSlide((currentIndex - 1 + slides.length) % slides.length); }
 
         function startAutoCarousel() {
+            // 尊重系统“减少动态效果”设置：不自动轮播
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
             carouselInterval = setInterval(nextSlide, 3000);
         }
 
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
+        // 用户手动交互后停止自动轮播，避免打断浏览
+        function stopAutoCarousel() {
+            if (carouselInterval) {
+                clearInterval(carouselInterval);
+                carouselInterval = null;
+            }
+        }
+
+        nextBtn.addEventListener('click', function() { stopAutoCarousel(); nextSlide(); });
+        prevBtn.addEventListener('click', function() { stopAutoCarousel(); prevSlide(); });
         dots.forEach(function(dot, index) {
-            dot.addEventListener('click', function() { switchSlide(index); });
+            dot.addEventListener('click', function() { stopAutoCarousel(); switchSlide(index); });
         });
 
         // 移动端无悬停：点按图片切换说明文字的显示
         slides.forEach(function(slide) {
             slide.addEventListener('click', function() {
-                var activeDesc = document.querySelector('.carousel-desc.active');
-                if (activeDesc) activeDesc.classList.toggle('show-desc');
+                document.querySelectorAll('.carousel-desc.active').forEach(function(desc) {
+                    desc.classList.toggle('show-desc');
+                });
             });
         });
 
