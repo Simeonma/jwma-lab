@@ -1,0 +1,222 @@
+TITLE = {"en": "Openings - MacroPhotonic Lab", "cn": "招聘信息 - MacroPhotonic Lab"}
+NAV_ACTIVE = "openings"
+
+CSS = """
+        .page-title {
+            margin-bottom: 24px;
+        }
+
+        .intro-text {
+            font-size: 17px;
+            color: #475569;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            background: #F9FBFF;
+            padding: 24px;
+            border-radius: 12px;
+        }
+
+        .opening-section {
+            margin-bottom: 64px;
+        }
+
+        .section-subtitle {
+            margin-bottom: 32px;
+            padding-left: 12px;
+        }
+
+        .positions-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 28px;
+            width: 100%;
+        }
+
+        .position-card {
+            background: #ffffff;
+            border: 1px solid #F1F5F9;
+            border-radius: 12px;
+            padding: 32px;
+        }
+
+        .position-name {
+            font-size: 20px;
+            font-weight: 600;
+            color: #1E3A8A;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .position-desc {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        .position-desc strong {
+            color: #1E3A8A;
+        }
+
+        .application-info {
+            background: #F9FBFF;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid #E2E8F0;
+            margin-top: 40px;
+        }
+
+        .application-info h4 {
+            font-size: 18px;
+            color: #1E3A8A;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .application-info p {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.8;
+        }
+
+        .contact-email {
+            color: #3B82F6;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .page-title { font-size: 24px; }
+            .section-subtitle { font-size: 22px; }
+            .positions-grid { grid-template-columns: 1fr; gap: 24px; }
+            .position-card { padding: 24px; }
+            .intro-text { padding: 20px; font-size: 16px; }
+            .application-info { padding: 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .position-name { font-size: 18px; }
+            .position-desc { font-size: 15px; }
+            .application-info p { font-size: 15px; }
+        }
+
+        @media (max-width: 375px) {
+            .position-card { padding: 20px; }
+            .section-subtitle { font-size: 20px; }
+        }
+"""
+
+BODY = """
+    <div class="container">
+        <div class="card">
+            <h3 class="page-title" id="about-title-en">About Us</h3>
+            <h3 class="page-title" id="about-title-cn" style="display: none;">关于我们</h3>
+
+            <div class="intro-text" id="intro-en">
+                Our research group works at the intersection of nano-device engineering and photonic physics, including but not limited to silicon/silicon nitride/lithium niobate integrated photonic chips, III-V semiconductor lasers, condensed-matter physics, nano-optomechanics and nano-acoustics, topological physics, and metamaterials. <br><br>
+
+                We believe research is all about exploration and discovery. Thus, we're building a supportive group where everyone can grow — and have fun doing it. <strong>We hope every member can enjoy the joy of exploring the unknown, unleash creativity in an open and free atmosphere, and eventually grow into an independent and competent researcher</strong>. If you are interested in our research, feel free to contact the PI directly at <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>. You will typically receive a reply within 3 business days.
+            </div>
+            <div class="intro-text" id="intro-cn" style="display: none;">
+                我们对纳米器件工程与光子物理交叉领域的许多前沿课题都感兴趣，包括但不限于硅/氮化硅/铌酸锂集成光子芯片、三五族半导体激光器、凝聚态物理、超材料、纳米光力学和纳米声学、拓扑物理等方向。<br><br>
+
+                科研的本质是纯粹的探索与创造，因此我们致力于维持一个包容互助的团队环境。<strong>我们希望让每一位成员都能纯粹地享受探索未知的乐趣，在开放自由的氛围中释放创造力，最终成长为独当一面的科研工作者</strong>。如果你对我们的研究感兴趣，欢迎直接联系PI: <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>，你一般会在3个工作日内收到回复。
+            </div>
+
+            <h3 class="page-title" id="positions-title-en">Open Positions</h3>
+            <h3 class="page-title" id="positions-title-cn" style="display: none;">职位开放</h3>
+
+            <div class="opening-section">
+                <div class="positions-grid">
+
+                <div class="position-card hover-card">
+                        <div class="position-name" id="postdoc-name-en">Postdoctoral Fellow</div>
+                        <div class="position-name" id="postdoc-name-cn" style="display: none;">博士后研究员</div>
+
+                        <div class="position-desc" id="postdoc-desc-en">
+                            We currently have 2-3 openings for postdoctoral fellows in the areas of integrated photonics, quantum optics, and meta-materials.<br><br>
+                            <strong>Collaboration Philosophy</strong>:<br>
+                            We'll work together to develop research topics that fit your background, give you the resources you need, and push the field forward. We support grant applications, conference attendance, and career development.<br><br>
+                            <strong>Basic Requirements</strong>:<br>
+                            • Ph.D. degree from top-tier universities (985/211 institutions or internationally prestigious universities)<br>
+                            • Applicants must have first-author publications in related research areas, demonstrating the capability and potential to conduct high-quality research.<br><br>
+                            <strong>Salaries & Benefits</strong>:<br>
+                            • Annual salary: <strong>350,000–450,000 RMB</strong> (including Shenzhen postdoc subsidy)<br>
+                            • Comprehensive social insurance (medical, pension, work injury insurance, etc.)<br>
+                            • Housing subsidy and well-equipped research facilities
+                        </div>
+                        <div class="position-desc" id="postdoc-desc-cn" style="display: none;">
+                            现招聘博士后研究员 2-3 名，研究方向包括集成光子芯片、量子光学、超材料等。<br><br>
+                            <strong>合作理念</strong><br>
+                            PI会根据博士后的研究背景共同商量课题，提供充足的实验资源和前沿创新的研究思路。PI将支持其申请基金、参加国际会议，并为未来职业发展提供指导和推荐。<br><br>
+                            <strong>基本要求</strong><br>
+                            • 985/211高校或国际知名大学博士学位<br>
+                            • 在相关研究领域以第一作者发表过学术论文，具备开展高质量科研工作的能力和潜力<br><br>
+                            <strong>薪资福利</strong><br>
+                            • 年薪 <strong>35–45 万元</strong>（含深圳市博士后补贴）<br>
+                            • 完善的社会保险（医疗、养老、工伤等）<br>
+                            • 住房补贴及设备齐全的科研条件
+                        </div>
+                    </div>
+
+                    <div class="position-card hover-card">
+                        <div class="position-name" id="phd-name-en">Master/Ph.D. Student</div>
+                        <div class="position-name" id="phd-name-cn" style="display: none;">硕士/博士研究生</div>
+
+                        <div class="position-desc" id="phd-desc-en">
+                            We always welcome motivated students with genuine curiosity in photonics and physics. For details, please refer to the <a href="https://gs.sustech.edu.cn/#/admission/index">University Admissions Website</a>.<br><br>
+                            <strong>Mentoring Philosophy</strong>:<br>
+                            New members get hands-on training from senior lab members and the PI, then gradually move into independent projects. You pick your research direction based on what interests you. We'll work together on research ideas and guidance, exploring scientific frontiers and publishing high-impact results.<br><br>
+                            <strong>Basic Requirements</strong>:<br>
+                            • Bachelor's or Master's degree in optoelectronics, electronic engineering, physics, or related disciplines.<br>
+                            • Strong academic background (GPA ≥ 85/100 or 3.5/4.0) from top-tier universities.<br><br>
+                            <strong>Preferred Expertise</strong>:<br>
+                            • Device nanofabrication / material synthesis<br>
+                            • Device design / numerical simulations / theoretical modeling<br>
+                            • Chip / fiber / free-space optoelectronic characterization<br>
+                            • Artificial intelligence algorithms / programming
+                        </div>
+                        <div class="position-desc" id="phd-desc-cn" style="display: none;">
+                            我们持续招收对光子学的工程和物理有浓厚兴趣的研究生。详情请参考<a href="https://gs.sustech.edu.cn/#/admission/index">学校官网</a>。<br><br>
+                            <strong>培养理念</strong><br>
+                            新人会由PI或有经验的高年级学生指导基础训练，逐步过渡到独立项目；学生可根据个人兴趣和特长选择研究方向，PI会提供可行的科研想法和技术指导，共同探索科学前沿、发表高水平成果。<br><br>
+                            <strong>基本要求</strong><br>
+                            • 光电信息工程、电子工程、物理学或相关专业本科或硕士学历<br>
+                            • 顶尖高校毕业，具备优秀的学术背景（GPA ≥ 85/100 或 3.5/4.0）<br><br>
+                            <strong>优先考虑的专长</strong><br>
+                            • 器件纳米加工 / 材料制备<br>
+                            • 器件设计 / 数值模拟 / 理论建模<br>
+                            • 光子芯片 / 光纤光学 / 自由空间光学表征<br>
+                            • 人工智能算法 / 编程开发
+                        </div>
+                    </div>
+
+                    <div class="position-card hover-card">
+                        <div class="position-name" id="ra-name-en">Research Assistant</div>
+                        <div class="position-name" id="ra-name-cn" style="display: none;">研究助理</div>
+
+                        <div class="position-desc" id="ra-desc-en">
+                            If you are interested in hands-on research experience in photonics and nanotechnology, or wish to gain a deeper understanding of our research group, feel free to contact us!<br><br>
+                            • Flexible start date to accommodate your schedule<br>
+                            • Personalized short-term projects and one-on-one guidance<br>
+                            • Competitive stipend
+                        </div>
+                        <div class="position-desc" id="ra-desc-cn" style="display: none;">
+                            如果您对光子芯片和纳米技术领域的一线科研经验感兴趣，或者想要对我们课题组进行深入了解，欢迎联系我们！我们将会提供:<br>
+                            • 个性化的短期课题和一对一指导<br>
+                            • 灵活的入职时间，可根据个人安排调整<br>
+                            • 具有竞争力的待遇
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+"""
+
+SCRIPT = ""

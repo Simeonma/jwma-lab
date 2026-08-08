@@ -1,0 +1,310 @@
+TITLE = {"en": "Members - MacroPhotonic Lab", "cn": "团队成员 - MacroPhotonic Lab"}
+NAV_ACTIVE = "people"
+
+CSS = """
+        .section-title {
+            font-size: 28px;
+            color: #1E3A8A;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid #E2E8F0;
+            font-weight: 700;
+            text-align: left;
+            position: relative;
+        }
+
+        .pi-card {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            margin-bottom: 48px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .pi-avatar {
+            width: 196px;
+            height: 262px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #F8FAFC;
+            flex-shrink: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .pi-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            background-color: #F8FAFC;
+        }
+
+        .pi-info h4 {
+            font-size: 24px;
+            color: #1E3A8A;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .pi-info .position {
+            font-size: 18px;
+            color: #4B5563;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .pi-info .bio {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            color: #1F2937;
+            text-align: left;
+        }
+
+        .pi-info .cv-link {
+            color: #1F2937;
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .pi-info .cv-link:hover {
+            color: #3B82F6;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .member-card {
+            text-align: center;
+            background: #ffffff;
+            border: 1px solid #F1F5F9;
+            border-radius: 12px;
+            padding: 20px 16px;
+        }
+
+        .member-avatar {
+            width: 196px;
+            height: 196px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #F8FAFC;
+            margin: 0 auto 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .member-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            background-color: #F8FAFC;
+        }
+
+        .member-avatar.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #94A3B8;
+        }
+
+        .member-info h5 {
+            font-size: 18px;
+            color: #1E3A8A;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .member-info .member-position {
+            font-size: 16px;
+            color: #4B5563;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .member-info .research-area {
+            font-size: 16px;
+            color: #1F2937;
+            line-height: 1.6;
+            padding: 0 4px;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .member-info .contact {
+            font-size: 16px;
+            color: #1E3A8A;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .member-info .contact::before {
+            content: '\U0001f4e7';
+            font-size: 16px;
+            margin-right: 4px;
+        }
+
+        .join-card {
+            border: 1px solid #F1F5F9;
+        }
+
+        .join-card .member-avatar.placeholder {
+            color: #D97706;
+        }
+
+        .join-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #D97706;
+            margin-right: 6px;
+            vertical-align: middle;
+            animation: badge-pulse 2s ease-in-out infinite;
+        }
+
+        .join-link {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 20px;
+            background: #1E3A8A;
+            color: #ffffff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .join-link:hover {
+            background: #1E40AF;
+        }
+
+        @media (max-width: 768px) {
+            .section-title { font-size: 24px; }
+            .pi-card { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
+            .pi-avatar { width: 180px; height: 220px; }
+            .pi-info .bio { text-align: center; }
+            .members-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        @media (max-width: 600px) {
+            .pi-avatar { width: 150px; height: 180px; }
+            .member-avatar { width: 150px; height: 150px; }
+        }
+
+        @media (max-width: 480px) {
+            .pi-avatar { width: 140px; height: 170px; }
+        }
+"""
+
+BODY = """
+    <div class="container">
+        <div class="card">
+            <h3 class="section-title" id="pi-title-en">Principal Investigator</h3>
+            <h3 class="section-title" id="pi-title-cn" style="display: none;">课题组负责人</h3>
+
+            <div class="pi-card">
+                <div class="pi-avatar">
+                    <img src="images/members/Dr J Ma.jpg" alt="Jingwen Ma">
+                </div>
+                <div class="pi-info">
+                    <h4 id="pi-name-en">Dr. Jingwen Ma</h4>
+                    <h4 id="pi-name-cn" style="display: none;">马静文博士</h4>
+
+                    <div class="position" id="pi-position-en">Associate Professor, Department of Electrical and Electronic Engineering, SUSTech</div>
+                    <div class="position" id="pi-position-cn" style="display: none;">南方科技大学电子与电气工程系副教授</div>
+
+                    <div class="bio" id="pi-bio-en">
+                        Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He is currently an Associate Professor in the Department of Electrical and Electronic Engineering, Southern University of Science and Technology. Before joining SUSTech, he was a Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong. His research interests include integrated photonic chips, semiconductor lasers, light-matter interaction physics, and metamaterials. <a href="files/cv.pdf" class="cv-link" id="cv-link-en" target="_blank">Full CV</a>
+                    </div>
+                    <div class="bio" id="pi-bio-cn" style="display: none;">
+                        2021年获得香港中文大学电子工程博士学位，现任南方科技大学电子与电气工程系副教授。此前在香港大学张翔院士课题组任研究助理教授。研究兴趣包括集成光子芯片、半导体激光器、光-物质相互作用物理、纳米超表面与超材料等。<a href="files/cv.pdf" class="cv-link" id="cv-link-cn" style="display: none;" target="_blank">完整简历</a>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="section-title" id="members-title-en">Members</h3>
+            <h3 class="section-title" id="members-title-cn" style="display: none;">团队成员</h3>
+
+            <div class="members-grid">
+                <div class="member-card hover-card">
+                    <div class="member-avatar">
+                        <img src="images/members/Han Zhang.jpg" alt="Han Zhang">
+                    </div>
+                    <div class="member-info">
+                        <h5 id="hz-name-en">Han Zhang</h5>
+                        <h5 id="hz-name-cn" style="display: none;">张涵</h5>
+                        <div class="member-position" id="hz-pos-en">Research Assistant</div>
+                        <div class="member-position" id="hz-pos-cn" style="display: none;">研究助理</div>
+                        <div class="research-area" id="hz-bio-en">Han Zhang received his bachelor's degree from South China University of Technology and is currently pursuing a master's degree at the National University of Singapore. His research interests include photonic crystal lasers.</div>
+                        <div class="research-area" id="hz-bio-cn" style="display: none;">本科毕业于华南理工大学，现于新加坡国立大学攻读硕士学位，研究兴趣为光子晶体激光器。</div>
+                    </div>
+                </div>
+                <div class="member-card hover-card">
+                    <div class="member-avatar">
+                        <img src="images/members/Yikang Peng.jpg" alt="Yikang Peng">
+                    </div>
+                    <div class="member-info">
+                        <h5 id="yp-name-en">Yikang Peng</h5>
+                        <h5 id="yp-name-cn" style="display: none;">彭怡康</h5>
+                        <div class="member-position" id="yp-pos-en">Research Assistant</div>
+                        <div class="member-position" id="yp-pos-cn" style="display: none;">研究助理</div>
+                        <div class="research-area" id="yp-bio-en">Yikang Peng is about to graduate from Sun Yat-sen University. His research interests include optical computing and photonic chips.</div>
+                        <div class="research-area" id="yp-bio-cn" style="display: none;">即将毕业于中山大学，研究兴趣为光计算与光子芯片。</div>
+                    </div>
+                </div>
+                <div class="member-card hover-card">
+                    <div class="member-avatar">
+                        <img src="images/members/Yidan Zhu.jpg" alt="Yidan Zhu">
+                    </div>
+                    <div class="member-info">
+                        <h5 id="yz-name-en">Yidan Zhu</h5>
+                        <h5 id="yz-name-cn" style="display: none;">朱奕丹</h5>
+                        <div class="member-position" id="yz-pos-en">Undergraduate Intern</div>
+                        <div class="member-position" id="yz-pos-cn" style="display: none;">本科实习生</div>
+                        <div class="research-area" id="yz-bio-en">Yidan Zhu is an undergraduate student at the Department of Electronic and Electrical Engineering, SUSTech. Her research interests include topological photonic crystals.</div>
+                        <div class="research-area" id="yz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为拓扑光子晶体。</div>
+                    </div>
+                </div>
+                <div class="member-card hover-card">
+                    <div class="member-avatar">
+                        <img src="images/members/Jiaheng Zheng.jpg" alt="Jiaheng Zheng">
+                    </div>
+                    <div class="member-info">
+                        <h5 id="jz-name-en">Jiaheng Zheng</h5>
+                        <h5 id="jz-name-cn" style="display: none;">郑家恒</h5>
+                        <div class="member-position" id="jz-pos-en">Undergraduate Intern</div>
+                        <div class="member-position" id="jz-pos-cn" style="display: none;">本科实习生</div>
+                        <div class="research-area" id="jz-bio-en">Jiaheng Zheng is an undergraduate student at the Department of Electronic and Electrical Engineering, SUSTech. His research interests include photonic chips.</div>
+                        <div class="research-area" id="jz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为光子芯片。</div>
+                    </div>
+                </div>
+                <div class="member-card join-card hover-card">
+                    <div class="member-avatar placeholder">
+                        <span>👥</span>
+                    </div>
+                    <div class="member-info">
+                        <h5 id="join-title-en">Join Our Team</h5>
+                        <h5 id="join-title-cn" style="display: none;">加入我们</h5>
+                        <div class="member-position" id="join-pos-en"><span class="join-dot"></span>PhD Student · Postdoc · RA</div>
+                        <div class="member-position" id="join-pos-cn" style="display: none;"><span class="join-dot"></span>博士生 · 博士后 · 研究助理</div>
+                        <a href="openings.html" class="join-link" id="join-link-en">View Openings →</a>
+                        <a href="openings.html" class="join-link" id="join-link-cn" style="display: none;">查看职位 →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+"""
+
+SCRIPT = ""

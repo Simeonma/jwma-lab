@@ -1,0 +1,448 @@
+TITLE = {"en": "Home - MacroPhotonic Lab", "cn": "首页 - MacroPhotonic Lab"}
+NAV_ACTIVE = "home"
+
+CSS = """
+        .banner {
+            background-image: url('images/home/home.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            color: #ffffff;
+            padding: 36px 24px;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(16, 42, 67, 0.6);
+            z-index: 1;
+        }
+
+        .banner-desc {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.8;
+            word-spacing: 2px;
+        }
+
+        .banner-desc strong {
+            color: #93C5FD;
+            font-weight: 600;
+        }
+
+        .carousel-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 24px;
+            position: relative;
+        }
+
+        .carousel-title {
+            font-size: 28px;
+            color: #1E3A8A;
+            margin-bottom: 24px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .carousel-wrap {
+            max-width: 100%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .carousel-slide {
+            width: 100%;
+            max-width: 1200px;
+            height: 500px;
+            display: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.08);
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-slide.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 1;
+        }
+
+        .carousel-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            display: block;
+        }
+
+        .carousel-desc {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            max-height: 70%;
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffffff;
+            padding: 20px 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            white-space: normal;
+            overflow-wrap: break-word;
+            line-height: 1.6;
+            font-size: 18px;
+            overflow-y: auto;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            z-index: 5;
+        }
+
+        .carousel-desc a {
+            color: #93C5FD;
+            font-weight: 500;
+            text-decoration: none;
+            display: inline;
+            white-space: normal;
+            word-break: break-word;
+        }
+
+        .carousel-desc a:hover {
+            text-decoration: underline;
+        }
+
+        .carousel-slide:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(30, 58, 138, 0.12);
+        }
+
+        .carousel-wrap:hover .carousel-desc {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .carousel-wrap:hover .carousel-desc.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* 移动端：点按图片展开/收起说明文字 */
+        .carousel-desc.show-desc {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #1E3A8A;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background-color: #ffffff;
+            color: #3B82F6;
+            transform: translateY(-50%) scale(1.05);
+        }
+
+        .prev-btn {
+            left: 8px;
+        }
+
+        .next-btn {
+            right: 8px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .indicator-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(30, 58, 138, 0.6);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .indicator-dot.active {
+            background-color: #3B82F6;
+            width: 24px;
+            border-radius: 6px;
+        }
+
+        .news-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 24px;
+        }
+
+        .news-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 36px 40px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #F1F5F9;
+        }
+
+        .news-card h3 {
+            font-size: 22px;
+            color: #1E3A8A;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .news-item {
+            display: flex;
+            gap: 20px;
+            padding: 14px 0;
+            border-bottom: 1px solid #F1F5F9;
+            align-items: baseline;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .news-date {
+            font-size: 14px;
+            font-weight: 600;
+            color: #64748B;
+            min-width: 90px;
+            flex-shrink: 0;
+        }
+
+        .news-text {
+            font-size: 16px;
+            color: #1F2937;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .news-card { padding: 28px 24px; }
+            .news-card h3 { font-size: 20px; }
+            .news-item { flex-direction: column; gap: 4px; }
+            .news-text { font-size: 15px; }
+        }
+
+        @media (max-width: 480px) {
+            .news-section { padding: 0 16px; }
+            .news-card { padding: 24px 20px; }
+        }
+
+        @media (max-width: 768px) {
+            .banner { padding: 28px 20px; }
+            .banner-desc { font-size: 16px; }
+            .card h3 { font-size: 24px; }
+            .carousel-title { font-size: 24px; }
+            .carousel-slide { width: 100%; height: 280px; }
+            .carousel-desc {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                font-size: 15px;
+                padding: 16px 20px;
+                max-height: 70%;
+            }
+            .carousel-btn { width: 40px; height: 40px; font-size: 18px; }
+            .prev-btn { left: 4px; }
+            .next-btn { right: 4px; }
+        }
+
+        @media (max-width: 480px) {
+            .banner { padding: 24px 16px; }
+            .carousel-container { padding: 0 16px; margin: 32px auto; }
+            .carousel-slide { width: 100%; height: 200px; }
+            .carousel-desc {
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                font-size: 13px;
+                padding: 10px 14px;
+                line-height: 1.5;
+            }
+            .carousel-btn { width: 36px; height: 36px; font-size: 16px; }
+            .prev-btn { left: 2px; }
+            .next-btn { right: 2px; }
+            .indicator-dot { width: 10px; height: 10px; }
+            .indicator-dot.active { width: 20px; }
+        }
+"""
+
+BODY = """
+    <div class="banner">
+        <p class="banner-desc" id="banner-desc-en">
+            We're a research group working on photonic chips and macroscopic quantum phenomena. <strong>On the application side, we build devices for on-chip information processing and computing</strong> — things like silicon photonic chips, III-V lasers, and opto-electro-mechanical chips. <strong>On the science side, we explore quantum phases of light-matter hybrids and their fascinating behaviors</strong>, like Bose-Einstein condensation and quantum fluids.
+        </p>
+        <p class="banner-desc" id="banner-desc-cn" style="display: none;">
+            我们从事光子芯片与宏观光量子物态的交叉科学研究，研究内容涵盖光电测量、纳米加工、理论建模等方向。<strong>应用层面，我们研发面向光信息与光计算领域的先进光子器件及芯片</strong>，包括硅光集成芯片、III-V 族半导体激光器、光机电芯片等；<strong>基础科学层面，我们聚焦光-物质强耦合纳米芯片的量子物态研究</strong>，致力于在集成光子芯片平台上实现并操控玻色 - 爱因斯坦凝聚、量子流体等宏观量子物态。
+        </p>
+    </div>
+
+    <div class="carousel-container">
+        <div class="carousel-wrap">
+            <div class="carousel-slide active" data-index="0">
+                <img src="images/publications/Excitonic negative refraction mediated by magnetic orders.jpg" alt="Excitonic negative refraction" class="carousel-img">
+            </div>
+            <div class="carousel-desc active" id="desc1-en">
+                <strong>Strong light-matter interactions:</strong> We made the first excitonic negative refraction — mediated by magnetic orders. Published in <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>.
+            </div>
+
+            <div class="carousel-slide" data-index="1">
+                <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Topological nanomechanics" class="carousel-img">
+            </div>
+            <div class="carousel-desc" id="desc2-en">
+                <strong>Nano-electro-mechanical chips:</strong> We made the first topological chip with auxiliary orbital degree of freedom. Published in <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>.
+            </div>
+
+            <div class="carousel-slide" data-index="2">
+                <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="Dirac-vortex lasers" class="carousel-img">
+            </div>
+            <div class="carousel-desc" id="desc3-en">
+                <strong>III-V semiconductor lasers:</strong> We built photonic-crystal micro-cavity lasers with Dirac-vortex states. Published in <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>.
+            </div>
+
+            <div class="carousel-slide" data-index="3">
+                <img src="images/publications/vortex_string_chiral_mode.jpg" alt="Vortex-string chiral modes" class="carousel-img">
+            </div>
+            <div class="carousel-desc" id="desc4-en">
+                <strong>Metamaterials:</strong> We realized vortex-string chiral modes in metamaterials. Published in <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>.
+            </div>
+
+            <div class="carousel-slide" data-index="4">
+                <img src="images/publications/Topological photonic integrated circuits based on valley kink states.jpg" alt="Valley photonic crystals" class="carousel-img">
+            </div>
+            <div class="carousel-desc" id="desc5-en">
+                <strong>Photonic integrated circuits:</strong> We built photonic integrated circuits using valley kink states. Published in <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Laser &amp; Photonics Review</a> (cover article).
+            </div>
+
+            <button class="carousel-btn prev-btn">&larr;</button>
+            <button class="carousel-btn next-btn">&rarr;</button>
+
+            <div class="carousel-indicators">
+                <div class="indicator-dot active" data-index="0"></div>
+                <div class="indicator-dot" data-index="1"></div>
+                <div class="indicator-dot" data-index="2"></div>
+                <div class="indicator-dot" data-index="3"></div>
+                <div class="indicator-dot" data-index="4"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="news-section">
+        <div class="news-card">
+            <h3 id="news-title-en">News</h3>
+            <h3 id="news-title-cn" style="display: none;">动态</h3>
+            <div class="news-item">
+                <span class="news-date">Aug 2026</span>
+                <span class="news-text" id="news3-en">We warmly welcome Yidan Zhu and Jiaheng Zheng to join our lab.</span>
+                <span class="news-text" id="news3-cn" style="display: none;">欢迎朱奕丹、郑家恒加入实验室。</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Aug 2026</span>
+                <span class="news-text" id="news2-en">We warmly welcome Han Zhang and Yikang Peng to join our lab.</span>
+                <span class="news-text" id="news2-cn" style="display: none;">欢迎张涵、彭怡康加入实验室。</span>
+            </div>
+            <div class="news-item">
+                <span class="news-date">Jun 2026</span>
+                <span class="news-text" id="news1-en">MacroPhotonic Lab launched at SUSTech.</span>
+                <span class="news-text" id="news1-cn" style="display: none;">MacroPhotonic Lab 在南方科技大学成立。</span>
+            </div>
+        </div>
+    </div>
+"""
+
+SCRIPT = """
+        const slides = document.querySelectorAll('.carousel-slide');
+        const dots = document.querySelectorAll('.indicator-dot');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const descElements = document.querySelectorAll('.carousel-desc');
+        let currentIndex = 0;
+        let carouselInterval;
+
+        function switchSlide(index) {
+            slides.forEach(function(slide) { slide.classList.remove('active'); });
+            dots.forEach(function(dot) { dot.classList.remove('active'); });
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+
+            descElements.forEach(function(desc) {
+                desc.classList.remove('active');
+                desc.classList.remove('show-desc');
+            });
+            document.getElementById('desc' + (index + 1) + '-en').classList.add('active');
+
+            currentIndex = index;
+        }
+
+        function nextSlide() {
+            var newIndex = (currentIndex + 1) % slides.length;
+            switchSlide(newIndex);
+        }
+
+        function prevSlide() {
+            var newIndex = (currentIndex - 1 + slides.length) % slides.length;
+            switchSlide(newIndex);
+        }
+
+        function startAutoCarousel() {
+            carouselInterval = setInterval(nextSlide, 3000);
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        dots.forEach(function(dot, index) {
+            dot.addEventListener('click', function() { switchSlide(index); });
+        });
+
+        // 移动端无悬停：点按图片切换说明文字的显示
+        slides.forEach(function(slide) {
+            slide.addEventListener('click', function() {
+                var activeDesc = document.querySelector('.carousel-desc.active');
+                if (activeDesc) activeDesc.classList.toggle('show-desc');
+            });
+        });
+
+        startAutoCarousel();
+"""
