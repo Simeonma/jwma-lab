@@ -150,6 +150,12 @@
             visibility: visible;
         }
 
+        /* 移动端：点按图片展开/收起说明文字 */
+        .carousel-desc.show-desc {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -357,7 +363,7 @@
     <div class="carousel-container">
         <div class="carousel-wrap">
             <div class="carousel-slide active" data-index="0">
-                <img src="images/publications/Excitonic negative refraction mediated by magnetic orders.png" alt="Excitonic negative refraction" class="carousel-img">
+                <img src="images/publications/Excitonic negative refraction mediated by magnetic orders.jpg" alt="Excitonic negative refraction" class="carousel-img">
             </div>
             <div class="carousel-desc active" id="desc1-en">
                 <strong>Strong light-matter interactions:</strong> We made the first excitonic negative refraction — mediated by magnetic orders. Published in <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>.
@@ -449,7 +455,10 @@ const slides = document.querySelectorAll('.carousel-slide');
             slides[index].classList.add('active');
             dots[index].classList.add('active');
 
-            descElements.forEach(function(desc) { desc.classList.remove('active'); });
+            descElements.forEach(function(desc) {
+                desc.classList.remove('active');
+                desc.classList.remove('show-desc');
+            });
             document.getElementById('desc' + (index + 1) + '-en').classList.add('active');
 
             currentIndex = index;
@@ -473,6 +482,14 @@ const slides = document.querySelectorAll('.carousel-slide');
         prevBtn.addEventListener('click', prevSlide);
         dots.forEach(function(dot, index) {
             dot.addEventListener('click', function() { switchSlide(index); });
+        });
+
+        // 移动端无悬停：点按图片切换说明文字的显示
+        slides.forEach(function(slide) {
+            slide.addEventListener('click', function() {
+                var activeDesc = document.querySelector('.carousel-desc.active');
+                if (activeDesc) activeDesc.classList.toggle('show-desc');
+            });
         });
 
         startAutoCarousel();
