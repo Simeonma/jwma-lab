@@ -204,10 +204,10 @@ BODY = """
                             <div class="facility-name" id="phonon-name-cn" style="display: none;">纳米力学与片上声子表征系统</div>
 
                             <div class="facility-desc" id="phonon-desc-en">
-                                Under construction...
+                                This characterization platform is currently being established. More details will be updated soon.
                             </div>
                             <div class="facility-desc" id="phonon-desc-cn" style="display: none;">
-                                建设中...
+                                该表征平台正在建设中，详细信息将尽快更新。
                             </div>
                         </div>
                     </div>

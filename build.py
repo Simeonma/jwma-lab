@@ -43,6 +43,12 @@ def build():
 
         html = TEMPLATE.format(
             title=mod["TITLE"]["en"],
+            cn_title=mod["TITLE"]["cn"],
+            page_url=(
+                "https://www.jwma-lab.com/"
+                if filename == "index.html"
+                else f"https://www.jwma-lab.com/{filename}"
+            ),
             head_extra=mod.get("HEAD_EXTRA", ""),
             css=mod.get("CSS", ""),
             body=mod.get("BODY", ""),
