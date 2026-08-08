@@ -1,0 +1,4 @@
+# Normalize line endings to LF for all text files so that local builds
+# (Windows) and CI (Linux) produce byte-identical output and git never
+# sees a spurious whole-file diff.
+* text=auto eol=lf

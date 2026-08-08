@@ -57,7 +57,8 @@ def build():
         )
 
         out = OUTPUT / filename
-        out.write_text(html, encoding="utf-8")
+        # Emit LF on every platform so local builds and CI produce identical bytes
+        out.write_text(html.replace("\r\n", "\n"), encoding="utf-8", newline="\n")
         print(f"  OK  {filename}")
 
     print(f"\nDone!  Output: {OUTPUT}")
