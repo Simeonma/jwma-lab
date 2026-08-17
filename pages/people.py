@@ -225,10 +225,10 @@ BODY = """
                     <div class="position" id="pi-position-cn" style="display: none;">南方科技大学电子与电气工程系副教授</div>
 
                     <div class="bio" id="pi-bio-en">
-                        Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He is currently an Associate Professor in the Department of Electrical and Electronic Engineering, Southern University of Science and Technology. Before joining SUSTech, he was a Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong. His research interests include integrated photonic chips, semiconductor lasers, light-matter interaction physics, and metamaterials. <a href="files/cv.pdf" class="cv-link" id="cv-link-en" target="_blank">Full CV</a>
+                        Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He is currently an Associate Professor in the Department of Electrical and Electronic Engineering, Southern University of Science and Technology, and a recipient of the National Overseas High-Level Talent Program. Before joining SUSTech, he was a Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong. His research interests include integrated photonic chips, semiconductor lasers, light-matter interaction physics, and metamaterials. <a href="files/cv.pdf" class="cv-link" id="cv-link-en" target="_blank">Full CV</a>
                     </div>
                     <div class="bio" id="pi-bio-cn" style="display: none;">
-                        2021年获得香港中文大学电子工程博士学位，现任南方科技大学电子与电气工程系副教授。此前在香港大学张翔院士课题组任研究助理教授。研究兴趣包括集成光子芯片、半导体激光器、光-物质相互作用物理、纳米超表面与超材料等。<a href="files/cv.pdf" class="cv-link" id="cv-link-cn" style="display: none;" target="_blank">完整简历</a>
+                        2021年获得香港中文大学电子工程博士学位，现任南方科技大学电子与电气工程系副教授，入选国家海外高层次人才计划。此前在香港大学张翔院士课题组任研究助理教授。研究兴趣包括集成光子芯片、半导体激光器、光-物质相互作用物理、纳米超表面与超材料等。<a href="files/cv.pdf" class="cv-link" id="cv-link-cn" style="display: none;" target="_blank">完整简历</a>
                     </div>
                 </div>
             </div>
