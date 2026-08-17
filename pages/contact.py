@@ -144,7 +144,9 @@ SCRIPT = """
                 attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
                 maxZoom: 19
             }).addTo(map);
-            L.marker([lat, lng]).addTo(map);
+            L.marker([lat, lng]).addTo(map).bindPopup(
+                '<strong>MacroPhotonic Lab</strong><br>Room 339, South Building of College of Engineering<br>工学院南楼 339 房间'
+            ).openPopup();
 
             window.addEventListener('resize', function() {
                 map.invalidateSize();
