@@ -313,7 +313,7 @@ BODY = """
                                 <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Excitonic negative refraction mediated by magnetic orders</a>
                             </div>
                             <div class="pub-authors">
-                                <strong>Jingwen Ma</strong>*; Xiong Wang*; Yuanhao Gong; Chong Hu; Qi Wang; Kai Feng; Zemeng Lin; Teruya Ishihara; Xiaobo Yin; Shuang Zhang; Zuxin Chen&dagger;; Xiaoze Liu&dagger;; Xiaodong Cui; Xiang Zhang&dagger;.
+                                <strong>Jingwen Ma</strong>*; Xiong Wang*; Yuanhao Gong; Chong Hu; Qi Wang; Kai Feng; Zemeng Lin; Teruya Ishihara; Nicholas Fang; Xiaobo Yin; Shuang Zhang; Zuxin Chen&dagger;; Xiaoze Liu&dagger;; Xiaodong Cui; Xiang Zhang&dagger;.
                                 <span class="pub-journal">Nature Nanotechnology</span>, 21, 374-379 (2026)
                             </div>
                         </div>
