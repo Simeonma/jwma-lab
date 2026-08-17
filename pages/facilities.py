@@ -155,7 +155,7 @@ BODY = """
                                 • High-power electrical source<br>
                                 • Infrared spectrometer (Andor Kymera + iDus CCD)<br>
                                 • Infrared CMOS camera (Hamamatsu)<br>
-                                • g2 measurement system
+                                • g2 measurement system (under construction)
                             </div>
                             <div class="facility-desc" id="laser-desc-cn" style="display: none;">
                                 用于表征通信波段的光泵浦/电泵浦半导体激光器。核心设备包括：<br>
@@ -163,7 +163,7 @@ BODY = """
                                 • 高功率电信号源<br>
                                 • 红外光谱仪（Andor Kymera + iDus CCD）<br>
                                 • 红外CMOS相机（滨松）<br>
-                                • g2测量系统
+                                • g2测量系统（搭建中）
                             </div>
                         </div>
                     </div>
