@@ -129,28 +129,34 @@ BODY = """
                         <div class="position-name" id="postdoc-name-cn" style="display: none;">博士后研究员</div>
 
                         <div class="position-desc" id="postdoc-desc-en">
-                            We currently have 2-3 openings for postdoctoral fellows in the areas of integrated photonics, quantum optics, and meta-materials.<br><br>
+                            We currently have 2-3 openings for postdoctoral fellows in the areas of integrated photonic chips, ultrafast optics, and metamaterials.<br><br>
                             <strong>Collaboration Philosophy</strong>:<br>
                             We'll work together to develop research topics that fit your background, give you the resources you need, and push the field forward. We support grant applications, conference attendance, and career development.<br><br>
                             <strong>Basic Requirements</strong>:<br>
                             • Ph.D. degree from top-tier universities (985/211 institutions or internationally prestigious universities)<br>
                             • Applicants must have first-author publications in related research areas, demonstrating the capability and potential to conduct high-quality research.<br><br>
-                            <strong>Salaries & Benefits</strong>:<br>
-                            • Annual salary: <strong>350,000–450,000 RMB</strong> (including Shenzhen postdoc subsidy)<br>
+                            <strong>Salaries, Benefits & Support</strong>:<br>
+                            • Annual salary: <strong>330,000–500,000 RMB</strong> (including Guangdong Province and Shenzhen in-post postdoctoral living subsidies)<br>
                             • Comprehensive social insurance (medical, pension, work injury insurance, etc.)<br>
-                            • Housing subsidy and well-equipped research facilities
+                            • Housing: postdocs may apply for Shenzhen public rental housing through the university during their tenure; those not using public rental housing are eligible for a housing subsidy of 2,800 RMB/month (pre-tax) for two years<br>
+                            • Academic exchange: in addition to domestic and international exchange opportunities provided by the group, the university offers 25,000 RMB in academic exchange funding over two years<br>
+                            • Talent programs: the group assists eligible postdocs in applying for postdoctoral talent programs; successful applicants can receive subsidies totaling up to 1,000,000 RMB (not concurrently with the Guangdong and Shenzhen in-post living subsidies)<br>
+                            • Career development: postdocs who stay in Shenzhen for research work after completing their postdoc term and sign a labor (employment) contract of 3 years or more with a local enterprise or institution may apply for the Shenzhen postdoc research grant for staying in/coming to Shenzhen, receiving 100,000 RMB per year for up to 3 years (subject to the latest Shenzhen application requirements). Outstanding postdocs have the opportunity to be promoted to Research Assistant Professor or Assistant Researcher upon completion
                         </div>
                         <div class="position-desc" id="postdoc-desc-cn" style="display: none;">
-                            现招聘博士后研究员 2-3 名，研究方向包括集成光子芯片、量子光学、超材料等。<br><br>
+                            现招聘博士后研究员 2-3 名，研究方向包括集成光子芯片、超快光学、超材料等。<br><br>
                             <strong>合作理念</strong><br>
                             PI会根据博士后的研究背景共同商量课题，提供充足的实验资源和前沿创新的研究思路。PI将支持其申请基金、参加国际会议，并为未来职业发展提供指导和推荐。<br><br>
                             <strong>基本要求</strong><br>
                             • 985/211高校或国际知名大学博士学位<br>
                             • 在相关研究领域以第一作者发表过学术论文，具备开展高质量科研工作的能力和潜力<br><br>
-                            <strong>薪资福利</strong><br>
-                            • 年薪 <strong>35–45 万元</strong>（含深圳市博士后补贴）<br>
+                            <strong>薪资福利与支持</strong><br>
+                            • 年薪 <strong>33–50 万元人民币</strong>（含广东省及深圳市在站博士后生活补贴）<br>
                             • 完善的社会保险（医疗、养老、工伤等）<br>
-                            • 住房补贴及设备齐全的科研条件
+                            • 住房支持：在站期间可依托学校申请深圳市公租房；未使用公租房的，可享受两年税前 2800 元/月的住房补贴<br>
+                            • 学术交流：除课题组提供的国内外学术交流机会外，学校提供两年共计 2.5 万元的学术交流经费<br>
+                            • 人才项目：课题组协助符合条件的博士后申请博士后人才项目，申请成功者可享受总计高达 100 万元的补贴（与广东省及深圳市在站博士后生活补贴不同时享受）<br>
+                            • 出站发展：出站留深从事科研工作并与本市企事业单位签订 3 年以上劳动（聘用）合同的，可申请深圳市博士后留深来深科研资助，每年 10 万元，共资助 3 年（以深圳市最新申报要求为准）；结题后表现优秀者有机会晋升为研究助理教授/助理研究员
                         </div>
                     </div>
 
