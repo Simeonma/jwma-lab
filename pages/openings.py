@@ -112,14 +112,10 @@ BODY = """
             <h3 class="page-title" id="about-title-cn" style="display: none;">关于我们</h3>
 
             <div class="intro-text" id="intro-en">
-                Our research group works at the intersection of nano-device engineering and photonic physics, including but not limited to silicon/silicon nitride/lithium niobate integrated photonic chips, III-V semiconductor lasers, condensed-matter physics, nano-optomechanics and nano-acoustics, topological physics, and metamaterials. <br><br>
-
-                We believe research is all about exploration and discovery. Thus, we're building a supportive group where everyone can grow — and have fun doing it. <strong>We hope every member can enjoy the joy of exploring the unknown, unleash creativity in an open and free atmosphere, and eventually grow into an independent and competent researcher</strong>. If you are interested in our research, feel free to contact the PI directly at <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>. You will typically receive a reply within 3 business days.
+                We are interested in many frontier topics at the intersection of nano-device engineering and photonic physics. We believe the essence of research is pure exploration and creation, and we are therefore committed to maintaining an equal, inclusive, and mutually supportive team environment. <strong>We hope every member can take pure delight in exploring the unknown, unleash creativity in an open and free atmosphere, and eventually grow into an independent and competent researcher</strong>. If you are interested in our research, feel free to contact the PI directly at <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>. You will typically receive a reply within 3 business days.
             </div>
             <div class="intro-text" id="intro-cn" style="display: none;">
-                我们对纳米器件工程与光子物理交叉领域的许多前沿课题都感兴趣，包括但不限于硅/氮化硅/铌酸锂集成光子芯片、三五族半导体激光器、凝聚态物理、超材料、纳米光力学和纳米声学、拓扑物理等方向。<br><br>
-
-                科研的本质是纯粹的探索与创造，因此我们致力于维持一个包容互助的团队环境。<strong>我们希望让每一位成员都能纯粹地享受探索未知的乐趣，在开放自由的氛围中释放创造力，最终成长为独当一面的科研工作者</strong>。如果你对我们的研究感兴趣，欢迎直接联系PI: <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>，你一般会在3个工作日内收到回复。
+                我们对纳米器件工程与光子物理交叉领域的许多前沿课题都感兴趣。我们相信科研的本质是纯粹的探索与创造，因此我们致力于维持一个平等包容互助的团队环境。<strong>我们希望让每一位成员都能纯粹地享受探索未知的乐趣，在开放自由的氛围中释放创造力，最终成长为独当一面的科研工作者</strong>。如果你对我们的研究感兴趣，欢迎直接联系PI: <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>，你一般会在3 个工作日内收到回复。
             </div>
 
             <h3 class="page-title" id="positions-title-en">Open Positions</h3>
