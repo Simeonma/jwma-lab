@@ -313,7 +313,7 @@ BODY = """
                                 <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Excitonic negative refraction mediated by magnetic orders</a>
                             </div>
                             <div class="pub-authors">
-                                <strong>Jingwen Ma</strong>*; Xiong Wang*; Yuanhao Gong; Chong Hu; Qi Wang; Kai Feng; Zemeng Lin; Teruya Ishihara; Xiaobo Yin; Shuang Zhang; Zuxin Chen&dagger; Xiaoze Liu&dagger; Xiaodong Cui; Xiang Zhang&dagger;.
+                                <strong>Jingwen Ma</strong>*; Xiong Wang*; Yuanhao Gong; Chong Hu; Qi Wang; Kai Feng; Zemeng Lin; Teruya Ishihara; Xiaobo Yin; Shuang Zhang; Zuxin Chen&dagger;; Xiaoze Liu&dagger;; Xiaodong Cui; Xiang Zhang&dagger;.
                                 <span class="pub-journal">Nature Nanotechnology</span>, 21, 374-379 (2026)
                             </div>
                         </div>
@@ -373,7 +373,7 @@ BODY = """
                                 <a href="https://doi.org/10.1002/lpor.202502392" target="_blank">Hybrid cavity from tunable coupling between anapole and Fabry-Perot resonance or anti-resonance</a>
                             </div>
                             <div class="pub-authors">
-                                Aoning Luo; Haitao Li; Ken Qin; <strong>Jingwen Ma</strong>; Shijie Kang; Jiayu Fan; Yiyi Yao; Xiexuan Zhang; Jiusi Yu; BoYang&dagger; Qu; Xiaoxiao Wu&dagger;.
+                                Aoning Luo; Haitao Li; Ken Qin; <strong>Jingwen Ma</strong>; Shijie Kang; Jiayu Fan; Yiyi Yao; Xiexuan Zhang; Jiusi Yu; Boyang Qu&dagger;; Xiaoxiao Wu&dagger;.
                                 <span class="pub-journal">Laser &amp; Photonics Reviews</span>, e02392 (2025)
                             </div>
                         </div>
@@ -482,7 +482,7 @@ BODY = """
                             </div>
                             <div class="pub-authors">
                                 Haifeng Kang; <strong>Jingwen Ma</strong>&dagger;; Junyu Li; Xiang Zhang&dagger;; Xiaoze Liu&dagger;.
-                                <span class="pub-journal">ACS Nano</span>, 17, 24, 24449-4467 (2023)
+                                <span class="pub-journal">ACS Nano</span>, 17, 24, 24449-24467 (2023)
                             </div>
                         </div>
                     </div>
@@ -551,7 +551,7 @@ BODY = """
                         <div class="pub-img-container" onclick="togglePubDesc(this)">
                             <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Nanomechanical topological insulators" loading="lazy" class="pub-img">
                             <div class="pub-desc">
-                                We report an topological system with auxiliary orbital degree of freedom. This work is featured in <a href="https://doi.org/10.1038/s41565-021-00853-z" target="_blank">Nature Nanotechnology 16 (5): 487-489 (2021)</a>.
+                                We report a topological system with an auxiliary orbital degree of freedom. This work is featured in <a href="https://doi.org/10.1038/s41565-021-00853-z" target="_blank">Nature Nanotechnology 16 (5): 487-489 (2021)</a>.
                             </div>
                         </div>
                         <div class="pub-content">
