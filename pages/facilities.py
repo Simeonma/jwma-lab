@@ -2,10 +2,6 @@ TITLE = {"en": "Facilities - MacroPhotonic Lab", "cn": "实验设备 - MacroPhot
 NAV_ACTIVE = "facilities"
 
 CSS = """
-        .page-title {
-            margin-bottom: 40px;
-        }
-
         .facility-section {
             margin-bottom: 56px;
         }

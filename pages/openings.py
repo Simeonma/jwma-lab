@@ -2,10 +2,6 @@ TITLE = {"en": "Openings - MacroPhotonic Lab", "cn": "招聘信息 - MacroPhoton
 NAV_ACTIVE = "openings"
 
 CSS = """
-        .page-title {
-            margin-bottom: 24px;
-        }
-
         .intro-text {
             font-size: 17px;
             color: #475569;

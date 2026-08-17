@@ -41,7 +41,7 @@ CSS = """
             font-size: 20px;
             color: #1E3A8A;
             margin-bottom: 8px;
-            text-align: center;
+            text-align: left;
         }
 
         .research-item p {
