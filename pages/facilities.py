@@ -122,36 +122,22 @@ BODY = """
                 <div class="facility-grid">
                     <div class="facility-card hover-card">
                         <div class="facility-info">
-                            <div class="facility-name" id="chip-name-en">Photonic chip testing system</div>
-                            <div class="facility-name" id="chip-name-cn" style="display: none;">光子芯片测试系统</div>
-
-                            <div class="facility-desc" id="chip-desc-en">
-                                This characterization platform is currently being established. More details will be updated soon.
-                            </div>
-                            <div class="facility-desc" id="chip-desc-cn" style="display: none;">
-                                该表征平台正在建设中，详细信息将尽快更新。
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="facility-card hover-card">
-                        <div class="facility-info">
                             <div class="facility-name" id="meta-name-en">Meta-surface and quantum matter characterization</div>
                             <div class="facility-name" id="meta-name-cn" style="display: none;">超表面与量子物态表征系统</div>
 
                             <div class="facility-desc" id="meta-desc-en">
-                                For characterizing photonic nano-structures, quantum materials, and hybrid light-matter quantum states. The system enables full control over nearly all degrees of freedom of photons, with ultrafast time resolution of 100 fs.<br>
+                                For characterizing photonic nano-structures, quantum materials, and hybrid light-matter quantum states across nearly all photonic degrees of freedom, with ultrafast time resolution of 100 fs.<br>
                                 Key facilities include:<br>
                                 • Custom angle-resolved microscope<br>
-                                • Transient pump-probe system<br>
+                                • Transient pump-probe system (under construction)<br>
                                 • High-resolution spectrometer & single-photon detection setup<br>
                                 • Piezo scanning stages, lock-in amplifier, cryostat
                             </div>
                             <div class="facility-desc" id="meta-desc-cn" style="display: none;">
-                                用于表征光子纳米结构、量子材料及光-物质杂化量子态。该系统可实现对光子几乎所有自由度的完全调控，时间分辨率达100飞秒。<br>
-                                核心设备包括:<br>
+                                用于表征光子纳米结构、量子材料及光-物质杂化量子态，覆盖光子几乎所有自由度，时间分辨率可达 100 飞秒。<br>
+                                核心设备包括：<br>
                                 • 定制化角分辨显微镜<br>
-                                • 瞬态泵-探测系统<br>
+                                • 瞬态泵浦探测系统（搭建中）<br>
                                 • 高分辨率光谱仪及单光子探测系统<br>
                                 • 压电扫描台、锁相放大器、低温恒温器
                             </div>
@@ -191,6 +177,20 @@ BODY = """
                                 This characterization platform is currently being established. More details will be updated soon.
                             </div>
                             <div class="facility-desc" id="phonon-desc-cn" style="display: none;">
+                                该表征平台正在建设中，详细信息将尽快更新。
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="facility-card hover-card">
+                        <div class="facility-info">
+                            <div class="facility-name" id="chip-name-en">Photonic chip testing system</div>
+                            <div class="facility-name" id="chip-name-cn" style="display: none;">光子芯片测试系统</div>
+
+                            <div class="facility-desc" id="chip-desc-en">
+                                This characterization platform is currently being established. More details will be updated soon.
+                            </div>
+                            <div class="facility-desc" id="chip-desc-cn" style="display: none;">
                                 该表征平台正在建设中，详细信息将尽快更新。
                             </div>
                         </div>
