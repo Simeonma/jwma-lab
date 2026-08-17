@@ -101,14 +101,14 @@ BODY = """
                             <img src="images/facility/nano-fabrication.jpg" alt="nano-fabrication" loading="lazy">
                         </div>
                         <div class="facility-info">
-                            <div class="facility-name" id="nano-name-en">SUSTech University Cleanroom</div>
-                            <div class="facility-name" id="nano-name-cn" style="display: none;">南科大分析检测中心</div>
+                            <div class="facility-name" id="nano-name-en">SUSTech Core Research Facilities (CRF)</div>
+                            <div class="facility-name" id="nano-name-cn" style="display: none;">南方科技大学分析检测中心</div>
 
                             <div class="facility-desc" id="nano-desc-en">
-                                Most of the nanofabrication in our research can be performed in the SUSTech University Cleanroom. Key capabilities include electron-beam lithography, photolithography, PECVD, LPCVD, ALD, ICP, and RIE. For more details, please visit <a href="https://crf.sustech.edu.cn/platform/weina" target="_blank">the official website</a>.
+                                Most of our devices—photonic crystals, microcavities, integrated photonic chips, and NEMS—can be fabricated in the SUSTech Core Research Facilities (CRF), which provides a complete nanofabrication chain: pattern definition (electron-beam and photolithography), thin-film deposition (PECVD, LPCVD, ALD), and etching (ICP-RIE). For more details, please visit <a href="https://crf.sustech.edu.cn/platform/weina" target="_blank">the official website</a>.
                             </div>
                             <div class="facility-desc" id="nano-desc-cn" style="display: none;">
-                                本课题组的大部分微纳加工工作均可在南方科技大学校级洁净室完成。核心加工能力包括电子束光刻、光刻、等离子体增强化学气相沉积（PECVD）、低压化学气相沉积（LPCVD）、原子层沉积（ALD）、感应耦合等离子体刻蚀（ICP）、反应离子刻蚀（RIE）等。更多详情请访问 <a href="https://crf.sustech.edu.cn/platform/weina" target="_blank">官方网站</a>。
+                                我们的光子晶体、微腔、集成光子芯片与纳米机电等器件大部分可在南方科技大学分析检测中心制备。该平台覆盖完整微纳加工工艺链：图形化（电子束光刻、光刻）、薄膜沉积（PECVD、LPCVD、ALD）与刻蚀（ICP-RIE）等。更多详情请访问 <a href="https://crf.sustech.edu.cn/platform/weina" target="_blank">官方网站</a>。
                             </div>
                         </div>
                     </div>
