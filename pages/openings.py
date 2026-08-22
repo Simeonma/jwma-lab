@@ -230,15 +230,13 @@ BODY = """
                             If you are interested in hands-on research experience in photonics and nanotechnology, or wish to gain a deeper understanding of our research group, feel free to contact us! It is particularly suitable for undergraduates considering graduate studies who want to gain research experience in advance.<br><br>
                             • Flexible start date to accommodate your schedule<br>
                             • Personalized short-term projects and one-on-one guidance<br>
-                            • Competitive stipend<br><br>
-                            Contact: <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>
+                            • Competitive stipend
                         </div>
                         <div class="position-desc" id="ra-desc-cn" style="display: none;">
                             如果你对光子芯片和纳米技术领域的一线科研经验感兴趣，或者想要对我们课题组进行深入了解，欢迎联系我们！尤其适合考虑未来深造、希望提前积累科研经验的本科生。我们将会提供：<br>
                             • 灵活的入职时间，可根据个人安排调整<br>
                             • 个性化的短期课题和一对一指导<br>
-                            • 具有竞争力的待遇<br><br>
-                            联系邮箱：<a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>
+                            • 具有竞争力的待遇
                         </div>
                     </div>
 
