@@ -26,9 +26,15 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 32px;
+            margin-bottom: 16px;
             padding-bottom: 16px;
             border-bottom: 2px solid #E2E8F0;
+        }
+
+        .pub-note {
+            font-size: 14px;
+            color: #64748B;
+            margin-bottom: 32px;
         }
 
         .card h3 {
@@ -326,12 +332,15 @@
         <div class="card">
             <div class="title-row">
                 <h3 id="pub-title-en">Selected Publications</h3>
-                <h3 id="pub-title-cn" style="display: none;">Selected Publications</h3>
+                <h3 id="pub-title-cn" style="display: none;">发表论文</h3>
                 <a href="https://scholar.google.com/citations?user=-2sAiXwAAAAJ&hl=en" class="scholar-button" target="_blank">
                     <span id="scholar-btn-en">Full Publications in Google Scholar</span>
-                    <span id="scholar-btn-cn" style="display: none;">Full Publications in Google Scholar</span>
+                    <span id="scholar-btn-cn" style="display: none;">在 Google Scholar 查看全部论文</span>
                 </a>
             </div>
+
+            <p class="pub-note" id="pub-note-en">A selection of representative publications. The complete list is available on Google Scholar.</p>
+            <p class="pub-note" id="pub-note-cn" style="display: none;">以下为代表性论文，完整列表请见 Google Scholar。</p>
 
             <div class="year-group">
                 <div class="year-timeline">
@@ -417,7 +426,7 @@
                             </div>
                             <div class="pub-authors">
                                 <strong>Jingwen Ma</strong>; Xiaobo Yin.
-                                <span class="pub-journal">Science</span>, 387, eadw1922 (2025) [Invited expert voices]
+                                <span class="pub-journal">Science</span>, 387, eadw1922 (2025) [Invited Expert Commentary]
                             </div>
                         </div>
                     </div>
@@ -566,7 +575,7 @@
                                 <a href="https://doi.org/10.1021/acsphotonics.2c00711" target="_blank">Monolithically integrated ultralow threshold topological corner state nanolasers on silicon</a>
                             </div>
                             <div class="pub-authors">
-                                Taojie Zhou*; <strong>Jingwen Ma</strong>*; Mingchu Tang*; Haochuan Li; Mickael Martin; Thierry Baron; Huiyun Liu; Siming Chen&dagger;; Xiankai Sun&dagger;; Zhaoyu Zhang&dagger;.
+                                Taojie Zhou*; <strong>Jingwen Ma</strong>*; Mingchu Tang*; Haochuan Li; Mickael Martin; Thierry Baron; Huiyun Liu&dagger;; Siming Chen&dagger;; Xiankai Sun&dagger;; Zhaoyu Zhang&dagger;.
                                 <span class="pub-journal">ACS Photonics</span>, 9, 12, 3824-3830 (2022)
                             </div>
                         </div>
@@ -578,7 +587,7 @@
                                 <a href="https://doi.org/10.1038/s41467-022-33088-0" target="_blank">Transition metal dichalcogenide metaphotonic and self-coupled polaritonic platform grown by chemical vapor deposition</a>
                             </div>
                             <div class="pub-authors">
-                                Fuhuan Shen; Zhenghe Zhang; Yaoqiang Zhou; <strong>Jingwen Ma</strong>; Kun Chen; Huanjun Chen; Shaojun Wang; Jianbin Xu&dagger;; Zefeng Chen&dagger;.
+                                Fuhuan Shen*; Zhenghe Zhang*; Yaoqiang Zhou*; <strong>Jingwen Ma</strong>; Kun Chen; Huanjun Chen; Shaojun Wang; Jianbin Xu&dagger;; Zefeng Chen&dagger;.
                                 <span class="pub-journal">Nature Communications</span>, 13, 5597 (2022)
                             </div>
                         </div>
@@ -590,7 +599,7 @@
                                 <a href="https://doi.org/10.1364/PRJ.451344" target="_blank">Terahertz topological photonic waveguide switch for on-chip communication</a>
                             </div>
                             <div class="pub-authors">
-                                Xudong Liu; Jialiang Huang; Hao Chen; Zhengfang Qian; <strong>Jingwen Ma</strong>; Xiankai Sun&dagger;; Shuting Fan; Yiwen Sun&dagger;.
+                                Xudong Liu; Jialiang Huang; Hao Chen; Zhengfang Qian; <strong>Jingwen Ma</strong>; Xiankai Sun; Shuting Fan; Yiwen Sun&dagger;.
                                 <span class="pub-journal">Photonics Research</span>, 10, 4, 1090-1096 (2022)
                             </div>
                         </div>
@@ -699,7 +708,7 @@
                             </div>
                             <div class="pub-authors">
                                 <strong>Jingwen Ma</strong>; Ziyao Feng; Yuan Li; Xiankai Sun&dagger;.
-                                <span class="pub-journal">IEEE Journal of Selected Topics in Quantum Electronics</span>, 26, 5, 1-10 (2019)
+                                <span class="pub-journal">IEEE Journal of Selected Topics in Quantum Electronics</span>, 26, 5, 7600410 (2019)
                             </div>
                         </div>
                     </div>
