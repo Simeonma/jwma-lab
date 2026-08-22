@@ -112,10 +112,10 @@ BODY = """
             <h3 class="page-title" id="about-title-cn" style="display: none;">关于我们</h3>
 
             <div class="intro-text" id="intro-en">
-                We are interested in many frontier topics at the intersection of nano-device engineering and photonic physics. We believe the essence of research is pure exploration and creation, and we hope to bring together people who genuinely enjoy exploring the unknown. We are committed to maintaining an equal, inclusive, and mutually supportive team environment, <strong>where everyone can unleash creativity in an open and free atmosphere and eventually grow into an independent and competent researcher</strong>. If you are interested in our research, feel free to contact the PI directly at <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>. You will typically receive a reply within 3 business days.
+                We believe the essence of research is pure exploration and creation, and we hope to bring together people who genuinely enjoy exploring the unknown. We are committed to maintaining an equal, inclusive, and mutually supportive team environment, <strong>where everyone can unleash creativity in an open and free atmosphere and eventually grow into an independent and competent researcher</strong>. If you are interested in our research, feel free to contact the PI directly at <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>. You will typically receive a reply within 3 business days.
             </div>
             <div class="intro-text" id="intro-cn" style="display: none;">
-                我们对纳米器件工程与光子物理交叉领域的许多前沿课题都感兴趣。我们相信科研的本质是纯粹的探索与创造，因此我们希望聚拢一些真正享受探索未知的乐趣的人。我们致力于维持一个平等包容互助的团队环境，<strong>让大家在开放自由的氛围中释放创造力，最终成长为独当一面的科研工作者</strong>。如果你对我们的研究感兴趣，欢迎直接联系PI: <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>，你一般会在3 个工作日内收到回复。
+                我们相信科研的本质是纯粹的探索与创造，因此我们希望聚拢一些真正享受探索未知的乐趣的人。我们致力于维持一个平等包容互助的团队环境，<strong>让大家在开放自由的氛围中释放创造力，最终成长为独当一面的科研工作者</strong>。如果你对我们的研究感兴趣，欢迎直接联系PI: <a href="mailto:majw@sustech.edu.cn" class="contact-email">majw@sustech.edu.cn</a>，你一般会在3 个工作日内收到回复。
             </div>
 
             <h3 class="page-title" id="positions-title-en">Open Positions</h3>
@@ -167,7 +167,7 @@ BODY = """
                             <strong>Mentoring Philosophy</strong>:<br>
                             New members get hands-on training from senior lab members and the PI, then gradually move into independent projects. You pick your research direction based on what interests you. We'll work together on research ideas and guidance, exploring scientific frontiers and publishing high-impact results.<br><br>
                             <strong>Basic Requirements</strong>:<br>
-                            • Master's degree in optoelectronics, electronic engineering, physics, or related disciplines (outstanding bachelor's graduates may apply for direct Ph.D. admission).<br>
+                            • Master's degree in optoelectronics, electronic engineering, physics, or related disciplines (outstanding bachelor's graduates may apply for direct Ph.D. admission, subject to relevant policies).<br>
                             • Strong academic background (GPA ≥ 85/100 or 3.5/4.0) from top-tier universities.<br><br>
                             <strong>Preferred Expertise</strong>:<br>
                             • Device nanofabrication / material synthesis<br>
@@ -180,7 +180,7 @@ BODY = """
                             <strong>培养理念</strong><br>
                             新人会由PI或有经验的高年级学生指导基础训练，逐步过渡到独立项目；学生可根据个人兴趣和特长选择研究方向，PI会提供可行的科研想法和技术指导，共同探索科学前沿、发表高水平成果。<br><br>
                             <strong>基本要求</strong><br>
-                            • 光电信息工程、电子工程、物理学或相关专业硕士学位（优秀本科生可申请直博）<br>
+                            • 光电信息工程、电子工程、物理学或相关专业硕士学位（优秀本科生可依据相关政策申请直博）<br>
                             • 顶尖高校毕业，具备优秀的学术背景（GPA ≥ 85/100 或 3.5/4.0）<br><br>
                             <strong>优先考虑的专长</strong><br>
                             • 器件纳米加工 / 材料制备<br>
