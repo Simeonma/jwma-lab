@@ -375,42 +375,6 @@ BODY = """
                             </div>
                         </div>
                     </div>
-
-                    <div class="pub-item no-img">
-                        <div class="pub-content">
-                            <div class="pub-title">
-                                <a href="https://doi.org/10.1002/lpor.202502392" target="_blank">Hybrid cavity from tunable coupling between anapole and Fabry-Perot resonance or anti-resonance</a>
-                            </div>
-                            <div class="pub-authors">
-                                Aoning Luo; Haitao Li; Ken Qin; <strong>Jingwen Ma</strong>; Shijie Kang; Jiayu Fan; Yiyi Yao; Xiexuan Zhang; Jiusi Yu; Boyang Qu&dagger;; Xiaoxiao Wu&dagger;.
-                                <span class="pub-journal">Laser &amp; Photonics Reviews</span>, e02392 (2025)
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pub-item no-img">
-                        <div class="pub-content">
-                            <div class="pub-title">
-                                <a href="https://doi.org/10.1103/bzpw-7h2x" target="_blank">Far-field excitation of a photonic flat band via a tailored anapole mode</a>
-                            </div>
-                            <div class="pub-authors">
-                                Peiwen Ren*; Junrong Zheng*; Zhuo Huang*; Yan Liu; Long Zhang; Hua Zhang; <strong>Jingwen Ma</strong>; Zhanghai Chen&dagger;; Jian-Feng Li&dagger;; Jun Yi&dagger;; Zhilin Yang&dagger;.
-                                <span class="pub-journal">Physical Review Letters</span>, 135, 083803 (2025)
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pub-item no-img">
-                        <div class="pub-content">
-                            <div class="pub-title">
-                                <a href="https://doi.org/10.1103/PhysRevLett.134.196601" target="_blank">Boundary-induced topological chiral extended states in Weyl metamaterial waveguides</a>
-                            </div>
-                            <div class="pub-authors">
-                                Ning Han; Fujia Chen; Mingzhu Li; Rui Zhao; Wenhao Li; Qiaolu Chen; Li Zhang; Yuang Pan; Yuze Hu; Mingyu Tong; Lu Qi; <strong>Jingwen Ma</strong>; Zhi-Ming Yu; Hongsheng Chen&dagger;; Yihao Yang&dagger;.
-                                <span class="pub-journal">Physical Review Letters</span>, 134, 196601 (2025)
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -444,18 +408,6 @@ BODY = """
                             <div class="pub-authors">
                                 <strong>Jingwen Ma</strong>; Xiang Zhang; Xiaobo Yin&dagger;.
                                 <span class="pub-journal">National Science Review</span>, 11, 9, nwae275 (2024) [Invited Commentary]
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pub-item no-img">
-                        <div class="pub-content">
-                            <div class="pub-title">
-                                <a href="https://doi.org/10.1002/lpor.202300584" target="_blank">Tunable Kerker scattering in a self-coupled polaritonic metasurface</a>
-                            </div>
-                            <div class="pub-authors">
-                                Fuhuan Shen; Yaoqiang Zhou; <strong>Jingwen Ma</strong>; Jiapeng Zheng; Jianfang Wang; Zefeng Chen&dagger;; Jianbin Xu&dagger;.
-                                <span class="pub-journal">Laser &amp; Photonics Reviews</span>, 18, 1, 2300584 (2024)
                             </div>
                         </div>
                     </div>
@@ -495,18 +447,6 @@ BODY = """
                             </div>
                         </div>
                     </div>
-
-                    <div class="pub-item no-img">
-                        <div class="pub-content">
-                            <div class="pub-title">
-                                <a href="https://doi.org/10.1088/1361-6633/ac953e" target="_blank">2D-materials-integrated optoelectromechanics: recent progress and future perspectives</a>
-                            </div>
-                            <div class="pub-authors">
-                                Mingzeng Peng; Jiadong Cheng; Xinhe Zheng; <strong>Jingwen Ma</strong>; Ziyao Feng; Xiankai Sun&dagger;.
-                                <span class="pub-journal">Reports on Progress in Physics</span>, 86, 2, 26402 (2023)
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -522,30 +462,6 @@ BODY = """
                             <div class="pub-authors">
                                 Taojie Zhou*; <strong>Jingwen Ma</strong>*; Mingchu Tang*; Haochuan Li; Mickael Martin; Thierry Baron; Huiyun Liu&dagger;; Siming Chen&dagger;; Xiankai Sun&dagger;; Zhaoyu Zhang&dagger;.
                                 <span class="pub-journal">ACS Photonics</span>, 9, 12, 3824-3830 (2022)
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pub-item no-img">
-                        <div class="pub-content">
-                            <div class="pub-title">
-                                <a href="https://doi.org/10.1038/s41467-022-33088-0" target="_blank">Transition metal dichalcogenide metaphotonic and self-coupled polaritonic platform grown by chemical vapor deposition</a>
-                            </div>
-                            <div class="pub-authors">
-                                Fuhuan Shen*; Zhenghe Zhang*; Yaoqiang Zhou*; <strong>Jingwen Ma</strong>; Kun Chen; Huanjun Chen; Shaojun Wang; Jianbin Xu&dagger;; Zefeng Chen&dagger;.
-                                <span class="pub-journal">Nature Communications</span>, 13, 5597 (2022)
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="pub-item no-img">
-                        <div class="pub-content">
-                            <div class="pub-title">
-                                <a href="https://doi.org/10.1364/PRJ.451344" target="_blank">Terahertz topological photonic waveguide switch for on-chip communication</a>
-                            </div>
-                            <div class="pub-authors">
-                                Xudong Liu; Jialiang Huang; Hao Chen; Zhengfang Qian; <strong>Jingwen Ma</strong>; Xiankai Sun; Shuting Fan; Yiwen Sun&dagger;.
-                                <span class="pub-journal">Photonics Research</span>, 10, 4, 1090-1096 (2022)
                             </div>
                         </div>
                     </div>
