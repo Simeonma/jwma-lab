@@ -43,9 +43,9 @@
         }
 
         .pi-avatar {
-            width: 196px;
-            height: 262px;
-            border-radius: 12px;
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
             overflow: hidden;
             background: #F8FAFC;
             flex-shrink: 0;
@@ -55,7 +55,7 @@
         .pi-avatar img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             object-position: center;
             background-color: #F8FAFC;
         }
@@ -212,18 +212,18 @@
         @media (max-width: 768px) {
             .section-title { font-size: 24px; }
             .pi-card { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
-            .pi-avatar { width: 180px; height: 220px; }
+            .pi-avatar { width: 200px; height: 200px; }
             .pi-info .bio { text-align: center; }
             .members-grid { grid-template-columns: 1fr; gap: 40px; }
         }
 
         @media (max-width: 600px) {
-            .pi-avatar { width: 150px; height: 180px; }
+            .pi-avatar { width: 170px; height: 170px; }
             .member-avatar { width: 150px; height: 150px; }
         }
 
         @media (max-width: 480px) {
-            .pi-avatar { width: 140px; height: 170px; }
+            .pi-avatar { width: 150px; height: 150px; }
         }
 
     </style>
