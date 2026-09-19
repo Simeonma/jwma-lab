@@ -276,6 +276,30 @@ CSS = """
             line-height: 1.6;
         }
 
+        .news-item.news-extra {
+            display: none;
+        }
+
+        .news-card.expanded .news-item.news-extra {
+            display: flex;
+        }
+
+        .news-toggle {
+            margin-top: 14px;
+            background: none;
+            border: none;
+            padding: 0;
+            color: #3B82F6;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .news-toggle:hover {
+            text-decoration: underline;
+        }
+
         @media (max-width: 768px) {
             .news-card { padding: 28px 24px; }
             .news-card h3 { font-size: 20px; }
@@ -358,7 +382,7 @@ BODY = """
             </div>
 
             <div class="carousel-slide" data-index="1">
-                <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Topological nanomechanics" class="carousel-img">
+                <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Topological nanomechanics" loading="lazy" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc2-en">
                 <strong>Nano-electro-mechanical chips:</strong> We made the first topological chip with auxiliary orbital degree of freedom. Published in <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>.
@@ -368,7 +392,7 @@ BODY = """
             </div>
 
             <div class="carousel-slide" data-index="2">
-                <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="Dirac-vortex lasers" class="carousel-img">
+                <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.jpg" alt="Dirac-vortex lasers" loading="lazy" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc3-en">
                 <strong>III-V semiconductor lasers:</strong> We built photonic-crystal micro-cavity lasers with Dirac-vortex states. Published in <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>.
@@ -378,7 +402,7 @@ BODY = """
             </div>
 
             <div class="carousel-slide" data-index="3">
-                <img src="images/publications/vortex_string_chiral_mode.jpg" alt="Vortex-string chiral modes" class="carousel-img">
+                <img src="images/publications/vortex_string_chiral_mode.jpg" alt="Vortex-string chiral modes" loading="lazy" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc4-en">
                 <strong>Metamaterials:</strong> We realized vortex-string chiral modes in metamaterials. Published in <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>.
@@ -388,7 +412,7 @@ BODY = """
             </div>
 
             <div class="carousel-slide" data-index="4">
-                <img src="images/publications/Topological photonic integrated circuits based on valley kink states.jpg" alt="Valley photonic crystals" class="carousel-img">
+                <img src="images/publications/Topological photonic integrated circuits based on valley kink states.jpg" alt="Valley photonic crystals" loading="lazy" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc5-en">
                 <strong>Photonic integrated circuits:</strong> We built photonic integrated circuits using valley kink states. Published in <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Laser &amp; Photonics Review</a> (cover article).
@@ -489,4 +513,36 @@ SCRIPT = """
         });
 
         startAutoCarousel();
+
+        // News: collapse older items beyond the latest 3, with a bilingual toggle
+        (function() {
+            var card = document.querySelector('.news-card');
+            if (!card) return;
+            var items = card.querySelectorAll('.news-item');
+            if (items.length <= 3) return;
+            for (var i = 3; i < items.length; i++) items[i].classList.add('news-extra');
+            var btn = document.createElement('button');
+            btn.className = 'news-toggle';
+            btn.type = 'button';
+            btn.innerHTML = '<span id="news-toggle-en" style="display:inline;">Show older news &#9662;</span>' +
+                            '<span id="news-toggle-cn" style="display:none;">展开更早的动态 &#9662;</span>';
+            card.appendChild(btn);
+            var expanded = false;
+            var enLabel = document.getElementById('news-toggle-en');
+            var cnLabel = document.getElementById('news-toggle-cn');
+            btn.addEventListener('click', function() {
+                expanded = !expanded;
+                card.classList.toggle('expanded', expanded);
+                enLabel.textContent = expanded ? 'Show less \u25B4' : 'Show older news \u25BE';
+                cnLabel.textContent = expanded ? '收起 \u25B4' : '展开更早的动态 \u25BE';
+            });
+            function syncLang() {
+                var cn = localStorage.getItem('labLang') === 'cn';
+                enLabel.style.display = cn ? 'none' : 'inline';
+                cnLabel.style.display = cn ? 'inline' : 'none';
+            }
+            syncLang();
+            document.getElementById('en-btn').addEventListener('click', syncLang);
+            document.getElementById('cn-btn').addEventListener('click', syncLang);
+        })();
 """

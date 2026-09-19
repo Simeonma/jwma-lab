@@ -5,6 +5,7 @@ Source: _template.html, pages/*.py, common.css, common.js (this directory)
 Output: *.html written into this directory
 """
 
+from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -20,6 +21,7 @@ PAGE_FILES = {
     "facilities": "facilities.html",
     "openings": "openings.html",
     "contact": "contact.html",
+    "404": "404.html",
 }
 
 
@@ -62,6 +64,21 @@ def build():
         print(f"  OK  {filename}")
 
     print(f"\nDone!  Output: {OUTPUT}")
+
+    # Regenerate sitemap.xml with today's date as lastmod
+    today = date.today().isoformat()
+    urls = []
+    for filename in PAGE_FILES.values():
+        loc = "https://www.jwma-lab.com/" if filename == "index.html" else f"https://www.jwma-lab.com/{filename}"
+        urls.append(f"  <url><loc>{loc}</loc><lastmod>{today}</lastmod></url>")
+    sitemap = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        + "\n".join(urls)
+        + "\n</urlset>\n"
+    )
+    (OUTPUT / "sitemap.xml").write_text(sitemap, encoding="utf-8", newline="\n")
+    print("  OK  sitemap.xml")
 
 
 if __name__ == "__main__":

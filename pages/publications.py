@@ -420,7 +420,7 @@ BODY = """
                     <div class="year" id="year-2023-cn" style="display: none;" onclick="toggleYear(this)">2023</div>
                     <div class="pub-item has-img">
                         <div class="pub-img-container" onclick="togglePubDesc(this)">
-                            <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="Dirac-vortex lasers" loading="lazy" class="pub-img">
+                            <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.jpg" alt="Dirac-vortex lasers" loading="lazy" class="pub-img">
                             <div class="pub-desc">
                                 We report the first Dirac-vortex microcavity laser that harnesses an auxiliary orbital degree of freedom. This work is featured in <a href="https://doi.org/10.1038/s41377-024-01398-1" target="_blank">Light: Science &amp; Applications 13, 64 (2024)</a>, <a href="https://phys.org/news/2023-10-room-temperature-continuous-wave-topological-dirac-vortex-microcavity.html" target="_blank">Phys.org</a>, and <a href="https://paper.sciencenet.cn/htmlpaper/2023/12/202312261443226192329.shtm" target="_blank">Sciencenet (科学网)</a>.
                             </div>

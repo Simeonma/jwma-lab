@@ -1,4 +1,4 @@
-TITLE = {"en": "Members - MacroPhotonic Lab", "cn": "团队成员 - MacroPhotonic Lab"}
+TITLE = {"en": "Members - MacroPhotonic Lab", "cn": "鍥㈤槦鎴愬憳 - MacroPhotonic Lab"}
 NAV_ACTIVE = "people"
 
 CSS = """
@@ -211,134 +211,134 @@ BODY = """
     <div class="container">
         <div class="card">
             <h3 class="section-title" id="pi-title-en">Principal Investigator</h3>
-            <h3 class="section-title" id="pi-title-cn" style="display: none;">课题组负责人</h3>
+            <h3 class="section-title" id="pi-title-cn" style="display: none;">璇鹃缁勮礋璐ｄ汉</h3>
 
             <div class="pi-card">
                 <div class="pi-avatar">
-                    <img src="images/members/Dr J Ma.jpg" alt="Jingwen Ma">
+                    <img loading="lazy" src="images/members/Dr J Ma.jpg" alt="Jingwen Ma">
                 </div>
                 <div class="pi-info">
                     <h4 id="pi-name-en">Dr. Jingwen Ma</h4>
-                    <h4 id="pi-name-cn" style="display: none;">马静文博士</h4>
+                    <h4 id="pi-name-cn" style="display: none;">椹潤鏂囧崥澹?/h4>
 
                     <div class="position" id="pi-position-en">Associate Professor, Department of Electrical and Electronic Engineering, SUSTech</div>
-                    <div class="position" id="pi-position-cn" style="display: none;">南方科技大学电子与电气工程系副教授</div>
+                    <div class="position" id="pi-position-cn" style="display: none;">鍗楁柟绉戞妧澶у鐢靛瓙涓庣數姘斿伐绋嬬郴鍓暀鎺?/div>
 
                     <div class="bio" id="pi-bio-en">
                         Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He then worked as a Postdoctoral Fellow and Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong. He is currently an Associate Professor in the Department of Electrical and Electronic Engineering, Southern University of Science and Technology, and a recipient of the National Overseas High-Level Talent Program. His research interests include integrated photonic chips, semiconductor lasers, light-matter interaction physics, and metamaterials. <a href="files/cv.pdf" class="cv-link" id="cv-link-en" target="_blank">Full CV</a>
                     </div>
                     <div class="bio" id="pi-bio-cn" style="display: none;">
-                        2021年获得香港中文大学电子工程博士学位，此后在香港大学张翔院士课题组从事博士后研究并任研究助理教授。现任南方科技大学电子与电气工程系副教授，入选国家海外高层次人才计划。研究兴趣包括集成光子芯片、半导体激光器、光-物质相互作用物理、纳米超表面与超材料等。<a href="files/cv.pdf" class="cv-link" id="cv-link-cn" style="display: none;" target="_blank">完整简历</a>
+                        2021骞磋幏寰楅娓腑鏂囧ぇ瀛︾數瀛愬伐绋嬪崥澹浣嶏紝姝ゅ悗鍦ㄩ娓ぇ瀛﹀紶缈旈櫌澹棰樼粍浠庝簨鍗氬＋鍚庣爺绌跺苟浠荤爺绌跺姪鐞嗘暀鎺堛€傜幇浠诲崡鏂圭鎶€澶у鐢靛瓙涓庣數姘斿伐绋嬬郴鍓暀鎺堬紝鍏ラ€夊浗瀹舵捣澶栭珮灞傛浜烘墠璁″垝銆傜爺绌跺叴瓒ｅ寘鎷泦鎴愬厜瀛愯姱鐗囥€佸崐瀵间綋婵€鍏夊櫒銆佸厜-鐗╄川鐩镐簰浣滅敤鐗╃悊銆佺撼绫宠秴琛ㄩ潰涓庤秴鏉愭枡绛夈€?a href="files/cv.pdf" class="cv-link" id="cv-link-cn" style="display: none;" target="_blank">瀹屾暣绠€鍘?/a>
                     </div>
                 </div>
             </div>
 
             <h3 class="section-title" id="members-title-en">Members</h3>
-            <h3 class="section-title" id="members-title-cn" style="display: none;">团队成员</h3>
+            <h3 class="section-title" id="members-title-cn" style="display: none;">鍥㈤槦鎴愬憳</h3>
 
             <div class="members-grid">
                 <div class="member-card hover-card">
                     <div class="member-avatar placeholder">
-                        <span>👥</span>
+                        <span>馃懃</span>
                     </div>
                     <div class="member-info">
                         <h5 id="xt-name-en">Tianyu Xu</h5>
-                        <h5 id="xt-name-cn" style="display: none;">徐天宇</h5>
+                        <h5 id="xt-name-cn" style="display: none;">寰愬ぉ瀹?/h5>
                         <div class="member-position" id="xt-pos-en">Master's Student</div>
-                        <div class="member-position" id="xt-pos-cn" style="display: none;">硕士研究生</div>
+                        <div class="member-position" id="xt-pos-cn" style="display: none;">纭曞＋鐮旂┒鐢?/div>
                         <div class="research-area" id="xt-bio-en">Tianyu Xu received his bachelor's degree from SUSTech and is currently pursuing a master's degree there. His research interests include intelligent optical systems.</div>
-                        <div class="research-area" id="xt-bio-cn" style="display: none;">本科毕业于南方科技大学，现为南方科技大学硕士研究生，研究兴趣为智能光学系统。</div>
+                        <div class="research-area" id="xt-bio-cn" style="display: none;">鏈姣曚笟浜庡崡鏂圭鎶€澶у锛岀幇涓哄崡鏂圭鎶€澶у纭曞＋鐮旂┒鐢燂紝鐮旂┒鍏磋叮涓烘櫤鑳藉厜瀛︾郴缁熴€?/div>
                     </div>
                 </div>
                 <div class="member-card hover-card">
                     <div class="member-avatar">
-                        <img src="images/members/Jiong Ouyang.jpg" alt="Jiong Ouyang">
+                        <img loading="lazy" src="images/members/Jiong Ouyang.jpg" alt="Jiong Ouyang">
                     </div>
                     <div class="member-info">
                         <h5 id="oj-name-en">Jiong Ouyang</h5>
-                        <h5 id="oj-name-cn" style="display: none;">欧阳炯</h5>
+                        <h5 id="oj-name-cn" style="display: none;">娆ч槼鐐?/h5>
                         <div class="member-position" id="oj-pos-en">Master's Student</div>
-                        <div class="member-position" id="oj-pos-cn" style="display: none;">硕士研究生</div>
+                        <div class="member-position" id="oj-pos-cn" style="display: none;">纭曞＋鐮旂┒鐢?/div>
                         <div class="research-area" id="oj-bio-en">Jiong Ouyang received his bachelor's degree from Shenzhen University and is currently pursuing a master's degree at the Southern University of Science and Technology. His research interests include nanophotonics.</div>
-                        <div class="research-area" id="oj-bio-cn" style="display: none;">本科毕业于深圳大学，目前在南方科技大学攻读硕士学位，研究兴趣为纳米光子学。</div>
+                        <div class="research-area" id="oj-bio-cn" style="display: none;">鏈姣曚笟浜庢繁鍦冲ぇ瀛︼紝鐩墠鍦ㄥ崡鏂圭鎶€澶у鏀昏纭曞＋瀛︿綅锛岀爺绌跺叴瓒ｄ负绾崇背鍏夊瓙瀛︺€?/div>
                     </div>
                 </div>
                 <div class="member-card hover-card">
                     <div class="member-avatar">
-                        <img src="images/members/Jie Liu.jpg" alt="Jie Liu">
+                        <img loading="lazy" src="images/members/Jie Liu.jpg" alt="Jie Liu">
                     </div>
                     <div class="member-info">
                         <h5 id="jl-name-en">Jie Liu</h5>
-                        <h5 id="jl-name-cn" style="display: none;">刘杰</h5>
+                        <h5 id="jl-name-cn" style="display: none;">鍒樻澃</h5>
                         <div class="member-position" id="jl-pos-en">Master's Student</div>
-                        <div class="member-position" id="jl-pos-cn" style="display: none;">硕士研究生</div>
+                        <div class="member-position" id="jl-pos-cn" style="display: none;">纭曞＋鐮旂┒鐢?/div>
                         <div class="research-area" id="jl-bio-en">Jie Liu is a master's student at SUSTech. He completed his undergraduate studies at Hunan University of Technology and Business. His research interests include intelligent optical systems.</div>
-                        <div class="research-area" id="jl-bio-cn" style="display: none;">南方科技大学在读硕士研究生，本科毕业于湖南工商大学电子信息工程专业，研究兴趣为智能光学系统。</div>
+                        <div class="research-area" id="jl-bio-cn" style="display: none;">鍗楁柟绉戞妧澶у鍦ㄨ纭曞＋鐮旂┒鐢燂紝鏈姣曚笟浜庢箹鍗楀伐鍟嗗ぇ瀛︾數瀛愪俊鎭伐绋嬩笓涓氾紝鐮旂┒鍏磋叮涓烘櫤鑳藉厜瀛︾郴缁熴€?/div>
                     </div>
                 </div>
                 <div class="member-card hover-card">
                     <div class="member-avatar">
-                        <img src="images/members/Han Zhang.jpg" alt="Han Zhang">
+                        <img loading="lazy" src="images/members/Han Zhang.jpg" alt="Han Zhang">
                     </div>
                     <div class="member-info">
                         <h5 id="hz-name-en">Han Zhang</h5>
-                        <h5 id="hz-name-cn" style="display: none;">张涵</h5>
+                        <h5 id="hz-name-cn" style="display: none;">寮犳兜</h5>
                         <div class="member-position" id="hz-pos-en">Research Assistant</div>
-                        <div class="member-position" id="hz-pos-cn" style="display: none;">研究助理</div>
+                        <div class="member-position" id="hz-pos-cn" style="display: none;">鐮旂┒鍔╃悊</div>
                         <div class="research-area" id="hz-bio-en">Han Zhang received his bachelor's degree from South China University of Technology and is currently pursuing a master's degree at the National University of Singapore. His research interests include photonic crystal lasers.</div>
-                        <div class="research-area" id="hz-bio-cn" style="display: none;">本科毕业于华南理工大学，现于新加坡国立大学攻读硕士学位，研究兴趣为光子晶体激光器。</div>
+                        <div class="research-area" id="hz-bio-cn" style="display: none;">鏈姣曚笟浜庡崕鍗楃悊宸ュぇ瀛︼紝鐜颁簬鏂板姞鍧″浗绔嬪ぇ瀛︽敾璇荤澹浣嶏紝鐮旂┒鍏磋叮涓哄厜瀛愭櫠浣撴縺鍏夊櫒銆?/div>
                     </div>
                 </div>
                 <div class="member-card hover-card">
                     <div class="member-avatar">
-                        <img src="images/members/Yikang Peng.jpg" alt="Yikang Peng">
+                        <img loading="lazy" src="images/members/Yikang Peng.jpg" alt="Yikang Peng">
                     </div>
                     <div class="member-info">
                         <h5 id="yp-name-en">Yikang Peng</h5>
-                        <h5 id="yp-name-cn" style="display: none;">彭怡康</h5>
+                        <h5 id="yp-name-cn" style="display: none;">褰€″悍</h5>
                         <div class="member-position" id="yp-pos-en">Research Assistant</div>
-                        <div class="member-position" id="yp-pos-cn" style="display: none;">研究助理</div>
+                        <div class="member-position" id="yp-pos-cn" style="display: none;">鐮旂┒鍔╃悊</div>
                         <div class="research-area" id="yp-bio-en">Yikang Peng is about to graduate from Sun Yat-sen University. His research interests include optical computing and photonic chips.</div>
-                        <div class="research-area" id="yp-bio-cn" style="display: none;">即将毕业于中山大学，研究兴趣为光计算与光子芯片。</div>
+                        <div class="research-area" id="yp-bio-cn" style="display: none;">鍗冲皢姣曚笟浜庝腑灞卞ぇ瀛︼紝鐮旂┒鍏磋叮涓哄厜璁＄畻涓庡厜瀛愯姱鐗囥€?/div>
                     </div>
                 </div>
                 <div class="member-card hover-card">
                     <div class="member-avatar">
-                        <img src="images/members/Yidan Zhu.jpg" alt="Yidan Zhu">
+                        <img loading="lazy" src="images/members/Yidan Zhu.jpg" alt="Yidan Zhu">
                     </div>
                     <div class="member-info">
                         <h5 id="yz-name-en">Yidan Zhu</h5>
-                        <h5 id="yz-name-cn" style="display: none;">朱奕丹</h5>
+                        <h5 id="yz-name-cn" style="display: none;">鏈卞涓?/h5>
                         <div class="member-position" id="yz-pos-en">Undergraduate Intern</div>
-                        <div class="member-position" id="yz-pos-cn" style="display: none;">本科实习生</div>
+                        <div class="member-position" id="yz-pos-cn" style="display: none;">鏈瀹炰範鐢?/div>
                         <div class="research-area" id="yz-bio-en">Yidan Zhu is an undergraduate student at the Department of Electronic and Electrical Engineering, SUSTech. Her research interests include topological photonic crystals.</div>
-                        <div class="research-area" id="yz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为拓扑光子晶体。</div>
+                        <div class="research-area" id="yz-bio-cn" style="display: none;">鍗楁柟绉戞妧澶у鐢靛瓙涓庣數姘斿伐绋嬬郴鍦ㄨ鏈鐢燂紝鐮旂┒鍏磋叮涓烘嫇鎵戝厜瀛愭櫠浣撱€?/div>
                     </div>
                 </div>
                 <div class="member-card hover-card">
                     <div class="member-avatar">
-                        <img src="images/members/Jiaheng Zheng.jpg" alt="Jiaheng Zheng">
+                        <img loading="lazy" src="images/members/Jiaheng Zheng.jpg" alt="Jiaheng Zheng">
                     </div>
                     <div class="member-info">
                         <h5 id="jz-name-en">Jiaheng Zheng</h5>
-                        <h5 id="jz-name-cn" style="display: none;">郑家恒</h5>
+                        <h5 id="jz-name-cn" style="display: none;">閮戝鎭?/h5>
                         <div class="member-position" id="jz-pos-en">Undergraduate Intern</div>
-                        <div class="member-position" id="jz-pos-cn" style="display: none;">本科实习生</div>
+                        <div class="member-position" id="jz-pos-cn" style="display: none;">鏈瀹炰範鐢?/div>
                         <div class="research-area" id="jz-bio-en">Jiaheng Zheng is an undergraduate student at the Department of Electronic and Electrical Engineering, SUSTech. His research interests include photonic chips.</div>
-                        <div class="research-area" id="jz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为光子芯片。</div>
+                        <div class="research-area" id="jz-bio-cn" style="display: none;">鍗楁柟绉戞妧澶у鐢靛瓙涓庣數姘斿伐绋嬬郴鍦ㄨ鏈鐢燂紝鐮旂┒鍏磋叮涓哄厜瀛愯姱鐗囥€?/div>
                     </div>
                 </div>
                 <div class="member-card join-card hover-card">
                     <div class="member-avatar placeholder">
-                        <span>👥</span>
+                        <span>馃懃</span>
                     </div>
                     <div class="member-info">
                         <h5 id="join-title-en">Join Our Team</h5>
-                        <h5 id="join-title-cn" style="display: none;">加入我们</h5>
-                        <div class="member-position" id="join-pos-en"><span class="join-dot"></span>PhD Student · Postdoc · RA</div>
-                        <div class="member-position" id="join-pos-cn" style="display: none;"><span class="join-dot"></span>博士生 · 博士后 · 研究助理</div>
-                        <a href="openings.html" class="join-link" id="join-link-en">View Openings →</a>
-                        <a href="openings.html" class="join-link" id="join-link-cn" style="display: none;">查看职位 →</a>
+                        <h5 id="join-title-cn" style="display: none;">鍔犲叆鎴戜滑</h5>
+                        <div class="member-position" id="join-pos-en"><span class="join-dot"></span>PhD Student 路 Postdoc 路 RA</div>
+                        <div class="member-position" id="join-pos-cn" style="display: none;"><span class="join-dot"></span>鍗氬＋鐢?路 鍗氬＋鍚?路 鐮旂┒鍔╃悊</div>
+                        <a href="openings.html" class="join-link" id="join-link-en">View Openings 鈫?/a>
+                        <a href="openings.html" class="join-link" id="join-link-cn" style="display: none;">鏌ョ湅鑱屼綅 鈫?/a>
                     </div>
                 </div>
             </div>

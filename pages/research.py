@@ -95,7 +95,7 @@ BODY = """
                 </div>
 
                 <div class="research-item hover-card">
-                    <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.png" alt="Photonic-crystal lasers" loading="lazy" class="research-img">
+                    <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.jpg" alt="Photonic-crystal lasers" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="item2-title-en">Photonic-crystal surface-emitting lasers</h4>
                         <h4 id="item2-title-cn" style="display: none;">光子晶体激光器</h4>
@@ -105,7 +105,7 @@ BODY = """
                 </div>
 
                 <div class="research-item hover-card">
-                    <img src="images/research/research5.png" alt="Quantum light-matter hybrids" loading="lazy" class="research-img">
+                    <img src="images/research/research5.jpg" alt="Quantum light-matter hybrids" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="item3-title-en">Strong light-matter coupling and macroscopic quantum states</h4>
                         <h4 id="item3-title-cn" style="display: none;">强光-物质耦合与宏观量子物态</h4>
