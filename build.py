@@ -29,8 +29,8 @@ def build():
     OUTPUT.mkdir(parents=True, exist_ok=True)
 
     for name, filename in PAGE_FILES.items():
-        mod = {}
         page_path = PAGES_DIR / f"{name}.py"
+        mod = {"__file__": str(page_path)}
         exec(page_path.read_text(encoding="utf-8"), mod)
 
         # Nav active classes
