@@ -135,5 +135,15 @@
 
     <script src="common.js"></script>
     
+    <script>
+        // GoatCounter analytics — only counts visits on the live domain
+        if (location.hostname.indexOf('jwma-lab.com') !== -1) {
+            var gc = document.createElement('script');
+            gc.async = true;
+            gc.src = '//gc.zgo.at/count.js';
+            gc.setAttribute('data-goatcounter', 'https://jwma-lab.goatcounter.com/count');
+            document.body.appendChild(gc);
+        }
+    </script>
 </body>
 </html>
