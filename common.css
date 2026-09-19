@@ -116,15 +116,16 @@ h1, h2, h3, h4, h5 {
 }
 
 .logo-img {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
     object-fit: contain;
     display: inline-block;
+    border-radius: 8px;
 }
 
 .logo-text {
     font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-    font-size: 22px;
+    font-size: 26px;
     font-weight: 700;
     letter-spacing: 1px;
     color: #ffffff;
