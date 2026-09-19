@@ -178,6 +178,41 @@
             margin-bottom: 5px;
         }
 
+        .alumni-list {
+            margin-top: 4px;
+        }
+
+        .alumni-empty {
+            padding: 12px 4px;
+            font-size: 16px;
+            color: #94A3B8;
+        }
+
+        .alumni-row {
+            display: flex;
+            gap: 24px;
+            padding: 12px 4px;
+            border-bottom: 1px solid #F1F5F9;
+            align-items: baseline;
+        }
+
+        .alumni-row:last-child {
+            border-bottom: none;
+        }
+
+        .alumni-name {
+            min-width: 160px;
+            font-weight: 600;
+            color: #1E3A8A;
+            flex-shrink: 0;
+        }
+
+        .alumni-info {
+            font-size: 16px;
+            color: #4B5563;
+            line-height: 1.6;
+        }
+
         .member-info .contact {
             font-size: 16px;
             color: #1E3A8A;
@@ -418,6 +453,22 @@
                         <a href="openings.html" class="join-link" id="join-link-cn" style="display: none;">查看职位 →</a>
                     </div>
                 </div>
+            </div>
+
+            <h3 class="section-title" id="alumni-title-en">Alumni</h3>
+            <h3 class="section-title" id="alumni-title-cn" style="display: none;">毕业生去向</h3>
+
+            <div class="alumni-list">
+                <div class="alumni-empty" id="alumni-empty-en">To be updated.</div>
+                <div class="alumni-empty" id="alumni-empty-cn" style="display: none;">待更新。</div>
+                <!-- To add an alumnus, remove the "To be updated" lines above and copy this block:
+                <div class="alumni-row">
+                    <span class="alumni-name" id="al1-name-en">San Zhang</span>
+                    <span class="alumni-name" id="al1-name-cn" style="display: none;">张三</span>
+                    <span class="alumni-info" id="al1-info-en">M.S. 2027 &middot; Ph.D. at MIT</span>
+                    <span class="alumni-info" id="al1-info-cn" style="display: none;">2027年硕士毕业，现于麻省理工学院攻读博士</span>
+                </div>
+                -->
             </div>
         </div>
     </div>
