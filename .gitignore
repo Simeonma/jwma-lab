@@ -1,0 +1,3 @@
+fonts/_src-*.woff2
+*.pyc
+__pycache__/

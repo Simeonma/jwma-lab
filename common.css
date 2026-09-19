@@ -1,4 +1,6 @@
-/* 自托管标题字体：仅拉丁子集（各约 21KB），中文回退到系统黑体栈 */
+/* 自托管标题字体：拉丁用 Source Serif 4（各约 21KB），
+   中文标题用 Noto Serif SC 按需子集（仅页面标题用字，各约 23KB）。
+   新增中文标题后重新生成：py scripts/subset_heading_font.py */
 @font-face {
     font-family: 'Source Serif 4';
     src: url('fonts/SourceSerif4-latin-600.woff2') format('woff2');
@@ -15,6 +17,24 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Noto Serif SC Sub';
+    src: url('fonts/NotoSerifSC-sub-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: 'Noto Serif SC Sub';
+    src: url('fonts/NotoSerifSC-sub-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
 /* 全局重置 */
 * {
     margin: 0;
@@ -29,9 +49,9 @@ body {
   line-height: 1.7;
 }
 
-/* 标题用衬线体（拉丁字形），学术气质；中文标题回退系统黑体 */
+/* 标题衬线体：拉丁 Source Serif 4 + 中文 Noto Serif SC 子集，缺字回退系统字体 */
 h1, h2, h3, h4, h5 {
-    font-family: 'Source Serif 4', Georgia, 'Times New Roman', "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+    font-family: 'Source Serif 4', 'Noto Serif SC Sub', Georgia, 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
 }
 
 /* 导航栏全局样式 */
@@ -61,6 +81,7 @@ h1, h2, h3, h4, h5 {
     gap: 12px;
     text-decoration: none;
     color: #ffffff;
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -92,9 +113,10 @@ h1, h2, h3, h4, h5 {
 
 .nav a {
     color: #E2E8F0;
+    font-family: 'Source Serif 4', 'Noto Serif SC Sub', Georgia, 'Noto Serif SC', 'Songti SC', SimSun, serif;
     text-decoration: none;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 600;
     padding: 8px 0;
     position: relative;
     transition: color 0.2s ease;
