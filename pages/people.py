@@ -238,6 +238,45 @@ BODY = """
 
             <div class="members-grid">
                 <div class="member-card hover-card">
+                    <div class="member-avatar placeholder">
+                        <span>👥</span>
+                    </div>
+                    <div class="member-info">
+                        <h5 id="xt-name-en">Tianyu Xu</h5>
+                        <h5 id="xt-name-cn" style="display: none;">徐天宇</h5>
+                        <div class="member-position" id="xt-pos-en">Master's Student</div>
+                        <div class="member-position" id="xt-pos-cn" style="display: none;">硕士研究生</div>
+                        <div class="research-area" id="xt-bio-en">Tianyu Xu received his bachelor's degree from SUSTech and is currently pursuing a master's degree there. His research interests include intelligent optical systems.</div>
+                        <div class="research-area" id="xt-bio-cn" style="display: none;">本科毕业于南方科技大学，现为南方科技大学硕士研究生，研究兴趣为智能光学系统。</div>
+                    </div>
+                </div>
+                <div class="member-card hover-card">
+                    <div class="member-avatar placeholder">
+                        <span>👥</span>
+                    </div>
+                    <div class="member-info">
+                        <h5 id="oj-name-en">Jiong Ouyang</h5>
+                        <h5 id="oj-name-cn" style="display: none;">欧阳炯</h5>
+                        <div class="member-position" id="oj-pos-en">Master's Student</div>
+                        <div class="member-position" id="oj-pos-cn" style="display: none;">硕士研究生</div>
+                        <div class="research-area" id="oj-bio-en">Jiong Ouyang received his bachelor's degree from Shenzhen University and is currently pursuing a master's degree at the Southern University of Science and Technology. His research interests include nanophotonics.</div>
+                        <div class="research-area" id="oj-bio-cn" style="display: none;">本科毕业于深圳大学，目前在南方科技大学攻读硕士学位，研究兴趣为纳米光子学。</div>
+                    </div>
+                </div>
+                <div class="member-card hover-card">
+                    <div class="member-avatar">
+                        <img src="images/members/Jie Liu.jpg" alt="Jie Liu">
+                    </div>
+                    <div class="member-info">
+                        <h5 id="jl-name-en">Jie Liu</h5>
+                        <h5 id="jl-name-cn" style="display: none;">刘杰</h5>
+                        <div class="member-position" id="jl-pos-en">Master's Student</div>
+                        <div class="member-position" id="jl-pos-cn" style="display: none;">硕士研究生</div>
+                        <div class="research-area" id="jl-bio-en">Jie Liu is a master's student at SUSTech. He completed his undergraduate studies at Hunan University of Technology and Business. His research interests include intelligent optical systems.</div>
+                        <div class="research-area" id="jl-bio-cn" style="display: none;">南方科技大学在读硕士研究生，本科毕业于湖南工商大学电子信息工程专业，研究兴趣为智能光学系统。</div>
+                    </div>
+                </div>
+                <div class="member-card hover-card">
                     <div class="member-avatar">
                         <img src="images/members/Han Zhang.jpg" alt="Han Zhang">
                     </div>
