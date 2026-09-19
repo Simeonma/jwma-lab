@@ -1,13 +1,11 @@
-"""subset_heading_font.py — Regenerate the self-hosted CJK font subsets.
+"""subset_heading_font.py — Regenerate the self-hosted CJK serif subset (whole site).
 
 Usage:  py scripts/subset_heading_font.py   (run from repo root, needs fonttools+brotli)
 
-Two subsets are generated from fontsource full files:
-
-1. Serif headings  (fonts/NotoSerifSC-sub-{600,700}.woff2)
-   Chars: CJK found in heading markup (<h1>..<h5>, TITLE=, _template.html).
-2. Sans body       (fonts/NotoSansSC-sub-{400,500,700}.woff2)
-   Chars: every CJK character used anywhere on the site (pages + template).
+The entire site uses one typeface pair: Source Serif 4 (Latin) +
+Noto Serif SC (Chinese). This script subsets Noto Serif SC to exactly
+the CJK characters used anywhere on the site (pages + template),
+for weights 400/500/600/700, writing fonts/NotoSerifSC-sub-*.woff2.
 
 Re-run after adding new Chinese text, then commit the regenerated
 fonts/*.woff2 files (source caches fonts/_src-* are gitignored).
@@ -26,32 +24,14 @@ CJK_RANGE = (
     "\u4e00-\u9fff\uf900-\ufaff\ufe30-\ufe4f\uff00-\uffef"
 )
 CJK_RE = re.compile(f"[{CJK_RANGE}]")
-HEADING_RE = re.compile(r"<h[1-5]\b")
-
-JOBS = [
-    # (family, source-url-template, weights, char-collection mode, out-prefix)
-    ("serif", "https://cdn.jsdelivr.net/fontsource/fonts/noto-serif-sc@latest/chinese-simplified-{w}-normal.woff2",
-     [600, 700], "headings", "NotoSerifSC-sub"),
-    ("sans", "https://cdn.jsdelivr.net/fontsource/fonts/noto-sans-sc@latest/chinese-simplified-{w}-normal.woff2",
-     [400, 500, 700], "all", "NotoSansSC-sub"),
-]
+WEIGHTS = [400, 500, 600, 700]
+URL = "https://cdn.jsdelivr.net/fontsource/fonts/noto-serif-sc@latest/chinese-simplified-{w}-normal.woff2"
 
 
-def page_texts() -> str:
+def collect_chars() -> str:
     parts = [p.read_text(encoding="utf-8") for p in sorted((ROOT / "pages").glob("*.py"))]
     parts.append((ROOT / "_template.html").read_text(encoding="utf-8"))
-    return "\n".join(parts)
-
-
-def chars_for(mode: str, everything: str) -> str:
-    if mode == "all":
-        chars = set(CJK_RE.findall(everything))
-    else:  # headings only
-        chars = set()
-        for line in everything.splitlines():
-            if HEADING_RE.search(line) or line.startswith("TITLE"):
-                chars.update(CJK_RE.findall(line))
-    # punctuation safety margin
+    chars = set(CJK_RE.findall("\n".join(parts)))
     chars.update("、·—…！？；：（）“”‘’《》〈〉【】％℃")
     return "".join(sorted(c for c in chars if c != "\n"))
 
@@ -76,16 +56,14 @@ def subset(src: Path, chars_file: Path, out: Path) -> None:
 
 
 def main() -> None:
-    everything = page_texts()
-    for family, url_tpl, weights, mode, prefix in JOBS:
-        chars = chars_for(mode, everything)
-        chars_file = FONTS / f"{'heading' if mode == 'headings' else 'body'}-chars.txt"
-        chars_file.write_text(chars, encoding="utf-8")
-        print(f"{family}: {len(chars)} chars")
-        for w in weights:
-            src = FONTS / f"_src-{family}-{w}.woff2"
-            download(url_tpl.format(w=w), src)
-            subset(src, chars_file, FONTS / f"{prefix}-{w}.woff2")
+    chars = collect_chars()
+    chars_file = FONTS / "all-chars.txt"
+    chars_file.write_text(chars, encoding="utf-8")
+    print(f"{len(chars)} unique CJK chars collected")
+    for w in WEIGHTS:
+        src = FONTS / f"_src-serif-{w}.woff2"
+        download(URL.format(w=w), src)
+        subset(src, chars_file, FONTS / f"NotoSerifSC-sub-{w}.woff2")
 
 
 if __name__ == "__main__":

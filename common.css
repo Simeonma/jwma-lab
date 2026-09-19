@@ -1,7 +1,22 @@
-/* 自托管全站字体。
-   标题：拉丁 Source Serif 4 + 中文思源宋体子集（仅标题用字，22KB/字重）
-   正文：拉丁 Source Sans 3 + 中文思源黑体子集（全站用字，~93KB/字重）
-   新增中文文本后重新生成子集：py scripts/subset_heading_font.py */
+/* 全站统一字体：拉丁 Source Serif 4 + 中文思源宋体子集（全站用字）。
+   四个字重齐全，标题、正文、导航一致。新增中文文本后重新生成子集：
+   py scripts/subset_heading_font.py */
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('fonts/SourceSerif4-latin-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('fonts/SourceSerif4-latin-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
 @font-face {
     font-family: 'Source Serif 4';
     src: url('fonts/SourceSerif4-latin-600.woff2') format('woff2');
@@ -16,6 +31,24 @@
     font-weight: 700;
     font-style: normal;
     font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif SC Sub';
+    src: url('fonts/NotoSerifSC-sub-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
+}
+
+@font-face {
+    font-family: 'Noto Serif SC Sub';
+    src: url('fonts/NotoSerifSC-sub-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+    unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
 }
 
 @font-face {
@@ -36,57 +69,6 @@
     unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
 }
 
-@font-face {
-    font-family: 'Source Sans 3';
-    src: url('fonts/SourceSans3-latin-400.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Source Sans 3';
-    src: url('fonts/SourceSans3-latin-500.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Source Sans 3';
-    src: url('fonts/SourceSans3-latin-700.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Noto Sans SC Sub';
-    src: url('fonts/NotoSansSC-sub-400.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-    unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
-}
-
-@font-face {
-    font-family: 'Noto Sans SC Sub';
-    src: url('fonts/NotoSansSC-sub-500.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-    unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
-}
-
-@font-face {
-    font-family: 'Noto Sans SC Sub';
-    src: url('fonts/NotoSansSC-sub-700.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-    unicode-range: U+2E80-9FFF, U+F900-FAFF, U+FF00-FFEF;
-}
-
 /* 全局重置 */
 * {
     margin: 0;
@@ -95,15 +77,10 @@
 }
 
 body {
-  font-family: 'Source Sans 3', 'Noto Sans SC Sub', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  font-family: 'Source Serif 4', 'Noto Serif SC Sub', Georgia, 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
   background-color: #F8FAFC;
   color: #1F2937;
   line-height: 1.7;
-}
-
-/* 标题衬线体：拉丁 Source Serif 4 + 中文 Noto Serif SC 子集，缺字回退系统字体 */
-h1, h2, h3, h4, h5 {
-    font-family: 'Source Serif 4', 'Noto Serif SC Sub', Georgia, 'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', SimSun, serif;
 }
 
 /* 导航栏全局样式 */
