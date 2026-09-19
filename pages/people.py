@@ -251,8 +251,8 @@ BODY = """
                     </div>
                 </div>
                 <div class="member-card hover-card">
-                    <div class="member-avatar placeholder">
-                        <span>👥</span>
+                    <div class="member-avatar">
+                        <img src="images/members/Jiong Ouyang.jpg" alt="Jiong Ouyang">
                     </div>
                     <div class="member-info">
                         <h5 id="oj-name-en">Jiong Ouyang</h5>
