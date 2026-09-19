@@ -311,7 +311,7 @@ h1, h2, h3, h4, h5 {
     max-width: 1200px;
     margin: 0 auto 28px;
     display: grid;
-    grid-template-columns: 1.3fr 1fr 1.1fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: 40px;
     text-align: left;
 }
