@@ -16,7 +16,11 @@
 
         enBtn.classList.toggle('active', showEn);
         cnBtn.classList.toggle('active', !showEn);
-        show.forEach(function(el) { el.style.display = 'block'; });
+        // Show: remove the inline display so each element returns to the
+        // display defined by the stylesheet (flex, inline-block, ...).
+        // Hide: force display:none. Never force 'block' — it would break
+        // flex containers and other non-block layouts.
+        show.forEach(function(el) { el.style.removeProperty('display'); });
         hide.forEach(function(el) { el.style.display = 'none'; });
         document.documentElement.lang = showEn ? 'en' : 'zh-CN';
         document.title = showEn ? enTitle : cnTitle;
