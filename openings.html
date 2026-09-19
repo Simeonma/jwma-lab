@@ -73,6 +73,11 @@
             border: 1px solid #F1F5F9;
             border-radius: 12px;
             padding: 32px;
+            cursor: pointer;
+        }
+
+        .position-card.open {
+            cursor: default;
         }
 
         .position-head {
@@ -80,7 +85,6 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 16px;
-            cursor: pointer;
         }
 
         .position-name {
@@ -106,15 +110,33 @@
             transform: rotate(180deg);
         }
 
+        /* 折叠态：预览前两行，底部渐隐提示可展开 */
         .position-desc {
-            display: none;
             font-size: 16px;
             color: #475569;
             line-height: 1.8;
+            max-height: 58px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .position-card:not(.open) .position-desc::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 34px;
+            background: linear-gradient(rgba(255, 255, 255, 0), #ffffff 88%);
+            pointer-events: none;
+        }
+
+        .position-desc p:first-child {
+            margin-top: 0;
         }
 
         .position-card.open .position-desc {
-            display: block;
+            max-height: none;
         }
 
         .position-desc strong {
@@ -426,10 +448,12 @@
 
     <script src="common.js"></script>
         <script>
-// Collapsible position cards: click the title row to expand/collapse
-        document.querySelectorAll('.position-head').forEach(function(head) {
-            head.addEventListener('click', function() {
-                head.closest('.position-card').classList.toggle('open');
+// Collapsible position cards: click anywhere on the card to
+        // expand/collapse; clicks on links inside are left alone.
+        document.querySelectorAll('.position-card').forEach(function(card) {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('a')) return;
+                card.classList.toggle('open');
             });
         });
     </script>
