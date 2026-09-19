@@ -118,6 +118,17 @@ BODY = """
                         </span>
                     </div>
                     <div class="contact-row">
+                        <span class="icon">🎓</span>
+                        <span class="label" id="fac-label-en">SUSTech</span>
+                        <span class="label" id="fac-label-cn" style="display: none;">学校主页</span>
+                        <span class="value" id="fac-value-en">
+                            <a href="https://www.sustech.edu.cn/en/faculties/jingwenma.html" target="_blank">Faculty Profile →</a>
+                        </span>
+                        <span class="value" id="fac-value-cn" style="display: none;">
+                            <a href="https://www.sustech.edu.cn/zh/faculties/jingwenma.html" target="_blank">教师个人主页 →</a>
+                        </span>
+                    </div>
+                    <div class="contact-row">
                         <span class="icon">📍</span>
                         <span class="label" id="addr-label-en">Address</span>
                         <span class="label" id="addr-label-cn" style="display: none;">地址</span>
