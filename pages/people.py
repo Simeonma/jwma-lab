@@ -63,14 +63,21 @@ CSS = """
         }
 
         .pi-info .cv-link {
-            color: #1F2937;
-            font-weight: 500;
-            text-decoration: underline;
-            text-underline-offset: 2px;
+            display: inline-block;
+            margin-right: 12px;
+            padding: 7px 18px;
+            border: 1.5px solid #1E3A8A;
+            border-radius: 8px;
+            color: #1E3A8A;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
         }
 
         .pi-info .cv-link:hover {
-            color: #3B82F6;
+            background-color: #1E3A8A;
+            color: #ffffff;
         }
 
         .members-grid {
@@ -260,15 +267,21 @@ BODY = """
                     <div class="position" id="pi-position-cn" style="display: none;">南方科技大学电子与电气工程系副教授</div>
 
                     <div class="bio" id="pi-bio-en">
-                        Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He then worked as a Postdoctoral Fellow and Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong. He is currently an Associate Professor in the Department of Electrical and Electronic Engineering, Southern University of Science and Technology, and a recipient of the National Overseas High-Level Talent Program. His research interests include integrated photonic chips, semiconductor lasers, light-matter interaction physics, and metamaterials. <a href="files/cv.pdf" class="cv-link" id="cv-link-en" target="_blank">Full CV</a>
-<a href="https://www.sustech.edu.cn/en/faculties/jingwenma.html" class="cv-link" id="pi-faculty-en" target="_blank">Faculty Profile</a>
+                        Dr. Jingwen Ma received his Ph.D. degree in Electronic Engineering from The Chinese University of Hong Kong in 2021. He then worked as a Postdoctoral Fellow and Research Assistant Professor in Prof. Xiang Zhang's group at the University of Hong Kong. He is currently an Associate Professor in the Department of Electrical and Electronic Engineering, Southern University of Science and Technology, and a recipient of the National Overseas High-Level Talent Program. His research interests include integrated photonic chips, semiconductor lasers, light-matter interaction physics, and metamaterials.
+                    </div>
+                    <div id="pi-links-en" style="margin-top: 4px;">
+                        <a href="files/cv.pdf" class="cv-link" target="_blank">Full CV</a>
+                        <a href="https://www.sustech.edu.cn/en/faculties/jingwenma.html" class="cv-link" target="_blank">Faculty Profile</a>
                     </div>
                     <div class="bio" id="pi-bio-cn" style="display: none;">
-                        2021年获得香港中文大学电子工程博士学位，此后在香港大学张翔院士课题组从事博士后研究并任研究助理教授。现任南方科技大学电子与电气工程系副教授，入选国家海外高层次人才计划。研究兴趣包括集成光子芯片、半导体激光器、光-物质相互作用物理、纳米超表面与超材料等。<a href="files/cv.pdf" class="cv-link" id="cv-link-cn" style="display: none;" target="_blank">完整简历</a>
-<a href="https://www.sustech.edu.cn/zh/faculties/jingwenma.html" class="cv-link" id="pi-faculty-cn" style="display: none;" target="_blank">学校教师主页</a>
+                        2021年获得香港中文大学电子工程博士学位，此后在香港大学张翔院士课题组从事博士后研究并任研究助理教授。现任南方科技大学电子与电气工程系副教授，入选国家海外高层次人才计划。研究兴趣包括集成光子芯片、半导体激光器、光-物质相互作用物理、纳米超表面与超材料等。
+                    </div>
+                    <div id="pi-links-cn" style="display: none; margin-top: 4px;">
+                        <a href="files/cv.pdf" class="cv-link" target="_blank">完整简历</a>
+                        <a href="https://www.sustech.edu.cn/zh/faculties/jingwenma.html" class="cv-link" target="_blank">学校教师主页</a>
+                    </div>
                     </div>
                 </div>
-            </div>
 
             <h3 class="section-title" id="members-title-en">Members</h3>
             <h3 class="section-title" id="members-title-cn" style="display: none;">团队成员</h3>

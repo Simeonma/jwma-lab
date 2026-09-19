@@ -83,6 +83,11 @@ body {
   line-height: 1.7;
 }
 
+/* 标题排版微调：多行标题换行更均衡 */
+h1, h2, h3, h4, h5 {
+    text-wrap: balance;
+}
+
 /* 导航栏全局样式 */
 .header {
     background-color: #0F172A;
@@ -297,10 +302,82 @@ body {
 .footer {
     background-color: #0F172A;
     color: #E2E8F0;
-    padding: 24px;
-    text-align: center;
+    padding: 40px 24px 24px;
     margin-top: 60px;
     font-size: 15px;
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto 28px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1.1fr;
+    gap: 40px;
+    text-align: left;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-brand strong {
+    color: #ffffff;
+    font-size: 19px;
+    letter-spacing: 0.5px;
+}
+
+.footer-logo-img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.footer-tagline {
+    color: #94A3B8;
+}
+
+.footer-head {
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.footer-col p {
+    margin-bottom: 6px;
+}
+
+.footer-col a {
+    color: #E2E8F0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+    color: #93C5FD;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-addr {
+    color: #94A3B8;
+    line-height: 1.6;
+}
+
+.footer-copy {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(226, 232, 240, 0.15);
+    text-align: center;
+    color: #94A3B8;
+    font-size: 14px;
 }
 
 .footer strong {
@@ -354,6 +431,16 @@ body {
 
     .card {
         padding: 32px 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
     }
 }
 

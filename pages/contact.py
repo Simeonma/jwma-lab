@@ -65,6 +65,11 @@ CSS = """
             color: #3B82F6;
         }
 
+        .arrow-link svg {
+            vertical-align: -2px;
+            margin-left: 3px;
+        }
+
         .map-wrapper {
             flex: 1;
             aspect-ratio: 1;
@@ -123,10 +128,10 @@ BODY = """
                         <span class="label" id="fac-label-en">SUSTech</span>
                         <span class="label" id="fac-label-cn" style="display: none;">学校主页</span>
                         <span class="value" id="fac-value-en">
-                            <a href="https://www.sustech.edu.cn/en/faculties/jingwenma.html" target="_blank">Faculty Profile →</a>
+                            <a href="https://www.sustech.edu.cn/en/faculties/jingwenma.html" target="_blank" class="arrow-link">Faculty Profile<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                         </span>
                         <span class="value" id="fac-value-cn" style="display: none;">
-                            <a href="https://www.sustech.edu.cn/zh/faculties/jingwenma.html" target="_blank">教师个人主页 →</a>
+                            <a href="https://www.sustech.edu.cn/zh/faculties/jingwenma.html" target="_blank" class="arrow-link">教师个人主页<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
                         </span>
                     </div>
                     <div class="contact-row">

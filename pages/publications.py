@@ -145,6 +145,12 @@ CSS = """
         .pub-img {
             width: 100%;
             height: auto;
+            transition: transform 0.35s ease;
+        }
+
+        .pub-img-container:hover .pub-img {
+            transform: scale(1.02);
+        }
             display: block;
         }
 

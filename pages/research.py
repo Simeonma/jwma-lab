@@ -25,6 +25,15 @@ CSS = """
             background-color: #F8FAFC;
         }
 
+        /* 图片 hover 轻缩放，呼应卡片浮起 */
+        .research-item .research-img {
+            transition: transform 0.35s ease;
+        }
+
+        .research-item:hover .research-img {
+            transform: scale(1.02);
+        }
+
         .research-content {
             display: flex;
             flex-direction: column;
