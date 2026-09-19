@@ -66,7 +66,46 @@ CSS = """
             transition: transform 0.2s ease;
         }
 
-        .position-card.open .pos-chevron {
+        .pos-toggle-row {
+            text-align: right;
+            margin-top: 14px;
+        }
+
+        .pos-toggle {
+            background: none;
+            border: none;
+            padding: 0;
+            color: #3B82F6;
+            font-size: 14px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        .pos-toggle:hover {
+            text-decoration: underline;
+        }
+
+        .t-collapse {
+            display: none;
+        }
+
+        .position-card.open .t-expand {
+            display: none;
+        }
+
+        .position-card.open .t-collapse {
+            display: inline;
+        }
+
+        .pos-toggle .chev {
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 12px;
+            transition: transform 0.2s ease;
+        }
+
+        .position-card.open .pos-toggle .chev {
             transform: rotate(180deg);
         }
 
@@ -192,7 +231,6 @@ BODY = """
                         <div class="position-head">
                             <div class="position-name" id="postdoc-name-en">Postdoctoral Fellow</div>
                             <div class="position-name" id="postdoc-name-cn" style="display: none;">博士后研究员</div>
-                            <span class="pos-chevron">&#9662;</span>
                         </div>
 
                         <div class="position-desc" id="postdoc-desc-en">
@@ -233,13 +271,19 @@ BODY = """
                                 <li>结题后表现优秀者有机会晋升为研究助理教授/助理研究员。</li>
                             </ul>
                         </div>
+                        <div class="pos-toggle-row">
+                            <button type="button" class="pos-toggle">
+                                <span class="t-expand"><span id="pt1-en">Expand details</span><span id="pt1-cn" style="display: none;">展开详情</span></span>
+                                <span class="t-collapse"><span id="pc1-en" style="display: none;">Collapse</span><span id="pc1-cn" style="display: none;">收起</span></span>
+                                <span class="chev">&#9662;</span>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="position-card hover-card">
                         <div class="position-head">
                             <div class="position-name" id="phd-name-en">Ph.D. Student</div>
                             <div class="position-name" id="phd-name-cn" style="display: none;">博士研究生</div>
-                            <span class="pos-chevron">&#9662;</span>
                         </div>
 
                         <div class="position-desc" id="phd-desc-en">
@@ -278,13 +322,19 @@ BODY = """
                                 <li>熟练运用 AI 辅助编程工具进行开发，具备多智能体（multi-agent）系统搭建经验</li>
                             </ul>
                         </div>
+                        <div class="pos-toggle-row">
+                            <button type="button" class="pos-toggle">
+                                <span class="t-expand"><span id="pt2-en">Expand details</span><span id="pt2-cn" style="display: none;">展开详情</span></span>
+                                <span class="t-collapse"><span id="pc2-en" style="display: none;">Collapse</span><span id="pc2-cn" style="display: none;">收起</span></span>
+                                <span class="chev">&#9662;</span>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="position-card hover-card">
                         <div class="position-head">
                             <div class="position-name" id="master-name-en">Master Student</div>
                             <div class="position-name" id="master-name-cn" style="display: none;">硕士研究生</div>
-                            <span class="pos-chevron">&#9662;</span>
                         </div>
 
                         <div class="position-desc" id="master-desc-en">
@@ -317,13 +367,19 @@ BODY = """
                                 <li>具备一定编程基础（包括善用 AI 辅助工具）</li>
                             </ul>
                         </div>
+                        <div class="pos-toggle-row">
+                            <button type="button" class="pos-toggle">
+                                <span class="t-expand"><span id="pt3-en">Expand details</span><span id="pt3-cn" style="display: none;">展开详情</span></span>
+                                <span class="t-collapse"><span id="pc3-en" style="display: none;">Collapse</span><span id="pc3-cn" style="display: none;">收起</span></span>
+                                <span class="chev">&#9662;</span>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="position-card hover-card">
                         <div class="position-head">
                             <div class="position-name" id="ra-name-en">Research Assistant</div>
                             <div class="position-name" id="ra-name-cn" style="display: none;">研究助理</div>
-                            <span class="pos-chevron">&#9662;</span>
                         </div>
 
                         <div class="position-desc" id="ra-desc-en">
@@ -341,6 +397,13 @@ BODY = """
                                 <li>个性化的短期课题和一对一指导</li>
                                 <li>具有竞争力的待遇</li>
                             </ul>
+                        </div>
+                        <div class="pos-toggle-row">
+                            <button type="button" class="pos-toggle">
+                                <span class="t-expand"><span id="pt4-en">Expand details</span><span id="pt4-cn" style="display: none;">展开详情</span></span>
+                                <span class="t-collapse"><span id="pc4-en" style="display: none;">Collapse</span><span id="pc4-cn" style="display: none;">收起</span></span>
+                                <span class="chev">&#9662;</span>
+                            </button>
                         </div>
                     </div>
 
