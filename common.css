@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5 {
 /* 导航栏全局样式 */
 .header {
     background-color: #0F172A;
-    padding: 16px 24px;
+    padding: 14px 24px;
     color: #ffffff;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -99,49 +99,34 @@ h1, h2, h3, h4, h5 {
 .nav-wrap {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    gap: 8px 16px;
+    display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 24px;
 }
 
-/* Logo核心样式：图片在左，文字在右 */
+/* Logo核心样式：图片标记在左 */
 .lab-logo {
-    grid-row: 1 / 3;
     display: flex;
-    flex-direction: row;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
     color: #ffffff;
-    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 1px;
     white-space: nowrap;
 }
 
 .logo-img {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     object-fit: contain;
     display: inline-block;
 }
 
-.logo-text {
-    line-height: 1.2;
-    display: inline-block;
-    align-items: center;
-}
-
-/* 导航菜单样式 */
+/* 导航菜单样式：三段式居中 */
 .nav {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
     display: flex;
-    justify-content: flex-end;
-    gap: 32px;
+    justify-content: center;
+    gap: 30px;
+    flex: 1;
 }
 
 .nav a {
@@ -193,20 +178,17 @@ h1, h2, h3, h4, h5 {
 
 /* 语言切换按钮样式 */
 .lang-switch {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
     display: flex;
-    justify-content: flex-end;
     gap: 8px;
 }
 
 .lang-btn {
-    padding: 6px 16px;
+    padding: 5px 14px;
     border-radius: 8px;
     border: 1px solid #3B82F6;
     background-color: transparent;
     color: #E2E8F0;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -301,41 +283,16 @@ h1, h2, h3, h4, h5 {
 .footer {
     background-color: #0F172A;
     color: #E2E8F0;
-    padding: 40px 24px 24px;
+    padding: 20px 24px;
     margin-top: 60px;
-    font-size: 15px;
-}
-
-.footer-contact {
-    max-width: 1200px;
-    margin: 0 auto 18px;
-    text-align: center;
-    line-height: 1.8;
-}
-
-.footer-contact a {
-    color: #E2E8F0;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.footer-contact a:hover {
-    color: #93C5FD;
-}
-
-.footer-sep {
-    color: #475569;
-    margin: 0 10px;
+    font-size: 14px;
 }
 
 .footer-copy {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(226, 232, 240, 0.15);
     text-align: center;
     color: #94A3B8;
-    font-size: 14px;
 }
 
 .footer strong {
@@ -350,18 +307,12 @@ h1, h2, h3, h4, h5 {
     }
 
     .nav-wrap {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto;
-        gap: 12px;
-        display: flex;
         flex-direction: column;
-        align-items: center;
+        gap: 12px;
     }
 
     .lab-logo {
-        grid-row: 1 / 2;
         justify-content: center;
-        font-size: 20px;
     }
 
     .logo-img {
@@ -370,8 +321,6 @@ h1, h2, h3, h4, h5 {
     }
 
     .nav {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
         justify-content: center;
         gap: 20px;
         flex-wrap: wrap;
@@ -382,8 +331,6 @@ h1, h2, h3, h4, h5 {
     }
 
     .lang-switch {
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
         justify-content: center;
     }
 
