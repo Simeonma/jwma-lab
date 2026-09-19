@@ -35,20 +35,46 @@ CSS = """
             padding: 32px;
         }
 
+        .position-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 16px;
+            cursor: pointer;
+        }
+
         .position-name {
             font-size: 20px;
             font-weight: 600;
             color: #1E3A8A;
-            margin-bottom: 16px;
+            margin-bottom: 0;
             padding-left: 12px;
             border-left: 4px solid #3B82F6;
             line-height: 1.3;
+            flex: 1;
+        }
+
+        .pos-chevron {
+            color: #94A3B8;
+            font-size: 15px;
+            margin-left: 12px;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .position-card.open .pos-chevron {
+            transform: rotate(180deg);
         }
 
         .position-desc {
+            display: none;
             font-size: 16px;
             color: #475569;
             line-height: 1.8;
+        }
+
+        .position-card.open .position-desc {
+            display: block;
         }
 
         .position-desc strong {
@@ -141,8 +167,11 @@ BODY = """
                 <div class="positions-grid">
 
                 <div class="position-card hover-card">
-                        <div class="position-name" id="postdoc-name-en">Postdoctoral Fellow</div>
-                        <div class="position-name" id="postdoc-name-cn" style="display: none;">博士后研究员</div>
+                        <div class="position-head">
+                            <div class="position-name" id="postdoc-name-en">Postdoctoral Fellow</div>
+                            <div class="position-name" id="postdoc-name-cn" style="display: none;">博士后研究员</div>
+                            <span class="pos-chevron">&#9662;</span>
+                        </div>
 
                         <div class="position-desc" id="postdoc-desc-en">
                             <p>We currently have 2-3 openings for postdoctoral fellows in the areas of integrated photonic chips, ultrafast optics, and metamaterials.</p>
@@ -185,8 +214,11 @@ BODY = """
                     </div>
 
                     <div class="position-card hover-card">
-                        <div class="position-name" id="phd-name-en">Ph.D. Student</div>
-                        <div class="position-name" id="phd-name-cn" style="display: none;">博士研究生</div>
+                        <div class="position-head">
+                            <div class="position-name" id="phd-name-en">Ph.D. Student</div>
+                            <div class="position-name" id="phd-name-cn" style="display: none;">博士研究生</div>
+                            <span class="pos-chevron">&#9662;</span>
+                        </div>
 
                         <div class="position-desc" id="phd-desc-en">
                             <p>We are looking for Ph.D. students genuinely interested in research, with a touch of idealism — those who enjoy truly understanding a problem for its own sake, rather than chasing short-term results. For admissions details, please refer to the <a href="https://gs.sustech.edu.cn/#/admission/index">University Admissions Website</a>.</p>
@@ -227,8 +259,11 @@ BODY = """
                     </div>
 
                     <div class="position-card hover-card">
-                        <div class="position-name" id="master-name-en">Master Student</div>
-                        <div class="position-name" id="master-name-cn" style="display: none;">硕士研究生</div>
+                        <div class="position-head">
+                            <div class="position-name" id="master-name-en">Master Student</div>
+                            <div class="position-name" id="master-name-cn" style="display: none;">硕士研究生</div>
+                            <span class="pos-chevron">&#9662;</span>
+                        </div>
 
                         <div class="position-desc" id="master-desc-en">
                             <p>If you are curious but not yet sure whether research is your future path, a master's program is the perfect time to find out. We welcome master's students interested in the engineering and physics of photonics. For admissions details, please refer to the <a href="https://gs.sustech.edu.cn/#/admission/index">University Admissions Website</a>.</p>
@@ -263,8 +298,11 @@ BODY = """
                     </div>
 
                     <div class="position-card hover-card">
-                        <div class="position-name" id="ra-name-en">Research Assistant</div>
-                        <div class="position-name" id="ra-name-cn" style="display: none;">研究助理</div>
+                        <div class="position-head">
+                            <div class="position-name" id="ra-name-en">Research Assistant</div>
+                            <div class="position-name" id="ra-name-cn" style="display: none;">研究助理</div>
+                            <span class="pos-chevron">&#9662;</span>
+                        </div>
 
                         <div class="position-desc" id="ra-desc-en">
                             <p>If you are interested in hands-on research experience in photonics and nanotechnology, or wish to gain a deeper understanding of our research group, feel free to contact us! It is particularly suitable for undergraduates considering graduate studies who want to gain research experience in advance.</p>
@@ -302,4 +340,11 @@ BODY = """
     </div>
 """
 
-SCRIPT = ""
+SCRIPT = """
+        // Collapsible position cards: click the title row to expand/collapse
+        document.querySelectorAll('.position-head').forEach(function(head) {
+            head.addEventListener('click', function() {
+                head.closest('.position-card').classList.toggle('open');
+            });
+        });
+"""
