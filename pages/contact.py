@@ -35,9 +35,10 @@ CSS = """
         }
 
         .contact-row .icon {
-            font-size: 22px;
+            display: flex;
+            align-items: center;
+            color: #1E3A8A;
             width: 28px;
-            text-align: center;
             flex-shrink: 0;
         }
 
@@ -102,7 +103,7 @@ BODY = """
             <div class="contact-layout">
                 <div class="contact-list">
                     <div class="contact-row">
-                        <span class="icon">📧</span>
+                        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 5L2 7"/></svg></span>
                         <span class="label" id="email-label-en">Email</span>
                         <span class="label" id="email-label-cn" style="display: none;">邮箱</span>
                         <span class="value">
@@ -110,7 +111,7 @@ BODY = """
                         </span>
                     </div>
                     <div class="contact-row">
-                        <span class="icon">🔗</span>
+                        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></span>
                         <span class="label" id="links-label-en">Links</span>
                         <span class="label" id="links-label-cn" style="display: none;">链接</span>
                         <span class="value">
@@ -118,7 +119,7 @@ BODY = """
                         </span>
                     </div>
                     <div class="contact-row">
-                        <span class="icon">🎓</span>
+                        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg></span>
                         <span class="label" id="fac-label-en">SUSTech</span>
                         <span class="label" id="fac-label-cn" style="display: none;">学校主页</span>
                         <span class="value" id="fac-value-en">
@@ -129,7 +130,7 @@ BODY = """
                         </span>
                     </div>
                     <div class="contact-row">
-                        <span class="icon">📍</span>
+                        <span class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
                         <span class="label" id="addr-label-en">Address</span>
                         <span class="label" id="addr-label-cn" style="display: none;">地址</span>
                         <span class="value" id="addr-value-en">Room 339, South Building of College of Engineering, No. 1088 Xueyuan Road, Nanshan District, Shenzhen 518055, China</span>

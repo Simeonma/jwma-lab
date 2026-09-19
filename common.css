@@ -1,3 +1,20 @@
+/* 自托管标题字体：仅拉丁子集（各约 21KB），中文回退到系统黑体栈 */
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('fonts/SourceSerif4-latin-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Source Serif 4';
+    src: url('fonts/SourceSerif4-latin-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* 全局重置 */
 * {
     margin: 0;
@@ -6,10 +23,15 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
   background-color: #F8FAFC;
   color: #1F2937;
   line-height: 1.7;
+}
+
+/* 标题用衬线体（拉丁字形），学术气质；中文标题回退系统黑体 */
+h1, h2, h3, h4, h5 {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
 }
 
 /* 导航栏全局样式 */

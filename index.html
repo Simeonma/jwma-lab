@@ -59,8 +59,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(16, 42, 67, 0.6);
+            background: linear-gradient(100deg, rgba(8, 23, 42, 0.92) 0%, rgba(15, 35, 62, 0.75) 50%, rgba(15, 35, 62, 0.45) 100%);
             z-index: 1;
+        }
+
+        .banner-cta {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            margin: 26px auto 0;
+            padding: 12px 30px;
+            border: 1.5px solid rgba(255, 255, 255, 0.75);
+            border-radius: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .banner-cta:hover {
+            background-color: #ffffff;
+            color: #1E3A8A;
         }
 
         .banner-title {
@@ -437,11 +457,15 @@
             <small>南方科技大学</small>
         </h1>
         <p class="banner-desc" id="banner-desc-en">
-            We're a research group working at the intersection of photonic chips and macroscopic quantum states of light. Our research spans optical characterization, nanofabrication, and theoretical modeling. <strong>On the application side, we develop advanced photonic devices and chips for optical information and optical computing</strong> — integrated photonic chips, III-V semiconductor lasers, and opto-electro-mechanical chips. <strong>On the science side, we focus on novel physics of light-matter coupling</strong>, striving to realize and control macroscopic quantum states such as Bose-Einstein condensation on photonic chip platforms, and to explore their applications in next-generation photonic chips.
+            We work at the intersection of <strong>photonic chips</strong> and <strong>macroscopic quantum states of light</strong> — from integrated photonic circuits and III-V semiconductor lasers to polariton condensates and topological photons.
         </p>
         <p class="banner-desc" id="banner-desc-cn" style="display: none;">
-            我们从事光子芯片与宏观光量子物态的交叉科学研究，研究内容涵盖光电测量、纳米加工、理论建模等方向。<strong>应用层面，我们研发面向光信息与光计算领域的先进光子器件及芯片</strong>，包括集成光子芯片、III-V 族半导体激光器、光机电芯片等；<strong>基础科学层面，我们聚焦光-物质耦合的新奇物理现象</strong>，致力于在光子芯片平台上实现并操控玻色 - 爱因斯坦凝聚等宏观量子物态，探索其在下一代光子芯片领域的应用。
+            我们从事<strong>光子芯片</strong>与<strong>宏观光量子物态</strong>的交叉研究——从集成光子电路、III-V 族半导体激光器，到极化激元凝聚与拓扑光子。
         </p>
+        <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+            <span id="banner-cta-en" style="display: inline;"><a href="research.html" class="banner-cta">Explore our research →</a></span>
+            <span id="banner-cta-cn" style="display: none;"><a href="research.html" class="banner-cta">了解我们的研究方向 →</a></span>
+        </div>
     </div>
 
     <div class="carousel-container">
