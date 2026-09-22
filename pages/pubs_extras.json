@@ -30,6 +30,11 @@
     "image_alt": "Valley kink states",
     "desc_html": "We demonstrate topological photonic integrated circuits. This work is featured as cover article."
   },
+  "10.1038/s41565-021-00868-6": {
+    "image": "images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg",
+    "image_alt": "Nanomechanical topological insulators",
+    "desc_html": "We report a topological system with an auxiliary orbital degree of freedom. This work is featured in <a href=\"https://doi.org/10.1038/s41565-021-00853-z\" target=\"_blank\">Nature Nanotechnology 16 (5): 487-489 (2021)</a>."
+  },
   "10.1063/1.4945715": {
     "image": "images/publications/graphene_isolator.jpg",
     "image_alt": "graphene silicon isolator",
