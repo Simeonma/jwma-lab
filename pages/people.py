@@ -85,6 +85,7 @@ CSS = """
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 28px;
             margin-top: 10px;
+            margin-bottom: 56px;
             width: 100%;
         }
 
@@ -447,21 +448,15 @@ BODY = """
                 </div>
             </div>
 
-            <h3 class="section-title" id="alumni-title-en">Alumni</h3>
-            <h3 class="section-title" id="alumni-title-cn" style="display: none;">毕业生去向</h3>
-
-            <div class="alumni-list">
-                <div class="alumni-empty" id="alumni-empty-en">To be updated.</div>
-                <div class="alumni-empty" id="alumni-empty-cn" style="display: none;">待更新。</div>
-                <!-- To add an alumnus, remove the "To be updated" lines above and copy this block:
+            <!-- Alumni (no graduates yet): uncomment this whole block when needed.
+                 To add an alumnus, copy this card template inside .alumni-list:
                 <div class="alumni-row">
                     <span class="alumni-name" id="al1-name-en">San Zhang</span>
                     <span class="alumni-name" id="al1-name-cn" style="display: none;">张三</span>
                     <span class="alumni-info" id="al1-info-en">M.S. 2027 &middot; Ph.D. at MIT</span>
                     <span class="alumni-info" id="al1-info-cn" style="display: none;">2027年硕士毕业，现于麻省理工学院攻读博士</span>
                 </div>
-                -->
-            </div>
+            -->
         </div>
     </div>
 """
