@@ -427,19 +427,6 @@ BODY = """
                         <div class="research-area" id="jz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为光子芯片。</div>
                     </div>
                 </div>
-                <div class="member-card join-card hover-card">
-                    <div class="member-avatar placeholder">
-                        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <div class="member-info">
-                        <h5 id="join-title-en">Join Our Team</h5>
-                        <h5 id="join-title-cn" style="display: none;">加入我们</h5>
-                        <div class="member-position" id="join-pos-en"><span class="join-dot"></span>PhD Student · Postdoc · RA</div>
-                        <div class="member-position" id="join-pos-cn" style="display: none;"><span class="join-dot"></span>博士生 · 博士后 · 研究助理</div>
-                        <a href="openings.html" class="join-link" id="join-link-en">View Openings →</a>
-                        <a href="openings.html" class="join-link" id="join-link-cn" style="display: none;">查看职位 →</a>
-                    </div>
-                </div>
             </div>
 
             <!-- Alumni (no graduates yet): uncomment this whole block when needed.
