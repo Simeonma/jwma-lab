@@ -332,19 +332,6 @@ BODY = """
             <div class="members-grid">
                 <div class="member-card hover-card">
                     <div class="member-avatar">
-                        <img loading="lazy" src="images/members/Tianyu Xu.jpg" alt="Tianyu Xu">
-                    </div>
-                    <div class="member-info">
-                        <h5 id="xt-name-en">Tianyu Xu</h5>
-                        <h5 id="xt-name-cn" style="display: none;">徐天宇</h5>
-                        <div class="member-position" id="xt-pos-en">Master's Student</div>
-                        <div class="member-position" id="xt-pos-cn" style="display: none;">硕士研究生</div>
-                        <div class="research-area" id="xt-bio-en">Tianyu Xu received his bachelor's degree from SUSTech and is currently pursuing a master's degree there. His research interests include intelligent optical systems.</div>
-                        <div class="research-area" id="xt-bio-cn" style="display: none;">本科毕业于南方科技大学，现为南方科技大学硕士研究生，研究兴趣为智能光学系统。</div>
-                    </div>
-                </div>
-                <div class="member-card hover-card">
-                    <div class="member-avatar">
                         <img loading="lazy" src="images/members/Jiong Ouyang.jpg" alt="Jiong Ouyang">
                     </div>
                     <div class="member-info">
@@ -354,19 +341,6 @@ BODY = """
                         <div class="member-position" id="oj-pos-cn" style="display: none;">硕士研究生</div>
                         <div class="research-area" id="oj-bio-en">Jiong Ouyang received his bachelor's degree from Shenzhen University and is currently pursuing a master's degree at the Southern University of Science and Technology. His research interests include nanophotonics.</div>
                         <div class="research-area" id="oj-bio-cn" style="display: none;">本科毕业于深圳大学，目前在南方科技大学攻读硕士学位，研究兴趣为纳米光子学。</div>
-                    </div>
-                </div>
-                <div class="member-card hover-card">
-                    <div class="member-avatar">
-                        <img loading="lazy" src="images/members/Jie Liu.jpg" alt="Jie Liu">
-                    </div>
-                    <div class="member-info">
-                        <h5 id="jl-name-en">Jie Liu</h5>
-                        <h5 id="jl-name-cn" style="display: none;">刘杰</h5>
-                        <div class="member-position" id="jl-pos-en">Master's Student</div>
-                        <div class="member-position" id="jl-pos-cn" style="display: none;">硕士研究生</div>
-                        <div class="research-area" id="jl-bio-en">Jie Liu is a master's student at SUSTech. He completed his undergraduate studies at Hunan University of Technology and Business. His research interests include intelligent optical systems.</div>
-                        <div class="research-area" id="jl-bio-cn" style="display: none;">南方科技大学在读硕士研究生，本科毕业于湖南工商大学电子信息工程专业，研究兴趣为智能光学系统。</div>
                     </div>
                 </div>
             </div>
@@ -412,19 +386,6 @@ BODY = """
                         <div class="member-position" id="yz-pos-cn" style="display: none;">本科实习生</div>
                         <div class="research-area" id="yz-bio-en">Yidan Zhu is an undergraduate student at the Department of Electronic and Electrical Engineering, SUSTech. Her research interests include topological photonic crystals.</div>
                         <div class="research-area" id="yz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为拓扑光子晶体。</div>
-                    </div>
-                </div>
-                <div class="member-card hover-card">
-                    <div class="member-avatar">
-                        <img loading="lazy" src="images/members/Jiaheng Zheng.jpg" alt="Jiaheng Zheng">
-                    </div>
-                    <div class="member-info">
-                        <h5 id="jz-name-en">Jiaheng Zheng</h5>
-                        <h5 id="jz-name-cn" style="display: none;">郑家恒</h5>
-                        <div class="member-position" id="jz-pos-en">Undergraduate Intern</div>
-                        <div class="member-position" id="jz-pos-cn" style="display: none;">本科实习生</div>
-                        <div class="research-area" id="jz-bio-en">Jiaheng Zheng is an undergraduate student at the Department of Electronic and Electrical Engineering, SUSTech. His research interests include photonic chips.</div>
-                        <div class="research-area" id="jz-bio-cn" style="display: none;">南方科技大学电子与电气工程系在读本科生，研究兴趣为光子芯片。</div>
                     </div>
                 </div>
             </div>
