@@ -284,50 +284,25 @@ BODY = """
                     </div>
                 </div>
 
-            <!-- Postdocs (none currently): uncomment this whole block when recruited
-            <h3 class="section-title" id="postdoc-title-en">Postdoctoral Researchers</h3>
-            <h3 class="section-title" id="postdoc-title-cn" style="display: none;">博士后</h3>
-
-            <div class="members-grid">
+            <!-- New member card template: copy into the Members grid below.
+                 Avatar goes to images/members/; use a unique id prefix per person.
                 <div class="member-card hover-card">
                     <div class="member-avatar">
                         <img loading="lazy" src="images/members/名字.jpg" alt="Name">
                     </div>
                     <div class="member-info">
-                        <h5 id="pd1-name-en">Pinyin Name</h5>
-                        <h5 id="pd1-name-cn" style="display: none;">中文名</h5>
-                        <div class="member-position" id="pd1-pos-en">Postdoctoral Researcher</div>
-                        <div class="member-position" id="pd1-pos-cn" style="display: none;">博士后</div>
-                        <div class="research-area" id="pd1-bio-en">英文简介</div>
-                        <div class="research-area" id="pd1-bio-cn" style="display: none;">中文简介</div>
+                        <h5 id="xx-name-en">Pinyin Name</h5>
+                        <h5 id="xx-name-cn" style="display: none;">中文名</h5>
+                        <div class="member-position" id="xx-pos-en">Position, e.g. Ph.D. Student</div>
+                        <div class="member-position" id="xx-pos-cn" style="display: none;">职位，如博士研究生</div>
+                        <div class="research-area" id="xx-bio-en">英文简介</div>
+                        <div class="research-area" id="xx-bio-cn" style="display: none;">中文简介</div>
                     </div>
                 </div>
-            </div>
             -->
 
-            <!-- Ph.D. Students (none currently): uncomment this whole block when recruited
-            <h3 class="section-title" id="phd-title-en">Ph.D. Students</h3>
-            <h3 class="section-title" id="phd-title-cn" style="display: none;">博士研究生</h3>
-
-            <div class="members-grid">
-                <div class="member-card hover-card">
-                    <div class="member-avatar">
-                        <img loading="lazy" src="images/members/名字.jpg" alt="Name">
-                    </div>
-                    <div class="member-info">
-                        <h5 id="phd1-name-en">Pinyin Name</h5>
-                        <h5 id="phd1-name-cn" style="display: none;">中文名</h5>
-                        <div class="member-position" id="phd1-pos-en">Ph.D. Student</div>
-                        <div class="member-position" id="phd1-pos-cn" style="display: none;">博士研究生</div>
-                        <div class="research-area" id="phd1-bio-en">英文简介</div>
-                        <div class="research-area" id="phd1-bio-cn" style="display: none;">中文简介</div>
-                    </div>
-                </div>
-            </div>
-            -->
-
-            <h3 class="section-title" id="ms-title-en">Master's Students</h3>
-            <h3 class="section-title" id="ms-title-cn" style="display: none;">硕士研究生</h3>
+            <h3 class="section-title" id="members-title-en">Members</h3>
+            <h3 class="section-title" id="members-title-cn" style="display: none;">成员</h3>
 
             <div class="members-grid">
                 <div class="member-card hover-card">
@@ -343,12 +318,6 @@ BODY = """
                         <div class="research-area" id="oj-bio-cn" style="display: none;">本科毕业于深圳大学，目前在南方科技大学攻读硕士学位，研究兴趣为纳米光子学。</div>
                     </div>
                 </div>
-            </div>
-
-            <h3 class="section-title" id="ra-title-en">Research Assistants &amp; Interns</h3>
-            <h3 class="section-title" id="ra-title-cn" style="display: none;">研究助理与实习生</h3>
-
-            <div class="members-grid">
                 <div class="member-card hover-card">
                     <div class="member-avatar">
                         <img loading="lazy" src="images/members/Han Zhang.jpg" alt="Han Zhang">
