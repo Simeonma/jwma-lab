@@ -25,13 +25,16 @@ CSS = """
             transition: transform 0.35s ease;
         }
 
-        /* 第一栏（AI 驱动的光子设计）配图为正方形。列宽与其余各栏一致（40%），
-           只放开 max-height 并锁 1:1，否则 cover 会把环形节点裁掉 */
+        /* 第一栏（AI 驱动的光子设计）配图为 4:3 图版。列宽与其余各栏一致（40%）；
+           图片用 contain 完整放进框内，不裁切环形节点，两侧由图片自带的深蓝底补齐，
+           接缝不可见，整体读作一块 4:3 的深色图版 */
         .research-item--square .research-img {
             width: 40%;
             height: auto;
             max-height: none;
-            aspect-ratio: 1 / 1;
+            aspect-ratio: 4 / 3;
+            object-fit: contain;
+            background-color: #0B1729;
             flex-shrink: 0;
         }
 
