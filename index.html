@@ -221,6 +221,78 @@
             visibility: visible !important;
         }
 
+        /* GENIE 发布卡：与论文配图区分开的深色公告页，文案常驻、不靠 hover
+           背景图取自 genie-optics.com 首页那张焦斑图，已水平镜像，让亮部落在右侧、暗部留给文字 */
+        .carousel-slide.sw-slide {
+            background-image:
+                linear-gradient(100deg, rgba(8, 23, 42, 0.96) 0%, rgba(9, 26, 47, 0.90) 48%, rgba(10, 30, 54, 0.62) 80%, rgba(10, 30, 54, 0.36) 100%),
+                url('images/home/genie-focus.jpg');
+            background-size: cover, cover;
+            background-position: center, center;
+            background-repeat: no-repeat, no-repeat;
+            justify-content: flex-start;
+        }
+
+        /* 文案块靠左固定内缩，不做居中：右侧留给图案，左侧成一块确定的文字栏 */
+        .sw-slide-inner {
+            width: 100%;
+            max-width: 840px;
+            padding: 0 48px 0 88px;
+            text-align: left;
+        }
+
+        .sw-kicker {
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: #DBEAFE;
+            margin-bottom: 14px;
+        }
+
+        .sw-slide-title {
+            font-size: 46px;
+            font-weight: 600;
+            color: #ffffff;
+            line-height: 1.06;
+            letter-spacing: -0.015em;
+            margin-bottom: 20px;
+        }
+
+        .sw-lead {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #CBD9EC;
+            margin-bottom: 32px;
+            max-width: 630px;
+        }
+
+        /* 中文行距略松一档，西文保持 1.8 */
+        html[lang="zh-CN"] .sw-lead {
+            line-height: 1.95;
+        }
+
+        .sw-cta {
+            display: inline-block;
+            padding: 11px 26px;
+            border: 1.5px solid rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .sw-cta:hover {
+            background-color: #ffffff;
+            color: #1E3A8A;
+        }
+
+        .sw-cta:focus-visible {
+            outline: 2px solid #93C5FD;
+            outline-offset: 3px;
+        }
+
         .carousel-btn {
             position: absolute;
             top: 50%;
@@ -379,6 +451,18 @@
             .banner-desc { font-size: 16px; }
             .card h3 { font-size: 24px; }
             .carousel-slide { width: 100%; height: 280px; }
+            .carousel-slide.sw-slide { height: 300px; }
+            /* 窄屏下文字几乎占满整张卡，改用纵向均匀压暗，保证任何一行都压在暗底上 */
+            .carousel-slide.sw-slide {
+                background-image:
+                    linear-gradient(180deg, rgba(8, 23, 42, 0.93) 0%, rgba(8, 23, 42, 0.87) 100%),
+                    url('images/home/genie-focus.jpg');
+            }
+            .sw-slide-inner { padding: 0 56px; }
+            .sw-kicker { margin-bottom: 12px; }
+            .sw-slide-title { font-size: 34px; margin-bottom: 14px; }
+            .sw-lead { font-size: 16px; line-height: 1.75; margin-bottom: 22px; }
+            html[lang="zh-CN"] .sw-lead { line-height: 1.9; }
             .carousel-desc {
                 left: 50%;
                 transform: translateX(-50%);
@@ -397,6 +481,13 @@
             .banner-title { font-size: 26px; }
             .carousel-container { padding: 0 16px; margin: 32px auto; }
             .carousel-slide { width: 100%; height: 200px; }
+            .carousel-slide.sw-slide { height: 290px; }
+            .sw-slide-inner { padding: 0 46px; }
+            .sw-kicker { font-size: 14px; letter-spacing: 0.01em; margin-bottom: 12px; }
+            .sw-slide-title { font-size: 28px; margin-bottom: 10px; }
+            .sw-lead { font-size: 15px; line-height: 1.8; margin-bottom: 18px; }
+            html[lang="zh-CN"] .sw-lead { line-height: 1.95; }
+            .sw-cta { padding: 9px 18px; font-size: 13.5px; }
             .carousel-desc {
                 left: 50%;
                 transform: translateX(-50%);
@@ -474,53 +565,65 @@
 
     <div class="carousel-container">
         <div class="carousel-wrap">
-            <div class="carousel-slide active" data-index="0">
-                <img src="images/publications/Excitonic negative refraction mediated by magnetic orders.jpg" alt="Excitonic negative refraction" class="carousel-img">
-            </div>
-            <div class="carousel-desc active" id="desc1-en">
-                <strong>Strong light-matter interactions:</strong> We made the first excitonic negative refraction — mediated by magnetic orders. Published in <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>.
-            </div>
-            <div class="carousel-desc active" id="desc1-cn">
-                <strong>强光-物质相互作用：</strong>我们实现了首个由磁序调控的激子负折射，发表于 <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>。
+            <div class="carousel-slide sw-slide active" data-index="0">
+                <div class="sw-slide-inner">
+                    <div class="sw-kicker" id="sw-kick-en">New from the MacroPhotonic Lab</div>
+                    <div class="sw-kicker" id="sw-kick-cn" style="display: none;">宏观光子实验室发布</div>
+                    <div class="sw-slide-title">GENIE Optics</div>
+                    <p class="sw-lead" id="sw-lead-en">A closed-loop design engine for photonic devices. <span style="white-space: nowrap;">10&ndash;100&times;</span> GPU acceleration, <span style="white-space: nowrap;">fully automated end to end</span>.</p>
+                    <p class="sw-lead" id="sw-lead-cn" style="display: none;">面向光子器件的闭环设计引擎。<span style="white-space: nowrap;">10&ndash;100&times;</span> GPU 加速，端到端全自动设计。</p>
+                    <span id="sw-cta-en"><a class="sw-cta" href="https://www.genie-optics.com" target="_blank" rel="noopener">Visit genie-optics.com &rarr;</a></span>
+                    <span id="sw-cta-cn" style="display: none;"><a class="sw-cta" href="https://www.genie-optics.com" target="_blank" rel="noopener">访问 genie-optics.com &rarr;</a></span>
+                </div>
             </div>
 
             <div class="carousel-slide" data-index="1">
-                <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Topological nanomechanics" loading="lazy" class="carousel-img">
+                <img src="images/publications/Excitonic negative refraction mediated by magnetic orders.jpg" alt="Excitonic negative refraction" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc2-en">
-                <strong>Nano-electro-mechanical chips:</strong> We made the first topological chip with auxiliary orbital degree of freedom. Published in <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>.
+                <strong>Strong light-matter interactions:</strong> We made the first excitonic negative refraction — mediated by magnetic orders. Published in <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>.
             </div>
             <div class="carousel-desc" id="desc2-cn">
-                <strong>纳米机电芯片：</strong>我们制备了首个具备辅助轨道自由度的拓扑芯片，发表于 <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>。
+                <strong>强光-物质相互作用：</strong>我们实现了首个由磁序调控的激子负折射，发表于 <a href="https://doi.org/10.1038/s41565-025-02118-5" target="_blank">Nature Nanotechnology</a>。
             </div>
 
             <div class="carousel-slide" data-index="2">
-                <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.jpg" alt="Dirac-vortex lasers" loading="lazy" class="carousel-img">
+                <img src="images/publications/Nanomechanical topological insulators with an auxiliary orbital degree of freedom.jpg" alt="Topological nanomechanics" loading="lazy" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc3-en">
-                <strong>III-V semiconductor lasers:</strong> We built photonic-crystal micro-cavity lasers with Dirac-vortex states. Published in <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>.
+                <strong>Nano-electro-mechanical chips:</strong> We made the first topological chip with auxiliary orbital degree of freedom. Published in <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>.
             </div>
             <div class="carousel-desc" id="desc3-cn">
-                <strong>III-V 族半导体激光器：</strong>我们构建了基于狄拉克涡旋态的光子晶体微腔激光器，发表于 <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>。
+                <strong>纳米机电芯片：</strong>我们制备了首个具备辅助轨道自由度的拓扑芯片，发表于 <a href="https://doi.org/10.1038/s41565-021-00868-6" target="_blank">Nature Nanotechnology</a>。
             </div>
 
             <div class="carousel-slide" data-index="3">
-                <img src="images/publications/vortex_string_chiral_mode.jpg" alt="Vortex-string chiral modes" loading="lazy" class="carousel-img">
+                <img src="images/publications/Room-temperature continuous-wave Dirac-vortex topological lasers on silicon.jpg" alt="Dirac-vortex lasers" loading="lazy" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc4-en">
-                <strong>Metamaterials:</strong> We realized vortex-string chiral modes in metamaterials. Published in <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>.
+                <strong>III-V semiconductor lasers:</strong> We built photonic-crystal micro-cavity lasers with Dirac-vortex states. Published in <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>.
             </div>
             <div class="carousel-desc" id="desc4-cn">
-                <strong>超材料：</strong>我们在超材料中实现了涡旋弦手性模式，发表于 <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>。
+                <strong>III-V 族半导体激光器：</strong>我们构建了基于狄拉克涡旋态的光子晶体微腔激光器，发表于 <a href="https://doi.org/10.1038/s41377-023-01290-4" target="_blank">Light: Science &amp; Applications</a>。
             </div>
 
             <div class="carousel-slide" data-index="4">
-                <img src="images/publications/Topological photonic integrated circuits based on valley kink states.jpg" alt="Valley photonic crystals" loading="lazy" class="carousel-img">
+                <img src="images/publications/vortex_string_chiral_mode.jpg" alt="Vortex-string chiral modes" loading="lazy" class="carousel-img">
             </div>
             <div class="carousel-desc" id="desc5-en">
-                <strong>Photonic integrated circuits:</strong> We built photonic integrated circuits using valley kink states. Published in <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Laser &amp; Photonics Review</a> (cover article).
+                <strong>Metamaterials:</strong> We realized vortex-string chiral modes in metamaterials. Published in <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>.
             </div>
             <div class="carousel-desc" id="desc5-cn">
+                <strong>超材料：</strong>我们在超材料中实现了涡旋弦手性模式，发表于 <a href="https://doi.org/10.1038/s41467-024-46641-w" target="_blank">Nature Communications</a>。
+            </div>
+
+            <div class="carousel-slide" data-index="5">
+                <img src="images/publications/Topological photonic integrated circuits based on valley kink states.jpg" alt="Valley photonic crystals" loading="lazy" class="carousel-img">
+            </div>
+            <div class="carousel-desc" id="desc6-en">
+                <strong>Photonic integrated circuits:</strong> We built photonic integrated circuits using valley kink states. Published in <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Laser &amp; Photonics Review</a> (cover article).
+            </div>
+            <div class="carousel-desc" id="desc6-cn">
                 <strong>光子集成芯片：</strong>我们基于谷霍尔拓扑边缘态构建了光子集成芯片，发表于 <a href="https://doi.org/10.1002/lpor.201900087" target="_blank">Laser &amp; Photonics Review</a>（封面文章）。
             </div>
 
@@ -533,6 +636,7 @@
                 <button type="button" class="indicator-dot" data-index="2" aria-label="Go to slide 3"></button>
                 <button type="button" class="indicator-dot" data-index="3" aria-label="Go to slide 4"></button>
                 <button type="button" class="indicator-dot" data-index="4" aria-label="Go to slide 5"></button>
+                <button type="button" class="indicator-dot" data-index="5" aria-label="Go to slide 6"></button>
             </div>
         </div>
     </div>
@@ -541,6 +645,11 @@
         <div class="news-card">
             <h3 id="news-title-en">News</h3>
             <h3 id="news-title-cn" style="display: none;">动态</h3>
+            <div class="news-item">
+                <span class="news-date">Nov 2026</span>
+                <span class="news-text" id="news4-en">We released <strong>GENIE Optics</strong>, a closed-loop design engine for photonic devices — 10–100× GPU acceleration, fully automated end to end. <a href="https://www.genie-optics.com" target="_blank" rel="noopener">genie-optics.com</a></span>
+                <span class="news-text" id="news4-cn" style="display: none;">我们发布 <strong>GENIE Optics</strong>——面向光子器件的闭环设计引擎，10–100× GPU 加速，端到端全自动设计。详见 <a href="https://www.genie-optics.com" target="_blank" rel="noopener">genie-optics.com</a></span>
+            </div>
             <div class="news-item">
                 <span class="news-date">Sep 1, 2026</span>
                 <span class="news-text" id="news3-en">We warmly welcome Jiong Ouyang to join our lab as a master's student.</span>
@@ -582,8 +691,11 @@ const slides = document.querySelectorAll('.carousel-slide');
             dots[index].classList.add('active');
 
             descElements.forEach(function(desc) { desc.classList.remove('active', 'show-desc'); });
-            document.getElementById('desc' + (index + 1) + '-en').classList.add('active');
-            document.getElementById('desc' + (index + 1) + '-cn').classList.add('active');
+            // 第 1 张是 GENIE 发布卡，文案常驻在卡内，没有 hover 说明层
+            var descEn = document.getElementById('desc' + (index + 1) + '-en');
+            var descCn = document.getElementById('desc' + (index + 1) + '-cn');
+            if (descEn) descEn.classList.add('active');
+            if (descCn) descCn.classList.add('active');
 
             currentIndex = index;
         }
