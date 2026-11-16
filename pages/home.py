@@ -567,7 +567,7 @@ BODY = """
             <h3 id="news-title-en">News</h3>
             <h3 id="news-title-cn" style="display: none;">动态</h3>
             <div class="news-item">
-                <span class="news-date">Nov 2026</span>
+                <span class="news-date">Dec 1, 2026</span>
                 <span class="news-text" id="news4-en">We released <strong>GENIE Optics</strong>, a closed-loop physics-based engine for general photonic devices — 10–100× GPU acceleration, fully automated design end to end. <a href="https://www.genie-optics.com" target="_blank" rel="noopener">genie-optics.com</a></span>
                 <span class="news-text" id="news4-cn" style="display: none;">我们发布 <strong>GENIE Optics</strong>——面向通用光子器件的闭环物理引擎，10–100× GPU 加速，端到端全自动设计。详见 <a href="https://www.genie-optics.com" target="_blank" rel="noopener">genie-optics.com</a></span>
             </div>
