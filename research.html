@@ -65,12 +65,13 @@
             transition: transform 0.35s ease;
         }
 
-        /* 第一栏（AI 驱动的光子设计）配图为正方形，单独给方形框，
-           否则 .research-img 的 40% 宽 + 240px 高会把环形节点裁掉 */
+        /* 第一栏（AI 驱动的光子设计）配图为正方形。列宽与其余各栏一致（40%），
+           只放开 max-height 并锁 1:1，否则 cover 会把环形节点裁掉 */
         .research-item--square .research-img {
-            width: 248px;
-            height: 248px;
+            width: 40%;
+            height: auto;
             max-height: none;
+            aspect-ratio: 1 / 1;
             flex-shrink: 0;
         }
 
