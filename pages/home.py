@@ -476,7 +476,7 @@ BODY = """
             We work at the intersection of <strong>photonic chips</strong>, <strong>artificial intelligence</strong>, and <strong>macroscopic quantum states of light</strong>.
         </p>
         <p class="banner-desc" id="banner-desc-cn" style="display: none;">
-            我们从事<strong>光子芯片</strong>、<strong>人工智能</strong>，以及<strong>宏观光量子物态</strong>的交叉研究。
+            我们从事<strong>光子芯片</strong>、<strong>人工智能</strong>、<strong>宏观光量子物态</strong>的交叉研究。
         </p>
         <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
             <span id="banner-cta-en" style="display: inline;"><a href="research.html" class="banner-cta">Explore our research →</a></span>
