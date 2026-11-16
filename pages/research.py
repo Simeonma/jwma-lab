@@ -94,6 +94,16 @@ BODY = """
 
             <div class="research-container">
                 <div class="research-item hover-card">
+                    <img src="images/research/aidesign.jpg" alt="Closed-loop AI-driven photonic design" loading="lazy" class="research-img">
+                    <div class="research-content">
+                        <h4 id="aidesign-title-en">AI-driven photonic design</h4>
+                        <h4 id="aidesign-title-cn" style="display: none;">AI 驱动的光子设计</h4>
+                        <p id="aidesign-desc-en">Designing a photonic device still means iterating by hand: change a geometry, submit a simulation, read the result, decide what to change next. We are closing that loop. We combine full-wave solvers with agent-based planning and verification, so that a written specification — targets, tolerances, materials, fabrication constraints — can be carried to a checked layout without a person stepping through each iteration. The goal is not a faster simulator but a design process whose result can be trusted: every candidate, run and decision stays in the record and can be reopened. This line of work produced <a href="https://www.genie-optics.com" target="_blank" rel="noopener">GENIE Optics</a>, a closed-loop design engine.</p>
+                        <p id="aidesign-desc-cn" style="display: none;">设计一个光子器件，至今仍意味着逐轮手工迭代：改几何、提交仿真、读结果、再决定下一步。我们正在把这条回路接起来。我们把全波求解与智能体的规划、校验结合，让一份写好的指标——目标、容差、材料、工艺约束——在无人逐轮介入的情况下走到经校验的版图。我们要的不是更快的仿真器，而是一个结果可信的设计过程：每一个候选结构、每一次仿真与每一个决策都留在记录里，可以重新打开、重新运行。这条线上的产出是<a href="https://www.genie-optics.com" target="_blank" rel="noopener">GENIE Optics</a>，一个闭环设计引擎。</p>
+                    </div>
+                </div>
+
+                <div class="research-item hover-card">
                     <img src="images/research/research3.jpg" alt="Integrated photonic chips" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="item1-title-en">Photonic integrated circuits</h4>
