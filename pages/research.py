@@ -25,6 +25,15 @@ CSS = """
             transition: transform 0.35s ease;
         }
 
+        /* 第一栏（AI 驱动的光子设计）配图为正方形，单独给方形框，
+           否则 .research-img 的 40% 宽 + 240px 高会把环形节点裁掉 */
+        .research-item--square .research-img {
+            width: 248px;
+            height: 248px;
+            max-height: none;
+            flex-shrink: 0;
+        }
+
         .research-item:hover .research-img {
             transform: scale(1.02);
         }
@@ -77,12 +86,19 @@ CSS = """
                 margin-right: 0;
                 margin-bottom: 16px;
             }
+            /* 方形配图在窄屏不裁切：整幅铺满宽度，高度随比例走 */
+            .research-item--square .research-img {
+                width: 100%;
+                height: auto;
+                max-height: none;
+            }
             .research-item h4 { font-size: 22px; margin-bottom: 8px; }
             .research-item p { font-size: 16px; }
         }
 
         @media (max-width: 480px) {
             .research-img { height: 180px; }
+            .research-item--square .research-img { height: auto; }
         }
 """
 
@@ -93,7 +109,7 @@ BODY = """
             <h3 id="research-title-cn" style="display: none;">研究兴趣</h3>
 
             <div class="research-container">
-                <div class="research-item hover-card">
+                <div class="research-item hover-card research-item--square">
                     <img src="images/research/aidesign.jpg" alt="Closed-loop AI-driven photonic design" loading="lazy" class="research-img">
                     <div class="research-content">
                         <h4 id="aidesign-title-en">AI-driven photonic design</h4>
